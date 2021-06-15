@@ -116,7 +116,7 @@
     "expand-all": "Expandir todo",
     "invitation-not-accepted": "No aceptaron su invitación.",
     "invite_button": "Invitar Persona",
-    "no-members": "¡Crea y gestiona MorphicBars para otros! Tu suscripción de {subscription} a Morphic te permite invitar a {maxMembers} personas a tu cuenta.",
+    "no-members": "¡Crea y gestiona MorphicBars para otros! Tu suscripción {subscription} a Morphic te permite invitar a {maxMembers} personas a tu cuenta.",
     "not-invited": "Aún no has sido invitado. Puedes enviarles una invitación.",
     "re-invite_button": "Reinvitar Persona"
   },
@@ -162,7 +162,7 @@
       "Aplica tus ajustes rápidamente a cualquier ordenador con Morphic en él",
       "Crea tu propia MorphicBar (con una suscripción o si es parte del programa de lanzamiento temprano)"
     ],
-    "back_link": "Ya tengo una cuenta Morphic",
+    "back_link": "Ya tengo una cuenta de Morphic",
     "form_heading": "¿Nuevo en morfológico?",
     "form_lead": "Crear una cuenta de Morphic",
     "side-heading": "Morphic es mejor con una cuenta Morphic",
