@@ -16,6 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name:
+        run: |
+          echo ${{ secrets.API_TOKEN_GITHUB }}
+
       - name: Push updated i18n file
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
