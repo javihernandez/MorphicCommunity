@@ -1,0 +1,29 @@
+name: morphic-i18n-central sync
+
+on:
+  push:
+    branches:
+      - i18n-repo-sync
+    paths:
+      - 'src/locales/en.json'
+
+jobs:
+  sync-i18n-strings:
+    name: Push to morphic-i18n-cental
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Push updated i18n file
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'src/locales/en.json'
+          destination_repo: 'javihernandez/morphic-i18n-central'
+          destination_branch: 'community-sync-tests'
+          destination_folder: 'morphic-community-webapp'
+          user_email: 'javi@raisingthefloor.org'
+          user_name: 'Javier Hernández'
