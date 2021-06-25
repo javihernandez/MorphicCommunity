@@ -16,10 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name:
-        run: |
-          echo ${{ secrets.API_TOKEN_GITHUB }}
-
       - name: Push updated i18n file
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
@@ -31,3 +27,8 @@ jobs:
           destination_folder: 'morphic-community-webapp'
           user_email: 'javi@raisingthefloor.org'
           user_name: 'javihernandez'
+
+      - name:
+        run: |
+          echo "token:" ${{ $API_TOKEN_GITHUB }}
+ 
