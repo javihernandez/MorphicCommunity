@@ -26,4 +26,4 @@ jobs:
           destination_branch: 'community-sync-tests'
           destination_folder: 'morphic-community-webapp'
           user_email: 'javi@raisingthefloor.org'
-          user_name: 'Javier Hernández'
+          user_name: 'javihernandez'
