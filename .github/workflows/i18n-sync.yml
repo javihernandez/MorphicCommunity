@@ -9,7 +9,7 @@ on:
 
 jobs:
   sync-i18n-strings:
-    name: Push to morphic-i18n-cental
+    name: Push to morphic-i18n-central
 
     runs-on: ubuntu-latest
     steps:
@@ -26,6 +26,6 @@ jobs:
           destination_branch: 'community-sync-tests'
           destination_folder: 'morphic-community-webapp'
           user_email: 'javi@raisingthefloor.org'
-          user_name: 'javihernandez'
+          user_name: 'Javier Hernández'
 
 
