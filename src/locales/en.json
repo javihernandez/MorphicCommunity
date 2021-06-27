@@ -2,7 +2,7 @@
   "BarSettings": {
     "delete_button": "Delete Bar",
     "rename_button": "Edit bar name",
-    "test_string": "DELETE me"
+    "test_string": "DELETe me"
   },
   "CopyBarDialog": {
     "confirm-dialog": {
