@@ -1,0 +1,214 @@
+{
+  "BarSettings": {
+    "delete_button": "Delete Bar",
+    "rename_button": "Edit bar name"
+  },
+  "CopyBarDialog": {
+    "confirm-dialog": {
+      "no_button": "No",
+      "question": "Do you wish to continue?",
+      "summary": "This will copy the contents of the bar {barToCopy}, replacing all items of the current bar, {currentBar}.",
+      "title": "Confirm Bar Copy",
+      "yes_button": "Yes"
+    },
+    "intro": "You can copy any of the MorphicBars below into the MorphicBar you are editing. (Replacing the ALL of current contents of the MorphicBar you are editing)",
+    "no-bars": "There are no other bars to copy items from.",
+    "select-instruction": "Select a bar to copy from:",
+    "title": "Copy bar"
+  },
+  "General": {
+    "member-state": {
+      "active": "Active",
+      "invited": "Invited",
+      "uninvited": "Uninvited"
+    }
+  },
+  "Errors": {
+    "generic-server-error": "Server error: {message}",
+    "generic-title": "Unable to {action}",
+    "generic-action": "perform the last action",
+    "invalid_credentials": "That email address or password has not been recognized.",
+    "missing_required": "A required field is missing.",
+    "existing_email": "There is already an account associated with that email address.",
+    "existing_username": "There is already an account which uses that user name.",
+    "limit_reached": "The maximum number of members for your subscription has been reached.",
+    "cannot_demote_self": "You are unable to demote yourself.",
+    "cannot_delete_self": "You are unable to delete yourself from the community.",
+    "http": {
+      "404": "Unable to access to the server. Please try again later.",
+      "500": "There is a problem with the server. Please try again later."
+    },
+    "validation": {
+      "app-missing": "The application to open has not been chosen.",
+      "field-missing": "A required field is missing: {name}.",
+      "link-missing": "The site to open has not been chosen."
+    }
+  },
+  "App": {},
+  "BarItemFields": {},
+  "BarItemLink": {},
+  "BarPreview": {},
+  "BarsList": {
+    "default-bar": "Default Bar",
+    "new-bar_button": "Add a new bar"
+  },
+  "BillingDetails": {},
+  "BlockLoginRegister": {},
+  "MemberDetails": {
+    "bar-unused": "This bar has no members using it.",
+    "delete-member": "Delete member",
+    "make-manager": "Make member a Group Manager",
+    "make-non-manager": "Remove group manager role from member",
+    "member-count": "This MorphicBar is not used | This MorphicBar is used by 1 member | This MorphicBar is used by {n} members",
+    "resend-invite": "Re-invite member",
+    "send-invite": "Send Invitation"
+  },
+  "SidePanel": {
+    "account-settings_link": "Account settings",
+    "group-bars_heading": "Group Bars",
+    "other-bars_heading": "MorphicBars for Others",
+    "own-bars_heading": "My MorphicBar"
+  },
+  "Dashboard": {},
+  "EarlyReleaseProgram": {
+    "account-created": "Your account has been created.",
+    "already-joined": "You already have an account",
+    "create-dialog-ok_button": "Create Account",
+    "create-dialog-prompt": "What would you like to name this account?",
+    "create-dialog-text-hint": "Examples: Your name, organization name, other...",
+    "create-dialog-title": "Create your account",
+    "heading": "Morphic Early Release Program",
+    "intro": "Welcome to Morphic.",
+    "join_link": "Click here to begin"
+  },
+  "EditButtonDialog": {
+    "color": {
+      "teal": "Teal",
+      "blue": "Blue",
+      "purple": "Purple",
+      "red": "Red",
+      "green": "Green",
+      "orange": "Orange",
+      "other": "Other"
+    }
+  },
+  "Footer": {
+    "copyright": "Copyright © {year} Raising the Floor - US Inc. All rights Reserved."
+  },
+  "Header": {
+    "focus-mode_button": "Focus / Mobile Mode",
+    "home_button": "Home (to select other person or bar)",
+    "logout_button": "Logout",
+    "login_button": "Login",
+    "product-name": "MorphicBar Customization Tool",
+    "standard-mode_button": "Standard Mode"
+  },
+  "Home": {},
+  "InviteMemberDialog": {
+    "email_prompt": "Please enter the email address for {name}",
+    "invite-member_title": "Invite {name}"
+  },
+  "MemberInvite": {},
+  "MembersList": {
+    "add-bar_button": "Add a new bar",
+    "add-member_button": "Add a person",
+    "collapse-all": "Collapse all",
+    "expand-all": "Expand all",
+    "invitation-not-accepted": "Not accepted their invitation.",
+    "invite_button": "Invite Person",
+    "no-members": "Create and manage MorphicBars for others! Your {subscription} Morphic subscription allows you to invite {maxMembers} people to your account.",
+    "not-invited": "Not yet invited. You can send them an invitation.",
+    "re-invite_button": "Re-invite Person"
+  },
+  "MorphicBarEditor": {},
+  "MorphicBarPreconfigured": {},
+  "MyCommunities": {},
+  "MyCommunity": {},
+  "NoSubscription": {
+    "go-to-signup_link": "Click here to go to sign up page for Morphic Plus",
+    "morphic-early-release-program": "Morphic Early Release Program",
+    "morphic-plus-is-free": "Morphic Plus is free through the",
+    "no-subscription-message": "In order to create custom Morphic Bars you need to have a Morphic Plus subscription"
+  },
+  "PlanPicker": {
+    "12-month-payment": "(paid annually)",
+    "6-month-payment": "(paid semiannually)",
+    "contact_link": "Contact us for more information",
+    "current-plan-marker": "Your current plan",
+    "enterprise-information": "Morphic also offers enterprise plans for larger groups, universities, companies, and organizations.",
+    "future-upgrade-hint": "Not sure how many members you will have? You can upgrade your subscription whenever you need to.",
+    "payment_button": "Continue to Payment",
+    "plan-limit": "none | Manage 1 member | Manage up to {n} members",
+    "plan-monthly-price": "{price} per month",
+    "plan-savings": "Savings of {savings} with annual payment discount.",
+    "plan-too-small": "Your current group is too large for this plan.",
+    "renew-monthly": "automatically renews monthly until canceled"
+  },
+  "Plans": {
+    "close_button": "Close your group",
+    "group_bullet": "Group: {name}",
+    "leave_heading": "Not sure you want to stay with Morphic?",
+    "leave_text": "If you no longer want to manage your group, you can close it. Once the group is closed, all of\n          your group members will lose there personalizations. Each person will see the basic Morphic Bar.",
+    "member-count_bullet": "Current members: {member_count}",
+    "pick-subscription_heading": "Pick a subscription",
+    "trial-ended": "Your trial ends today. | Your trial ended yesterday. | Your trial ended {n} days ago.",
+    "trial-ending": "Your trial ends today. | Your trial will end tomorrow. | Your trial will ended in {n} days."
+  },
+  "PreviewItem": {},
+  "Registration": {
+    "account-benefits-lead": "An account allows you to",
+    "account-benefits_list": [
+      "Back up your accessibility and usability settings to Morphic",
+      "Apply your settings quickly to any computer with Morphic on it",
+      "Make your own MorphicBar (with a subscription or if part of the Early Release Program)"
+    ],
+    "back_link": "I already have a Morphic account",
+    "form_heading": "New to Morphic?",
+    "form_lead": "Create your Morphic account now",
+    "side-heading": "Morphic is better with a Morphic account",
+    "submit_button": "Sign up"
+  },
+  "RenderList": {},
+  "RenderListItem": {},
+  "ResetPassword": {
+    "enter-your-email-address": "Enter your email address",
+    "instructions": "Please enter your email address, and we will email you instructions to you on how to reset your password.",
+    "heading": "Reset your password",
+    "reset-password_button": "Reset Password",
+    "return-to-login_link": "Return to Login",
+    "success": "Instructions to recover your password have been emailed to you."
+  },
+  "TextInputDialog": {},
+  "UserLogin": {
+    "create-account_link": "I do not have a Morphic account yet",
+    "email_label": "Sign in with Email",
+    "heading": "Sign into Morphic",
+    "password-reset_link": "I forgot my password",
+    "password_label": "Password for Morphic",
+    "sign-in_button": "Sign in"
+  },
+  "UserRegistration": {
+    "success": "Registration completed successfully"
+  },
+  "ValidatedInput": {},
+  "members": {
+    "changeRole": {
+      "apply_button": "Change to {role}",
+      "cancel_button": "Cancel",
+      "confirm": "Please confirm changing the role of {member} to {role}",
+      "title": "Change member role"
+    },
+    "delete": {
+      "apply_button": "Remove {member}",
+      "cancel_button": "Cancel",
+      "confirm": "Please confirm the removal of {member} from the group",
+      "title": "Remove member"
+    },
+    "removeBar": {
+      "apply_button": "Delete bar",
+      "cancel_button": "Cancel",
+      "confirm": "Are you sure you want to delete the bar?\nThis will remove the bar from this account. This cannot be undone."
+    }
+  }
+}
+
