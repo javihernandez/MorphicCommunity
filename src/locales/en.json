@@ -44,22 +44,16 @@
       "link-missing": "The site to open has not been chosen."
     }
   },
-  "App": {
-  },
-  "BarItemFields": {
-  },
-  "BarItemLink": {
-  },
-  "BarPreview": {
-  },
+  "App": {},
+  "BarItemFields": {},
+  "BarItemLink": {},
+  "BarPreview": {},
   "BarsList": {
     "default-bar": "Default Bar",
     "new-bar_button": "Add a new bar"
   },
-  "BillingDetails": {
-  },
-  "BlockLoginRegister": {
-  },
+  "BillingDetails": {},
+  "BlockLoginRegister": {},
   "MemberDetails": {
     "bar-unused": "This bar has no members using it.",
     "delete-member": "Delete member",
@@ -75,8 +69,7 @@
     "other-bars_heading": "MorphicBars for Others",
     "own-bars_heading": "My MorphicBar"
   },
-  "Dashboard": {
-  },
+  "Dashboard": {},
   "EarlyReleaseProgram": {
     "account-created": "Your account has been created.",
     "already-joined": "You already have an account",
@@ -92,9 +85,9 @@
     "color": {
       "teal": "Teal",
       "blue": "Blue",
-      "purple":  "Purple",
+      "purple": "Purple",
       "red": "Red",
-      "green":  "Green",
+      "green": "Green",
       "orange": "Orange",
       "other": "Other"
     }
@@ -110,14 +103,12 @@
     "product-name": "MorphicBar Customization Tool",
     "standard-mode_button": "Standard Mode"
   },
-  "Home": {
-  },
+  "Home": {},
   "InviteMemberDialog": {
     "email_prompt": "Please enter the email address for {name}",
     "invite-member_title": "Invite {name}"
   },
-  "MemberInvite": {
-  },
+  "MemberInvite": {},
   "MembersList": {
     "add-bar_button": "Add a new bar",
     "add-member_button": "Add a person",
@@ -129,14 +120,10 @@
     "not-invited": "Not yet invited. You can send them an invitation.",
     "re-invite_button": "Re-invite Person"
   },
-  "MorphicBarEditor": {
-  },
-  "MorphicBarPreconfigured": {
-  },
-  "MyCommunities": {
-  },
-  "MyCommunity": {
-  },
+  "MorphicBarEditor": {},
+  "MorphicBarPreconfigured": {},
+  "MyCommunities": {},
+  "MyCommunity": {},
   "NoSubscription": {
     "go-to-signup_link": "Click here to go to sign up page for Morphic Plus",
     "morphic-early-release-program": "Morphic Early Release Program",
@@ -167,8 +154,7 @@
     "trial-ended": "Your trial ends today. | Your trial ended yesterday. | Your trial ended {n} days ago.",
     "trial-ending": "Your trial ends today. | Your trial will end tomorrow. | Your trial will ended in {n} days."
   },
-  "PreviewItem": {
-  },
+  "PreviewItem": {},
   "Registration": {
     "account-benefits-lead": "An account allows you to",
     "account-benefits_list": [
@@ -182,10 +168,8 @@
     "side-heading": "Morphic is better with a Morphic account",
     "submit_button": "Sign up"
   },
-  "RenderList": {
-  },
-  "RenderListItem": {
-  },
+  "RenderList": {},
+  "RenderListItem": {},
   "ResetPassword": {
     "enter-your-email-address": "Enter your email address",
     "instructions": "Please enter your email address, and we will email you instructions to you on how to reset your password.",
@@ -194,8 +178,7 @@
     "return-to-login_link": "Return to Login",
     "success": "Instructions to recover your password have been emailed to you."
   },
-  "TextInputDialog": {
-  },
+  "TextInputDialog": {},
   "UserLogin": {
     "create-account_link": "I do not have a Morphic account yet",
     "email_label": "Sign in with Email",
@@ -207,8 +190,7 @@
   "UserRegistration": {
     "success": "Registration completed successfully"
   },
-  "ValidatedInput": {
-  },
+  "ValidatedInput": {},
   "members": {
     "changeRole": {
       "apply_button": "Change to {role}",
