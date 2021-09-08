@@ -235,10 +235,22 @@ export function deleteCommunityMember(communityId, memberId) {
  * @param {GUID} communityId The community ID.
  * @param {GUID} memberId The member ID.
  * @param {String} email The member's email address, if not already added.
+ * @param {String} message Additional information.
  * @return {Promise<AxiosResponse<Any>>} Response.
  */
-export function inviteCommunityMember(communityId, memberId, email) {
-    return HTTP.post(`/v1/communities/${communityId}/invitations`, { member_id: memberId, email: email }, {action: "invite member"});
+export function inviteCommunityMember(communityId, memberId, email, message) {
+    return HTTP.post(`/v1/communities/${communityId}/invitations`, { member_id: memberId, email: email, message: message }, {action: "invite member"});
+}
+
+/**
+ * Accept an invitation for a community member.
+ * @see https://github.com/raisingthefloor/morphic-api-server/blob/master/Documentation/API.md#v1communitiesidinvitations
+ * @param {GUID} communityId The community ID.
+ * @param {GUID} invitationId The member ID.
+ * @return {Promise<AxiosResponse<Any>>} Response.
+ */
+export function acceptCommunityMemberInvite(communityId, invitationId) {
+    return HTTP.post(`/v1/communities/${communityId}/invitations/${invitationId}/accept`, { }, {action: "accept invite"});
 }
 
 /**

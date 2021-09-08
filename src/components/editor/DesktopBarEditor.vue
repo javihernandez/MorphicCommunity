@@ -5,9 +5,30 @@
         <img src="/img/trash.svg" style="height: 100px; width: 100px; margin-left: -50px; margin-top: -50px" />
       </template>
 
+      <div class="bar-label-container">
+        <div class="bar-label">
+          <strong class="bar-name" aria-label="Bar name">{{barDetails.name}}</strong>
+          <span v-if="memberDetails" class="bar-owner" aria-label="Bar owner">{{memberDetails.displayName}}</span>
+          <small class="bar-tip">Tip: To customize a button on the bar, click on it.</small>
+        </div>
+      </div>
+
+      <!-- Show a hint pointing to the bar, for new bars -->
+      <div v-if="!isChanged && barDetails.items && barDetails.items.length === 0" class="hint-box">
+        <Arrow point-to=".hint-box .arrowTo" :options="{
+                sourcePosition: 'middleRight',
+                destinationPosition: 'bottomRight',
+                thickness: 1,
+                endpoint: {type: 'arrowHead'}
+        }"/>
+        <span class="arrowTo" />
+        <p>This is an empty MorphicBar.</p>
+        Click or drag a button from the Button Catalog (on the right) to add it to the bar.
+      </div>
+
       <!-- Bar item problems -->
       <div class="desktop-alerts">
-        <b-alert v-for="(error) in barDetails.errors"
+        <b-alert v-for="(error) in barWarnings"
                  :key="error.key"
                  show
                  variant="warning"
@@ -78,7 +99,13 @@
                   @click="showEditDialog(item, $event)"
                   @cut="removeButton(item, barDetails.items)"
                   class="buttonDragger">
-              <div :key="item.id" class="previewHolder" :ref="buttonRef(item)">
+              <div :key="item.id"
+                   :class="{
+                     previewHolder: true,
+                     newItem: item.data.isNew
+                   }"
+                   :ref="buttonRef(item)"
+              >
                 <PreviewItem :item="item" />
               </div>
             </drag>
@@ -88,10 +115,10 @@
           </template>
         </drop-list>
       </div>
-      <div class="logoHolder">
-        <b-img src="/img/logo-color.svg" alt="Morphic Logo" />
+      <div class="logoHolder" aria-hidden="true">
+        <b-img src="/img/logo-color.svg" alt=""/>
       </div>
-      <div class="openDrawerIconHolder">
+      <div class="openDrawerIconHolder" aria-hidden="true">
         <span @click="openDrawer = !openDrawer" class="">
           <b-icon :icon="openDrawer ? 'arrow-right-circle-fill' : 'arrow-left-circle-fill'"></b-icon>
         </span>
@@ -115,12 +142,58 @@
   margin-top: 0 !important;
 
   .desktop-portion {
-    display: inline-block;
+    display: flex;
     flex-grow: 1;
+    flex-direction: column;
+    position: relative;
+
+    .bar-label-container {
+      flex-grow: 1;
+      text-align: center;
+      .bar-label {
+        display: inline-block;
+        position: relative;
+
+        top: 25%;
+
+
+        margin: 0.5rem;
+        padding: 1rem;
+        font-size: 18px;
+
+        border-radius: 1rem;
+        background-color: #CCE5FD;
+
+
+        .bar-name, .bar-owner, .bar-tip {
+          display: block;
+        }
+        .bar-tip {
+          margin-top: 1em;
+          width: 15em;
+        }
+      }
+    }
+  }
+
+
+  .hint-box {
+    width: 20em;
+    right: 0;
+    margin: 1em 3em 0 0;
+    position: absolute;
+    .arrowStart {
+      float: right;
+      margin-top: 1em;
+    }
+    .arrowTo {
+      position: absolute;
+      right: -4.5em;
+      top: 0.5em;
+    }
   }
 
   .desktop-alerts {
-    height: 100%;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -196,6 +269,10 @@
 
         & > div {
           min-width: 50px;
+        }
+
+        .newItem {
+          opacity: 0.4;
         }
 
         // Place-holder for dropping a new button.
@@ -285,10 +362,13 @@
 import { Drag, Drop, DropList } from "vue-easy-dnd";
 import BarItemLink from "@/components/editor/BarItemLink";
 import PreviewItem from "@/components/dashboard/PreviewItem";
+import Arrow from "@/components/Arrow";
+import * as Bar from "@/utils/bar";
 
 export default {
     name: "DesktopBarEditor",
     components: {
+        Arrow,
         BarItemLink,
         PreviewItem,
         Drag,
@@ -296,13 +376,23 @@ export default {
         DropList
     },
     props: {
-        barDetails: {}
+        /** @type {BarDetails} */
+        barDetails: {},
+        /** @type {CommunityMember} */
+        memberDetails: {},
+        isChanged: Boolean
     },
     data() {
         return {
             openDrawer: true,
             dragInProgress: false
         };
+    },
+    computed: {
+        barWarnings: function () {
+            Bar.checkBar(this.barDetails);
+            return this.barDetails.errors;
+        }
     },
     methods: {
         /**

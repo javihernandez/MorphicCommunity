@@ -2,7 +2,10 @@
   <div id="LiteBarEditor">
     <div class="editorHeader">
       <div/>
-      <div class="editorTitle"><h3>Buttons on the Bar</h3></div>
+      <div class="editorTitle">
+        <h3>Buttons on the Bar</h3>
+        Tip: To customize a button on the bar, click on it.
+      </div>
       <div><b-button variant="secondary" @click="showCatalog()">Add a button</b-button></div>
     </div>
 
@@ -33,7 +36,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    align-items: stretch;
+    align-items: flex-end;
 
     & > * {
       flex: 1 1 0;

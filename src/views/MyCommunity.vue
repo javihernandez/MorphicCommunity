@@ -294,7 +294,7 @@ export default {
                     ["Remove", "Cancel"],
                     `Remove '${member.fullName}' as group manager`,
                     {
-                        okVariant: "danger"
+                        dangerous: true
                     });
                 confirm.then(result => {
                     if (result) {

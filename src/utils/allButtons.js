@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 // This file is auto-generated from https://docs.google.com/spreadsheets/d/1F6Ap2czNsMw-KrmRjvgoELh1DzcZaqnHNQvpiUhD3LY.
 
 export const allButtons = {
@@ -679,9 +680,11 @@ export const allButtons = {
         configuration: {
             subkind: "app",
             label: "Skype",
-            exe: "microsoftSkype",
             color: "blue",
-            image_url: "skype"
+            image_url: "skype",
+            $skypeNoCall: true,
+            url: "skype:${skypeNoCall?:$skypeId$skypeAction}",
+            exe: "${skypeNoCall?microsoftSkype:}"
         }
     },
     national_weather_service: {
@@ -901,7 +904,7 @@ export const allButtons = {
         },
         configuration: {
             subkind: "action",
-            label: "Read Aloud",
+            label: "Read Selected",
             description: "A button that reads out the selected text.",
             identifier: "read-aloud",
             color: "blue"
@@ -950,7 +953,8 @@ export const allButtons = {
             label: "Skype",
             color: "blue",
             image_url: "skype",
-            url: "skype:$skypeId?$skypeAction"
+            url: "skype:${skypeNoCall?:$skypeId$skypeAction}",
+            exe: "${skypeNoCall?microsoftSkype:}"
         }
     },
     soundcloud: {

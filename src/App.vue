@@ -1,10 +1,13 @@
 <template>
   <b-container v-if="loaded" fluid id="PageContainer" :class="focusMode ? 'focusMode' : 'dashboardMode'">
-    <a class="contentLink" href="#PageContent" @click.prevent="skipToContent">Skip to content</a>
     <Header ref="Header" />
     <div role="main" id="PageContent" class="main">
       <h1 v-if="heading" id="MainHeading" :class="{screenReader: hideHeading}">{{ heading }}</h1>
       <router-view />
+    </div>
+    <div class="screenReader">
+      <div id="ScreenReaderAnnouncements" aria-live="polite"></div>
+      <div id="ScreenReaderAnnouncementsAssertive" aria-live="assertive"></div>
     </div>
     <Footer />
   </b-container>
@@ -47,25 +50,7 @@
     overflow: hidden;
     width: 1px;
     height: 1px;
-    clip: rect(1px, 1px, 1px, 1px);
-  }
-
-  // Skip to content link - off-screen until focused
-  .contentLink {
-    font-size: larger;
-    background-color: white;
-    padding: 2px;
-    position: absolute;
-    z-index: 100;
-    transform: translateX(-100%);
-
-    @media (prefers-reduced-motion: no-preference) {
-      transition: transform 250ms ease-out;
-    }
-
-    &:focus {
-      transform: translateX(0);
-    }
+    clip: rect(0, 0, 0, 0);
   }
 </style>
 
@@ -115,7 +100,8 @@ export default {
                 focusMode: this.focusMode,
                 dashboardMode: !this.focusMode,
                 isMobile: this.isMobile,
-                isLite: this.isLite
+                isLite: this.isLite,
+                editorPage: this.$route.meta.isEditorPage
             };
         }
     },
@@ -134,10 +120,41 @@ export default {
 
         this.getHeaderHeight();
         this.dialogScroll();
+
+        // For screen-readers, having a footer on a dialog is not desired.
+        this.$root.$on("bv::modal::shown", (bvEvent, modalId) => {
+            document.querySelectorAll("footer.modal-footer").forEach(elem => {
+                elem.setAttribute("role", "presentation");
+            });
+        });
+
+        // Refresh when some things have changed in another tab.
+        const watchKeys = ["token", "userId", "role", "communityId"];
+        let updateRequired;
+        window.addEventListener("storage", (e) => {
+            if (!e.key || watchKeys.includes(e.key)) {
+                if (this.$route.meta && !this.$route.meta.public) {
+                    if (document.visibilityState === "hidden") {
+                        updateRequired = true;
+                    } else {
+                        this.$router.go();
+                    }
+                }
+            }
+        });
+
+        window.addEventListener("visibilitychange", (e) => {
+            if (updateRequired && document.visibilityState !== "hidden") {
+                updateRequired = false;
+                this.$router.go();
+            }
+        });
+
     },
     watch: {
         bodyClasses: {
             deep: true,
+            immediate: true,
             /**
              * Sets the classes of the body element, based on `this.bodyClasses`.
              */
@@ -150,9 +167,26 @@ export default {
                 document.body.classList.remove(...remove);
                 document.body.classList.add(...add);
             }
+        },
+        "$route.path": function (newValue, oldValue) {
+            this.newPage();
         }
     },
     methods: {
+        /**
+         * A new page has been loaded.
+         */
+        newPage: function () {
+            // When a new page is loaded, announce the title and move focus to the skip to content link.
+            this.screenReaderMessage(this.$route.meta.title);
+            const skipLink = document.getElementById("SkipToContent");
+            if (skipLink) {
+                // Don't show the link, until the next time it's focused.
+                skipLink.classList.add("screenReader");
+                skipLink.addEventListener("blur", () => skipLink.classList.remove("screenReader"), {once: true});
+                skipLink.focus();
+            }
+        },
         /**
          * Set the local of the page.
          * @param {String} locale Identifier of the locale.
@@ -213,8 +247,9 @@ export default {
                     const styleSheet = this.headerHeightStyle.sheet;
 
                     // Add some rules to adjust position and height of things while taking the header into consideration
-                    [".", "body.focusMode .focus-", "body.isMobile .mobile-"].forEach(prefix => {
+                    [".", "body.focusMode .focus-", "body.isMobile .mobile-", "body:not(.isMobile, .focusMode) .desktop-"].forEach(prefix => {
                         styleSheet.insertRule(`${prefix}headerMarginTop { margin-top: ${height}px !important; }`);
+                        styleSheet.insertRule(`${prefix}headerPaddingTop { padding-top: ${height}px !important; }`);
                         styleSheet.insertRule(`${prefix}headerMaxHeight { max-height: calc(100vh - ${height}px) !important; }`);
                         styleSheet.insertRule(`${prefix}headerMinHeight { min-height: calc(100vh - ${height}px) !important; }`);
                     });
@@ -263,17 +298,6 @@ export default {
                     }
                 }
             });
-        },
-        /**
-         * Scroll the content to the top of the window, and set the focus to the first focusable element in the content.
-         */
-        skipToContent() {
-            const content = document.querySelector("#PageContent");
-            content.scrollIntoView(true);
-            const firstFocusable = content.querySelector("a,input,button,[tabindex]");
-            if (firstFocusable?.focus) {
-                firstFocusable.focus();
-            }
         }
     }
 };

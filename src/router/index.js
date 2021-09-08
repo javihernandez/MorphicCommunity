@@ -23,7 +23,12 @@ import MorphicBarPreconfigured from "@/views/MorphicBarPreconfigured.vue";
 import MorphicBarEditor from "@/views/MorphicBarEditor.vue";
 
 import RegistrationInvite from "@/views/RegistrationInvite";
+import ConfirmEmail from "@/views/email/ConfirmEmail.vue";
 
+// Email call-backs
+import AcceptInvite from "@/views/email/AcceptInvite.vue";
+
+import Download from "@/views/Download";
 
 Vue.use(VueRouter);
 
@@ -41,8 +46,9 @@ Vue.use(VueRouter);
  * @property {Boolean|"only"} public true if this page can be accessed without authentication. "only" if it can only
  *  be accessed without authentication (authenticated users are redirected away).
  * @property {Boolean} noAccount true if an authenticated user with no account can access.
+ * @property {Array<String>} roles Array of roles which can access the page.
  * @property {Boolean} redirect true if this is not a real page, just used to redirect to another (hides routing errors).
- * @property {Boolean} authHome true if this the default home page for authenticated users ("/dashboard").
+ * @property {"manager"|"member"} userHome The role for which this page is the home page.
  * @property {Boolean} home true if this the home page ("/").
  */
 
@@ -121,6 +127,18 @@ const routes = [
         }
     },
     {
+        path: "/member-message",
+        name: "NonManager",
+        component: NoSubscription,
+        meta: {
+            title: "Not a manger",
+            showHeading: true,
+            noAccount: true,
+            roles: ["member"],
+            userHome: "member"
+        }
+    },
+    {
         path: "/early-release-program",
         name: "EarlyReleaseProgram",
         component: EarlyReleaseProgram,
@@ -164,7 +182,8 @@ const routes = [
         component: Dashboard,
         meta: {
             title: "Home: MorphicBar Customization Tool",
-            authHome: true
+            roles: ["manager"],
+            userHome: "manager"
         }
     },
     {
@@ -172,7 +191,8 @@ const routes = [
         name: "MorphicBar Preconfigured",
         component: MorphicBarPreconfigured,
         meta: {
-            title: "Pick a bar"
+            title: "Pick a bar",
+            roles: ["manager"]
         }
     },
     {
@@ -181,7 +201,10 @@ const routes = [
         component: MorphicBarEditor,
         props: route => ({ catalogView: !!route.query.catalogView }),
         meta: {
-            title: "MorphicBar Editor"
+            title: "MorphicBar Editor",
+            hideHeading: true,
+            isEditorPage: true,
+            roles: ["manager"]
         }
     },
     {
@@ -201,6 +224,73 @@ const routes = [
             title: "Register",
             public: "only"
         }
+    },
+    {
+        // Confirming email - from the registration page.
+        path: "/confirm-email/registered",
+        name: "ConfirmEmail.Registered",
+        component: ConfirmEmail,
+        props: {
+            registered: true
+        },
+        meta: {
+            title: "Confirm your email address"
+        }
+    },
+    {
+        // Confirming email - after sign-in.
+        path: "/confirm-email/sign-in",
+        name: "ConfirmEmail.SignIn",
+        component: ConfirmEmail,
+        props: {
+            signIn: true
+        },
+        meta: {
+            title: "Confirm your email address"
+        }
+    },
+    {
+        path: "/download",
+        name: "Download",
+        component: Download,
+        props: {
+        },
+        meta: {
+            title: "Download Morphic"
+        }
+    },
+    {
+        // Download page, when coming from the invitation flow.
+        path: "/download/invited",
+        name: "Download.Invited",
+        component: Download,
+        props: {
+            invited: true
+        },
+        meta: {
+            title: "Download Morphic"
+        }
+    },
+    // Email call-backs
+    {
+        path: "/invite/:action/:id/:page",
+        name: "Email.Invite",
+        component: AcceptInvite,
+        props: true,
+        meta: {
+            title: "Invitation to Morphic",
+            public: true
+        }
+    },
+    {
+        path: "/confirm-email/:confirmUserId/:token",
+        name: "Email.Confirm",
+        component: ConfirmEmail,
+        props: true,
+        meta: {
+            title: "Confirm email address",
+            public: true
+        }
     }
 ];
 
@@ -208,14 +298,37 @@ const router = new VueRouter({
     routes
 });
 
-const authHomeRoute = routes.find(r => r.meta.authHome);
-const homeRoute = routes.find(r => r.meta.home);
+/**
+ * Gets the route to the home page for the current user, depending on their role.
+ * @return {AppRouteRecord} The route.
+ */
+function getUserHomeRoute() {
+    let route;
+
+    if (store.getters.homePage) {
+        route = store.getters.homePage;
+    } else {
+        route = routes.find(r => r.meta.userHome === store.getters.role);
+    }
+
+    return route;
+}
+
+const homeRoute = {name: "Home"};
 
 router.beforeEach((to, from, next) => {
-
     // Merge the route meta data
     /** @type {RouteMeta} */
     const meta = to.matched.reduce((obj, cur) => Object.assign(obj, cur.meta), {});
+
+    if (store.getters.isLoggedIn) {
+        // Refresh the user's community info. This will also check if the current session token is still active.
+        store.dispatch("userCommunities", store.getters.userId).then(() => {
+            // re-check the page, to see if the user should still view it.
+            const newRoute = checkPageAccess(meta, to);
+            return newRoute && router.replace(newRoute);
+        }).catch(() => undefined);
+    }
 
     let redirect;
 
@@ -231,26 +344,47 @@ router.beforeEach((to, from, next) => {
                 redirect = {name: "NoSubscription"};
             } else {
                 // redirect to the auth home page
-                redirect = store.getters.homePage || authHomeRoute.path;
+                redirect = getUserHomeRoute();
             }
         } else {
             // show the login form
             redirect = {name: "Login"};
         }
-    } else if (!meta.public && !store.getters.isLoggedIn) {
-        // User needs to be authenticated for this page.
-        store.commit("beforeLoginPage", to.fullPath);
-        redirect = {name: "Login"};
-    } else if (meta.public === "only" && store.getters.isLoggedIn) {
-        // Authenticated users can't access this page.
-        redirect = homeRoute.path;
-    } else if (!meta.public && !meta.noAccount && !store.getters.hasAccount) {
-        // only account holders can access this page
-        redirect = homeRoute.path;
+    } else {
+        const result = checkPageAccess(meta, to);
+        if (result) {
+            redirect = result;
+        }
     }
 
     next(redirect);
 });
+
+/**
+ * Determine if a page can be viewed by the current user.
+ * @param {RouteMeta} meta Metadata for the route.
+ * @param {Route} to The destination route.
+ * @return {String|Object} undefined if the page can be viewed, otherwise another route to use.
+ */
+function checkPageAccess(meta, to) {
+    let result;
+    if (!meta.public && !store.getters.isLoggedIn) {
+        // User needs to be authenticated for this page.
+        store.commit("beforeLoginPage", to.fullPath);
+        result = {name: "Login"};
+    } else if (meta.public === "only" && store.getters.isLoggedIn) {
+        // Authenticated users can't access this page.
+        result = false;
+    } else if (!meta.public && !meta.noAccount && !store.getters.hasAccount) {
+        // only account holders can access this page
+        result = false;
+    } else if (meta.roles && !meta.roles.includes(store.getters.role)) {
+        // role is not in the list of accepted roles.
+        result = false;
+    }
+
+    return result === false ? homeRoute : result;
+}
 
 // Make the router not report navigation failures, due to redirecting from / to a different page.
 const routerPush = VueRouter.prototype.push;

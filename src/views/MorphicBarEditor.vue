@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div id="EditorContainer" class="desktop-headerMaxHeight">
+
     <!-- MODALs: BEGIN -->
     <EditButtonDialog ref="editDialog" :bar="barDetails" />
     <CopyBarDialog id="copyBarDialog" :bars="barsList" :members="membersList" :current-bar="barDetails" @change="onBarChanged" />
+    <InviteMemberDialog id="InviteMemberDialog-MorphicBarEditor" :member="memberDetails" :members="membersList" />
 
     <b-modal id="unsavedChanges" title="Unsaved Changes">
       <p>You have made some changes to this bar, but they are not saved yet.</p>
@@ -14,88 +16,159 @@
         <b-button @click="hide('save')" variant="primary">Save</b-button>
       </template>
     </b-modal>
+
+    <b-modal id="SaveConfirmation"
+             title="MorphicBar Saved"
+             ok-only
+    >
+      <p>This MorphicBar has been saved.</p>
+      <p>
+        It will show up automatically on their computer soon. Users may need to open Morphic and switch to this MorphicBar to see it.
+      </p>
+    </b-modal>
+
+    <b-modal id="SaveConfirmationUninvited"
+             title="MorphicBar Saved"
+             ok-title="Invite now"
+             cancel-title="Invite later"
+             @ok="showModalDialog('InviteMemberDialog-MorphicBarEditor')"
+
+    >
+      <p>This MorphicBar has been saved.</p>
+      <p>
+        Now that the bar has been saved, it is ready for the person to start using it.
+      </p>
+      <p>
+        If you are ready for the person to use it, you can invite the following person to download, install, and sign
+        into Morphic, which will get this bar on the person's computer:
+      </p>
+      <p class="font-weight-bold ml-2">{{memberDetails.displayName}}</p>
+    </b-modal>
+
+
+
     <!-- MODALs: END -->
 
-    <!-- EDITOR v2 -->
-    <div id="EditorContainer">
-      <div v-if="!isLite" class="editorSide left">
-        <SidePanel :community="community" :bars="barsList" :members="membersList" :activeMemberId="activeMemberId" :activeBarId="barDetails.id" @reload="loadAllData()" />
-      </div>
-      <div v-show="editorVisible" class="editor">
-        <div id="barEditor" class="pt-2">
+    <div v-if="!isLite" class="editorSide left">
+      <SidePanel :community="community" :bars="barsList" :members="membersList" :activeMemberId="activeMemberId" :activeBarId="barDetails.id" @reload="loadAllData()" />
+    </div>
+    <div v-show="editorVisible" class="editor">
+      <div id="barEditor" class="pt-2">
 
-          <!-- Bar info, actions, and editor tabs -->
-          <EditorDetails ref="EditorDetails"
-                         :bar-details="barDetails"
-                         :bars-list="barsList"
-                         :bar-members="barMembers"
-                         :is-changed="isChanged"
-                         :member-details="memberDetails"
-                         :new-bar="newBar"
-                         @save-bar="saveBar()" @revert-bar="revertBar()"
-          />
+        <b-link v-if="isLite" to="/">
+          <b-img src="/img/back-arrow.svg" width="20" height="20" class="switchBarIcon" />Switch Bar or Person
+        </b-link>
 
-          <!-- the focus/mobile editor -->
-          <LiteBarEditor v-if="isLite"
-                         ref="LiteBarEditor"
-                         :bar-details="barDetails"
-                         @edit-item="showEditDialog($event)"
-                         @add-item="showCatalog(true)"
-          />
+        <!-- Bar info, actions, and editor tabs -->
+        <EditorDetails ref="EditorDetails"
+                       :bar-details="barDetails"
+                       :bars-list="barsList"
+                       :bar-members="barMembers"
+                       :is-changed="isChanged"
+                       :member-details="memberDetails"
+                       :new-bar="newBar"
+                       @save-bar="saveBar()" @revert-bar="revertBar()"
+        />
 
-
-          <!-- the desktop editor -->
-          <DesktopBarEditor v-else
-                            ref="DesktopBarEditor"
-                            :bar-details="barDetails"
-                            @edit-item="showEditDialog($event)"
-                            @bar-changed="onBarChanged"
-                            @click="$refs.EditorDetails.closeTab()"
-                            @item-dropped="addBarItem($event.item, $event.noImage, $event.index)"
-          />
-        </div>
-      </div>
-
-      <!-- Button Catalogue -->
-      <div v-show="catalogVisible" :class="isLite && 'p-3'" class="editorSide right">
-
-        <template v-if="isLite">
-          <h1>Button Catalog: Buttons you can add</h1>
-          <div>
-            <b-button @click="showCatalog(false)">Cancel</b-button>
-          </div>
-          <em>Click on a button name to configure and add to MorphicBar</em>
-        </template>
+        <!-- the focus/mobile editor -->
+        <LiteBarEditor v-if="isLite"
+                       ref="LiteBarEditor"
+                       :bar-details="barDetails"
+                       @edit-item="showEditDialog($event)"
+                       @add-item="showCatalog(true)"
+        />
 
 
-        <ButtonCatalog ref="ButtonCatalog"
-                       :button-catalog="buttonCatalog"
-                       @item-selected="addBarItem($event.item, $event.noImage)"
+        <!-- the desktop editor -->
+        <DesktopBarEditor v-else
+                          ref="DesktopBarEditor"
+                          :bar-details="barDetails"
+                          :member-details="memberDetails"
+                          :is-changed="isChanged"
+                          @edit-item="showEditDialog($event)"
+                          @bar-changed="onBarChanged"
+                          @click="$refs.EditorDetails.closeTab()"
+                          @item-dropped="addBarItem($event.item, $event.noImage, $event.index)"
         />
       </div>
+      <div id="EditorFooter"></div>
+    </div>
+
+    <!-- Button Catalogue -->
+    <div v-show="catalogVisible" :class="isLite && 'p-3'" class="editorSide right">
+
+      <template v-if="isLite">
+        <h1>Button Catalog: Buttons you can add</h1>
+        <div class="mb-3">
+          <b-button @click="showCatalog(false)">Cancel</b-button>
+        </div>
+      </template>
+
+
+      <ButtonCatalog ref="ButtonCatalog"
+                     :button-catalog="buttonCatalog"
+                     @item-selected="addBarItem($event.item, $event.noImage)"
+      />
     </div>
   </div>
 </template>
 
 <style lang="scss">
-  #barEditor {
-    padding-left: 15px;
-    padding-right: 15px;
+@import "~@/styles/_bootstrap-util.scss";
+
+.editorPage {
+  #PageContent {
+    display: flex;
+    flex-direction: column;
+    #EditorContainer {
+      flex-grow: 1;
+    }
   }
+  #SidePanel {
+    //max-height: 100%;
+  }
+
+  #PageContainer > footer {
+    display: none;
+  }
+}
+
+#barEditor {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.switchBarIcon {
+  vertical-align: top;
+}
 
 body:not(.isLite) {
   #EditorContainer {
     display: flex;
+    align-items: stretch;
 
     .editor {
       flex-grow: 1;
       flex-shrink: 1;
+
+      display: flex;
+      flex-direction: column;
+      #barEditor {
+        flex-grow: 1;
+      }
+
+      #EditorFooter > * {
+        background-color: unset !important;
+      }
+
     }
 
     .editorSide {
       flex-shrink: 0;
       width: 15em;
       min-width: 16.66%;
+
+      overflow-y: auto;
     }
   }
 }
@@ -121,10 +194,13 @@ import CopyBarDialog from "@/components/dialogs/CopyBarDialog";
 import EditorDetails from "@/components/editor/EditorDetails";
 import DesktopBarEditor from "@/components/editor/DesktopBarEditor";
 import LiteBarEditor from "@/components/editor/LiteBarEditor";
+import { dialogMixin } from "@/mixins/dialog";
+import InviteMemberDialog from "@/components/dialogs/InviteMemberDialog";
 
 export default {
     name: "MorphicBarEditor",
     components: {
+        InviteMemberDialog,
         LiteBarEditor,
         DesktopBarEditor,
         EditorDetails,
@@ -133,6 +209,7 @@ export default {
         EditButtonDialog,
         SidePanel
     },
+    mixins: [dialogMixin],
     props: {
         catalogView: Boolean
     },
@@ -144,29 +221,39 @@ export default {
          * @param {Boolean} [noImage] True if the button shall have no image.
          * @param {Number} [insertAt] The index of the new button.
          */
-        addBarItem: function (catalogButton, noImage, insertAt) {
+        addBarItem: async function (catalogButton, noImage, insertAt) {
             /** @type {BarItem} */
-            const barItem = Bar.addItem(this.barDetails, catalogButton, insertAt);
+            const barItem = Bar.addItem(this.barDetails, catalogButton, insertAt, true);
             if (noImage) {
                 barItem.configuration.image_url = "";
             }
 
             // close the catalog
             this.showCatalog(false);
-            this.$refs.ButtonCatalog.expandCatalogButton(null);
             this.onBarChanged();
 
             let showEdit;
-            if (barItem.data.isPlaceholder) {
-                showEdit = true;
+            if (barItem.data.showEdit === undefined) {
+                showEdit = barItem.data.paramFields.length > 1 || barItem.data.isPlaceholder || barItem.data.hasError;
             } else {
-                showEdit = barItem.data.hasError;
+                showEdit = barItem.data.showEdit;
             }
 
-            // Edit the button, if it has parameterised fields.
-            if (showEdit) {
-                this.showEditDialog(barItem);
+            const cancelled = showEdit && !(await this.showEditDialog(barItem));
+
+            if (cancelled) {
+                // Dialog was cancelled - remove the button
+                Bar.removeItem(barItem, this.barDetails);
+            } else {
+                // Set to false before deleting, so the change is seen.
+                barItem.data.isNew = false;
+                delete barItem.data.isNew;
+                // close the catalog
+                this.showCatalog(false);
+                this.onBarChanged();
+                this.screenReaderMessage(`New item added: ${barItem.configuration.label}`);
             }
+
         },
         /**
          * Called when the bar changes, after it is loaded.
@@ -177,7 +264,6 @@ export default {
         },
 
         storeUnsavedBar: function () {
-            Bar.checkBar(this.barDetails);
             this.$store.dispatch("unsavedChanges", this.isChanged);
             this.$store.dispatch("unsavedBar", this.isChanged && this.barDetails);
         },
@@ -189,10 +275,17 @@ export default {
             }
         },
 
-        loadAllData: function () {
-            this.loadBarData();
-            this.loadBarMembers();
-            this.getCommunityData();
+        /**
+         * Loads the required data for the page.
+         */
+        loadAllData: async function () {
+            await Promise.all([
+                this.getCommunityData(),
+                this.loadBarData(),
+                this.loadBarMembers()
+            ]);
+
+            this.screenReaderMessage(`Now editing bar '${this.barDetails.name}', owned by '${this.memberDetails.displayName}`);
         },
 
         /** Loads the initial bar data */
@@ -202,6 +295,7 @@ export default {
             // If there is a bar unsaved, redirect to that one instead.
             /** @type {BarDetails} */
             const unsavedBar = this.$store.getters.unsavedBar;
+
             if (unsavedBar && unsavedBar.id !== barId) {
                 const barName = Bar.getBarName(unsavedBar);
                 const message = `There is already a bar (${barName}) that has unsaved changes. The recent changes will be lost if you continue.`;
@@ -215,7 +309,7 @@ export default {
 
                 if (!ok) {
                     this.$router.push(this.getBarEditRoute(unsavedBar));
-                    return;
+                    throw new Error("Not loading");
                 }
             }
 
@@ -226,14 +320,8 @@ export default {
                 this.isChanged = false;
                 this.storeUnsavedBar();
                 // Load a saved bar.
-                getCommunityBar(this.communityId, barId)
-                    .then(resp => {
-                        this.barDetails = resp.data;
-                        this.updateOriginalBarDetails();
-                    })
-                    .catch(err => {
-                        console.error(err);
-                    });
+                this.barDetails = (await getCommunityBar(this.communityId, barId)).data;
+                this.updateOriginalBarDetails();
             }
         },
         // hack to refresh css rendering due to bars being fucked up in their CSS
@@ -272,7 +360,7 @@ export default {
          * Saves the bar.
          * @return {Promise} Resolves when complete.
          */
-        saveBar: function () {
+        saveBar: async function () {
             this.onSave = true;
             const data = this.barDetails;
             // const drawerItems = this.drawerItems.concat(this.drawerItemsSecond)
@@ -283,27 +371,30 @@ export default {
                 item.configuration.image_path = this.getIconUrl(item.configuration.image_url);
             });
 
-            return updateCommunityBar(this.communityId, this.$route.query.barId, data)
-                .then((resp) => {
-                    if (resp.status === 200) {
-                        this.showMessage(MESSAGES.barUpdated);
-                        this.isChanged = false;
-                        this.updateOriginalBarDetails();
-                    }
-                });
+            const success = await this.requestToBool(updateCommunityBar(this.communityId, this.$route.query.barId, data));
+            if (success) {
+                this.isChanged = false;
+                this.updateOriginalBarDetails();
+
+                const dialogId = this.memberDetails.state === "uninvited" ? "SaveConfirmationUninvited" : "SaveConfirmation";
+
+                await this.showModalDialog(dialogId);
+            }
         },
 
         /**
          * Shows the edit button dialog.
          * @param {BarItem} [item] The item to edit.
+         * @return {Promise} Resolves when the dialog is closed, result is false if cancelled.
          */
         showEditDialog: function (item) {
-            this.editDialog.showDialog(item).then(changed => {
+            return this.editDialog.showDialog(item).then(changed => {
                 Bar.checkBar(this.barDetails);
                 if (changed) {
                     this.onBarChanged();
                 }
                 this.$forceUpdate();
+                return changed;
             });
         },
 
@@ -314,43 +405,45 @@ export default {
         showCatalog: function (show) {
             const catalogRoute = {...this.$route };
             catalogRoute.query = {...catalogRoute.query };
+            const lastValue = catalogRoute.query.catalogView;
+
             if (show) {
                 catalogRoute.query.catalogView = true;
             } else {
                 delete catalogRoute.query.catalogView;
             }
 
-            this.$router.push(catalogRoute);
+            if (lastValue !== catalogRoute.query.catalogView) {
+                this.$router.push(catalogRoute);
+            }
 
             this.$refs.ButtonCatalog.$el.focus();
 
         },
 
-        loadBarMembers: function () {
-            getCommunityBars(this.communityId)
-                .then(resp => {
-                    const barsData = resp.data.bars;
-                    getCommunityMembers(this.communityId)
-                        .then((resp) => {
-                            this.barsList = barsData;
-                            this.membersList = resp.data.members;
-                        })
-                        .catch(err => {
-                            console.error(err);
-                        });
-                })
-                .catch(err => {
-                    console.error(err);
-                });
+        /**
+         * Loads the bars and members
+         * @return {Promise} Resolves when complete.
+         */
+        loadBarMembers: async function () {
+            const barsResponse = getCommunityBars(this.communityId);
+            const membersResponse = getCommunityMembers(this.communityId);
+
+            const bars = await barsResponse;
+            const members = await membersResponse;
+            this.barsList = bars.data.bars;
+            this.membersList = members.data.members;
+            return true;
         },
+
+        /**
+         * Loads the community data.
+         * @return {Promise} Resolves when complete.
+         */
         getCommunityData: function () {
-            getCommunity(this.communityId)
-                .then((community) => {
-                    this.community = community.data;
-                })
-                .catch(err => {
-                    console.error(err);
-                });
+            return getCommunity(this.communityId).then((community) => {
+                this.community = community.data;
+            });
         },
         /**
          * Update the filtered arrays of bars.
@@ -382,11 +475,15 @@ export default {
         },
         /**
          * Confirms if the user wants to leave the page, if there have been unsaved changes
+         * @param {Route} to The target route.
+         * @param {Route} from The current route.
          * @return {Promise<Boolean>} Resolves with true to move to the next page.
          */
-        leavePage: async function () {
+        leavePage: async function (to, from) {
             var nextPage = true;
-            if (this.isChanged) {
+            const sameBar = (to.query.barId === from.query.barId && to.query.memberId === from.query.memberId);
+
+            if (!sameBar && this.isChanged) {
                 const dialogResult = await this.showModalDialog("unsavedChanges");
 
                 switch (dialogResult) {
@@ -458,6 +555,11 @@ export default {
     },
     mounted() {
         this.loadAllData();
+
+        // Move the footer text
+        const footer = document.querySelector("#PageContainer > footer");
+        const editorFooter = document.querySelector("#EditorFooter");
+        editorFooter.innerHTML = footer.outerHTML.replace(/(<\/?)footer/g, "$1div");
     },
     watch: {
         "memberDetails.id": function (newValue, oldValue) {
@@ -503,11 +605,11 @@ export default {
         }
     },
     async beforeRouteUpdate(to, from, next) {
-        const proceed = this.$store.getters.isLoggedIn ? await this.leavePage() : true;
+        const proceed = this.$store.getters.isLoggedIn ? await this.leavePage(to, from) : true;
         next(proceed);
     },
     async beforeRouteLeave(to, from, next) {
-        const proceed = this.$store.getters.isLoggedIn ? await this.leavePage() : true;
+        const proceed = this.$store.getters.isLoggedIn ? await this.leavePage(to, from) : true;
         next(proceed);
     },
     beforeUpdate() {

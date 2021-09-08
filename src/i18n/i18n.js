@@ -87,6 +87,15 @@ const initialLocale = getInitialLocale();
 const i18n = new VueI18n({
     locale: initialLocale,
     fallbackLocale: defaultLocale,
+    postTranslation: function (str, key) {
+        if (Array.isArray(str)) {
+            // Get the complete translation for each array item
+            for (let i = 0; i < str.length; i++) {
+                str[i] = this.t(`${key}.${i}`);
+            }
+        }
+        return str;
+    },
     messages: {}
 });
 

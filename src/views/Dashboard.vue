@@ -2,12 +2,12 @@
   <div>
       <b-alert :show="billingInfo && billingInfo.trial_end_days > 0" variant="warning" dismissible style="margin: auto">You have {{ billingInfo && billingInfo.trial_end_days }} days left of your free trial. <b-link to="/billing/plans">Click here to purchase</b-link></b-alert>
       <b-alert :show="billingInfo && billingInfo.trial_end_days < 0" variant="danger"  style="margin: auto">Your free trial has expired <b-link to="/billing/plans">Click here to purchase</b-link></b-alert>
-    <b-row no-gutters class="auto">
-      <b-col :md="isLite ? 8 : 2">
+    <div class="dashboardContent">
+      <div class="sidePanelColumn">
         <SidePanel :community="community" :bars="barsList" :members="membersList" ref="SidePanel" @reload="loadData()" />
-      </b-col>
+      </div>
       <template v-if="!isLite">
-        <b-col md="4" fluid>
+        <div class="col-4">
           <div v-if="membersList.length > 0" class="info-box pt-3 pb-3 pl-5">
             <h1 class="h3">Welcome to Morphic</h1>
             <!-- hints -->
@@ -16,18 +16,25 @@
                 (<b-link @click="hintsSwitch" v-text="showHideHintsText"></b-link>)
               </p>
             </div>
-            <div id="hints" v-if="showHints">
-              <div pointTo="#MyMorphicBars .addNew">
-                Want to make a MorphicBar for yourself? Start with "Add a new bar"
+
+            <div id="hints" v-if="showHints" aria-hidden="true">
+              <div v-if="!hasOwnBar"
+                   point-to="#MyMorphicBars .addNew"
+                   v-t="'Dashboard.hints.new-bar'" />
+              <div v-else point-to=".barsList .barLink"
+                   v-t="'Dashboard.hints.edit-bar'" />
+
+              <div v-if="membersList.length === 1"
+                   point-to="#MembersList .addNewMember">
+                {{ $t('Dashboard.hints.create-member') }}
+                <ul class="mt-2 list-unstyled">
+                  <li v-for="(item, index) in $t('Dashboard.hints.create-member_instructions')"
+                      :key="index">{{ item }}</li>
+                </ul>
               </div>
-              <div v-if="membersList.length === 1" pointTo="#MembersList .addNew">
-                Do you want to make and manage MorphicBars for other people?
-                <p class="mt-2">
-                  Start by adding a person.<br/>
-                  Next you can create bars.<br/>
-                  Finally, you can invite the person to download and use Morphic.
-                </p>
-              </div>
+              <div v-else-if="membersList.length > 1"
+                   point-to="#MembersList:not(.hasExpanded) ul li:first-child .expander"
+                   v-t="'Dashboard.hints.other-bars'"/>
             </div>
             <div v-else>
               <p class="text-left small">Get started by clicking an item in the green menu to the left</p>
@@ -39,8 +46,8 @@
               Loading data, please wait...
             </div>
           </div>
-        </b-col>
-        <b-col md="5" class="videos">
+        </div>
+        <div class="col-5 videos">
           <div v-for="(video) in videos"
                :key="video.id"
                @click="playVideo(video)"
@@ -70,6 +77,16 @@
 
           </div>
 
+          <b-modal id="TutorialDialog"
+                   :title="playingVideo && playingVideo.title"
+                   size="lg"
+                   hide-footer
+                   @shown="$refs.Tutorial.start()"
+              >
+            <Tutorial ref="Tutorial" :tutorial-id="playingVideo && playingVideo.tutorial"
+                      @done="$bvModal.hide('TutorialDialog');"/>
+          </b-modal>
+
           <b-modal :id="'VideoDialog'"
                    dialog-class="videoDialog"
                    :title="playingVideo && playingVideo.caption"
@@ -93,18 +110,25 @@
           </b-modal>
 
 
-        </b-col>
-        <b-col md="1">
-          <div class="fill-height bg-silver"></div>
-        </b-col>
+        </div>
       </template>
-    </b-row>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
   $primary-color: #002957;
   $secondary-color: #84c661;
+
+  .dashboardContent {
+    display: flex;
+    position: relative;
+
+    .sidePanelColumn {
+      width: 15em;
+      min-width: 16.66%;
+    }
+  }
 
   .videos {
     padding-top: 6em;
@@ -222,6 +246,11 @@
     & > * {
       padding-left: 0.3em;
       position: absolute;
+      transition: opacity 0.35s;
+      opacity: 0;
+      &.show {
+        opacity: 1;
+      }
     }
   }
 </style>
@@ -235,10 +264,12 @@ import {
     getCommunityMembers
 } from "@/services/communityService";
 import * as billingService from "@/services/billingService";
+import Tutorial from "@/components/dashboard/Tutorial";
 
 export default {
     name: "Dashboard",
     components: {
+        Tutorial,
         SidePanel
     },
     data() {
@@ -263,8 +294,9 @@ export default {
         videos: function () {
             return [
                 {
-                    url: this.externalLinks.gettingStarted,
-                    caption: "30 Second Tutorial:<br/>Getting Started with the Customization Tool",
+                    tutorial: "getting-started",
+                    caption: this.$t("Tutorial.getting-started.link"),
+                    title: this.$t("Tutorial.getting-started.title"),
                     thumb: "/img/tutorial-thumb.png",
                     thumbRatio: "756:474"
                 },
@@ -274,6 +306,11 @@ export default {
                     length: "4:24"
                 }
             ];
+        },
+        hasOwnBar: function () {
+            /** @type {CommunityMember} */
+            const currentMember = this.membersList.find(m => m.isCurrent);
+            return currentMember?.bar_ids?.length;
         }
     },
     mounted: function () {
@@ -360,14 +397,21 @@ export default {
             const hints = this.$el.querySelectorAll("#hints > *");
 
             hints.forEach(hint => {
-                const target = document.querySelector(hint.getAttribute("pointTo"));
+                const getTarget = () => document.querySelector(hint.getAttribute("point-to"));
+                const target = getTarget();
+                const targetRect = target && target.getBoundingClientRect();
 
-                if (!hint || !target) {
+                // Check if the target is hidden
+                const off = targetRect && (targetRect.y <= 0 || targetRect.width === 0 || targetRect.height === 0);
+
+                if (!hint || !target || off) {
                     if (hint) {
-                        hint.style.display = "none";
+                        hint.classList.remove("show");
                     }
+                    this.arrows.push({getTarget});
                 } else {
-                    const targetRect = target.getBoundingClientRect();
+                    hint.classList.add("show");
+
                     const hintRect = hint.getBoundingClientRect();
                     const sourceRect = {
                         x: hintRect.x,
@@ -377,7 +421,7 @@ export default {
                     hint.style.top = `${sourceRect.y - this.sidePanel.getBoundingClientRect().y}px`;
 
                     const arrow = {
-                        target: target,
+                        getTarget: getTarget,
                         hint: hint,
                         targetRect: targetRect,
 
@@ -399,22 +443,28 @@ export default {
                     this.arrows.push(arrow);
                 }
             });
-            this.hintTimer = setInterval(this.checkHints, 500);
+            this.hintTimer = setTimeout(this.checkHints, 1500);
         },
         checkHints: function () {
-            const changed = this.arrows.some(arrow => {
-                const newRect = arrow.target.getBoundingClientRect();
-                return newRect.y !== arrow.targetRect.y;
-            });
+            try {
+                const changed = this.arrows.some(arrow => {
+                    const newRect = arrow.getTarget()?.getBoundingClientRect();
+                    return (!newRect !== !arrow.hint) || newRect?.y !== arrow.targetRect?.y;
+                });
 
-            if (changed) {
-                this.cleanUpArrows();
-                this.createArrows();
+                if (changed) {
+                    this.cleanUpArrows();
+                    this.createArrows();
+                }
+            } finally {
+                this.hintTimer = setTimeout(this.checkHints, 1500);
             }
         },
         cleanUpArrows: function () {
             this.arrows.forEach(arrow => {
-                arrow.arrowLine.remove();
+                if (arrow.arrowLine) {
+                    arrow.arrowLine.remove();
+                }
             });
             this.arrows = [];
             if (this.hintTimer) {
@@ -432,9 +482,15 @@ export default {
                 window.location = video.url;
             } else {
                 this.playingVideo = video;
-                this.$bvModal.show("VideoDialog");
+                // Show in the next tick, to allow the dialog content to load.
+                this.$nextTick(() => {
+                    if (video.tutorial) {
+                        this.$bvModal.show("TutorialDialog");
+                    } else {
+                        this.$bvModal.show("VideoDialog");
+                    }
+                });
             }
-
         }
     }
 };

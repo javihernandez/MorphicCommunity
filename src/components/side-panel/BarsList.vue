@@ -1,7 +1,9 @@
 <!-- A list of bars, either for a single member or all shared bars -->
 <template>
   <div class="barsList">
-    <ul class="list-unstyled">
+    <ul class="list-unstyled"
+        :aria-label="ariaLabel || $t('BarsList.bars_aria-label', {name: member.displayName})"
+    >
       <li v-for="(bar, index) in orderedBars" :key="bar.id"
           :class="{ active: bar.id === activeBarId }"
       >
@@ -15,9 +17,11 @@
     </ul>
     <div>
       <b-button v-bind="buttonAttrs"
+                variant="morphic-blue"
                 @click="$emit('newbar', member)"
                 class="addNew"
                 v-if="showAddButton"
+                :aria-label="$t('BarsList.new-bar_button_aria-label', {name: member.displayName})"
                 v-t="'BarsList.new-bar_button'" />
       <em v-if="!anyBars" class="d-block">You have no MorphicBars of your own yet.</em>
     </div>
@@ -39,7 +43,8 @@ export default {
         /** @type {CommunityMember} */
         member: Object,
         // variant attribute for buttons
-        buttonAttrs: Object
+        buttonAttrs: Object,
+        ariaLabel: String
     },
     methods: {
         getBarEditRoute: function (bar) {

@@ -40,6 +40,7 @@ describe("Billing Test", () => {
                 price: 600,
                 price_text: "$6",
                 size: "basic",
+                sizeName: "Standard",
                 stripe: {
                     price_id: "price_1HEhXfFNS9zyw2T7YKMUaXSj"
                 }

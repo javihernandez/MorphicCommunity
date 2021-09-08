@@ -2,6 +2,7 @@
 import * as communityService from "@/services/communityService";
 import { MESSAGES } from "@/utils/constants";
 import { deleteCommunityBar } from "@/services/communityService";
+import { resendEmailConfirmation } from "@/services/userService";
 
 /**
  * Mix-in for member management related things.
@@ -13,9 +14,10 @@ export const membersMixin = {
          * Deletes a member (from the community).
          * @param {CommunityMember} member The member to delete.
          * @param {Boolean} force Force the operation, without confirming with the user.
+         * @param {Boolean} keepRoute Keep the current route, and don't redirect to the home page.
          * @return {Promise<Boolean>} Resolves with true if the member was deleted.
          */
-        memberDelete: async function (member, force) {
+        memberDelete: async function (member, force, keepRoute) {
             const confirmed = force ||
                 await this.showConfirm(
                     this.$t("members.delete.confirm", {member: member.displayName}),
@@ -23,10 +25,52 @@ export const membersMixin = {
                         this.$t("members.delete.apply_button", {member: member.displayName}),
                         this.$t("members.delete.cancel_button")
                     ],
-                    this.$t("members.delete.title"));
+                    this.$t("members.delete.title"),
+                    {
+                        dangerous: true
+                    });
 
             const req = confirmed && communityService.deleteCommunityMember(this.communityId, member.id);
-            return req && this.requestToBool(req, MESSAGES.successfulMemberDelete);
+            return req && this.requestToBool(req, MESSAGES.successfulMemberDelete).then(success => {
+                if (!keepRoute) {
+                    this.$router.push("/");
+                }
+            });
+        },
+
+        /**
+         * Reloads a member's data.
+         * @param {CommunityMember} member The member (gets updated).
+         * @return {Promise<CommunityMember>} Resolves with the new data.
+         */
+        memberReload: async function (member) {
+            return communityService.getCommunityMember(this.communityId, member.id).then(getResponse => {
+                Object.assign(member, getResponse.data);
+                return getResponse.data;
+            });
+        },
+
+        /**
+         * Updates some of a member's details to the API service.
+         *
+         * The member's data is first refreshed, so stale information is not re-added. The member object passed
+         * gets updated with the fresh data, and with the new data if successful.
+         *
+         * @param {CommunityMember} member The member to update.
+         * @param {CommunityMember} newData Contains only the new values to update.
+         * @return {Promise<AxiosResponse>} Resolves with the response data.
+         */
+        memberUpdate: async function (member, newData) {
+            // Update the user's latest information
+            const latest = this.memberReload(member);
+
+            // Set the new values, and update.
+            Object.assign(latest, newData);
+            return communityService.updateCommunityMember(this.communityId, member.id, member).then(updateResponse => {
+                // Add the new data to the member object.
+                Object.assign(member, newData);
+                return updateResponse;
+            });
         },
 
         /**
@@ -37,8 +81,6 @@ export const membersMixin = {
          * @return {Promise<Boolean>} Resolves with true if the member's role was changed.
          */
         memberChangeRole: async function (member, newRole, force) {
-            const origRole = member.role;
-
             const confirmed = force ||
                 await this.showConfirm(
                     this.$t("members.changeRole.confirm", {member: member.displayName, role: newRole}),
@@ -48,16 +90,9 @@ export const membersMixin = {
                     ],
                     this.$t("members.changeRole.title"));
 
-            if (confirmed) {
-                member.role = newRole;
-            }
+            const req = confirmed && this.memberUpdate(member, {role: newRole});
 
-            const req = confirmed && communityService.updateCommunityMember(this.communityId, member.id, member);
-            return req && this.requestToBool(req, MESSAGES.successfulRoleChange).then(success => {
-                if (!success) {
-                    member.role = origRole;
-                }
-            });
+            return req && this.requestToBool(req, MESSAGES.successfulRoleChange);
         },
 
         /**
@@ -85,7 +120,7 @@ export const membersMixin = {
                     [this.$t("members.removeBar.apply_button"), this.$t("members.removeBar.cancel_button")],
                     bar.name,
                     {
-                        okVariant: "danger"
+                        dangerous: true
                     });
 
             var togo;
@@ -95,6 +130,7 @@ export const membersMixin = {
                     await updateResult;
                     togo = deleteCommunityBar(this.communityId, this.$route.query.barId).then((resp) => {
                         this.showMessage(MESSAGES.successfulBarDelete);
+                        return true;
                     });
 
                 } else {
@@ -126,6 +162,53 @@ export const membersMixin = {
             }
 
             return await communityService.updateCommunityMember(this.communityId, member.id, member);
+        },
+
+        /**
+         * Invites a member to enjoy fruits of morphic.
+         * @param {CommunityMember} member The chosen member.
+         * @param {String} invitationEmail The email address.
+         * @param {String} message Additional text for the invitation email.
+         * @return {Promise} Resolves when complete.
+         */
+        memberInvite: async function (member, invitationEmail, message) {
+            try {
+                await communityService.inviteCommunityMember(this.communityId, member.id, invitationEmail, message);
+            } catch (err) {
+                if (err.response?.data?.error === "email_verification_required") {
+                    err.handled = true;
+                    const resend = !await this.showConfirm("Until you have confirmed your own email address, you are unable to invite other members.", ["OK", "Resend confirmation email"]);
+                    if (resend) {
+                        await resendEmailConfirmation(this.userId);
+                    }
+                }
+                throw err;
+            }
+            member.state = "invited";
+            return true;
+        },
+
+        /**
+         * Renames a member
+         * @param {CommunityMember} member The member.
+         * @param {String} newName The new name.
+         * @return {Promise} Resolves when complete.
+         */
+        memberRename: function (member, newName) {
+            const response = this.memberUpdate(member, { first_name: newName, last_name: null });
+            return this.requestToBool(response, MESSAGES.successfulMemberRename);
+        },
+
+        /**
+         * Checks if a name has already been taken.
+         * @param {String} name The name to check.
+         * @param {CommunityMember} ignore A member to ignore (for use when renaming a member).
+         * @return {Boolean} true if there is already a member with the given name.
+         */
+        memberCheckDuplicate: function (name, ignore) {
+            return this.members.some(m => {
+                return m.fullName === name && (!ignore || m.id !== ignore.id);
+            });
         }
 
     }

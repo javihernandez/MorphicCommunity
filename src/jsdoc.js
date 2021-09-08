@@ -66,10 +66,13 @@
  * @property {String} subkind The item category (email, news).
  * @property {Boolean} [isPlaceholder] true if this button is a place-holder, where the site has not been chosen.
  * @property {Boolean} [isExpander] true if this item is used in the catalog to show the secondary items.
+ * @property {Boolean} [showEdit] true/false to always/never show the editor dialog when the item is added.
  * @property {Boolean} catalogItem true if this instance is in the catalog (not added to the bar)
  * @property {String} catalogLabel Label in the catalog (if different to `label`).
  * @property {String} category Category in the catalog
  * @property {Boolean} [hasError] true if one of the parameter values has a validation error.
+ * @property {Boolean} isNew true if the item has been just added from the catalog, before the customisation dialog has
+ *  been displayed.
  * @property {Object<String,String>} parameters Values of the named parameters used in fields.
  * @property {Array<String>} paramFields The field names of this object which are parameterised.
  * @property {Object<String,ItemProblem>} problems Results of the last problem check.
@@ -127,10 +130,20 @@
  * @property {String} fullName The member's full name (auto-generated).
  * @property {String} displayName The member's full name, for displaying (adds "(you)" for the current user).
  * @property {String} role The member's role ("manager" or "member").
- * @property {String} state The member's state.
+ * @property {"active"|"invited"|"uninvited"} state The member's state.
  * @property {String} stateText The member's state, for displaying (auto-generated).
  * @property {Array<GUID>} bar_ids The member's bars
  * @property {String} userId The member's userId.
  * @property {Boolean} isCurrent true if this member is the current user accessing the site.
  */
 
+/**
+ * Invitation details
+ * @typedef {Object} Invitation
+ * @property {GUID} invitationId The invitation id.
+ * @property {GUID} communityId The community id.
+ * @property {String} communityName The community name.
+ * @property {String} email The invitee's email.
+ * @property {String} name The invitee's name.
+ *
+ */

@@ -13,121 +13,86 @@
     />
 
     <template v-if="isLite">
-      <b-modal id="MemberDetailsDialog"
-               hide-header
-               ok-only
-               ok-title="Close"
-      >
-        <MemberDetails v-if="memberDetails" id="MemberDetailsDialog" :member-details="memberDetails" :members="members" is-dialog />
-      </b-modal>
-      <b-modal id="BarSettingsDialog"
-               hide-header
-               ok-only
-               ok-title="Close"
-      >
-        <BarSettings :bar-details="barDetails" is-dialog :member="memberDetails" @rename="showRenameBarDialog()"/>
-      </b-modal>
+<!--      <b-modal id="BarSettingsDialog"-->
+<!--               hide-header-->
+<!--               ok-only-->
+<!--               ok-title="Close"-->
+<!--      >-->
+<!--        <BarSettings :bar-details="barDetails" is-dialog :member="memberDetails" @rename="showRenameBarDialog()"/>-->
+<!--      </b-modal>-->
     </template>
 
     <b-row no-gutters>
       <!-- details and tabs -->
       <b-col fluid>
-        <div id="BarDetails">
+        <div id="BarDetails" :class="isLite && 'bg-silver rounded p-2'">
           <!-- Bar name -->
           <div class="bar-name">
-            <h2>
-              {{barName}}
-
-              <!-- rename bar -->
-              <span v-if="barDetails.name !== 'Default'">
-                        &nbsp;<small><b-button variant="link" @click="showRenameBarDialog()" Xv-b-modal="'barNameDialog'">rename</b-button></small>
-                      </span>
-            </h2>
+            <h2>Bar: <span class="name">{{barName}}</span></h2>
+            <!-- rename bar -->
+            <span v-if="barDetails.name !== 'Default'" class="actions">
+              <b-button variant="link" @click="showRenameBarDialog()">rename</b-button>
+              <b-button variant="link" @click="deleteBar()" class="text-danger">delete</b-button>
+            </span>
 
           </div>
           <div class="mb-1">
-            <span  class="lead">
-            <template v-if="barMembers.length === 0">
-              Shared bar
-            </template>
-            <template v-else-if="barMembers.length === 1">
-              Bar for: <b>{{ barMembers[0].displayName }}</b>
-            </template>
-            <template v-else>
-              Bar for: <b>{{ barMembers.length }} members</b>
-            </template>
+            <span class="lead">
+              <template v-if="barMembers.length === 0">
+                Shared bar
+              </template>
+              <template v-else-if="barMembers.length === 1">
+                Person: <span class="name">{{ barMembers[0].displayName }}</span>
+              </template>
+              <template v-else>
+                Person: <span class="name">{{ barMembers.length }} members</span>
+              </template>
             </span>
-            <b-link class="ml-4 onlyFocus"
-                    v-b-modal="'MemberDetailsDialog'"
-            >Person Details</b-link>
           </div>
-          <div v-if="isLite" class="mb-2">
-            <b-link v-b-modal="'BarSettingsDialog'"><b-icon-gear-fill/>Settings for this MorphicBar</b-link>
-          </div>
+<!--          <div v-if="isLite" class="mb-2">-->
+<!--            <b-link v-b-modal="'BarSettingsDialog'"><b-icon-gear-fill/>Settings for this MorphicBar</b-link>-->
+<!--          </div>-->
         </div>
 
         <div v-if="!isLite" id="EditorTabs">
-          <b-tabs class="editorTabs"
-                  v-model="editorTabIndex"
-                  small
-                  :content-class="'bg-white border border-top-0 ' + (editorTabIndex ? '' : 'd-none')">
 
-            <!-- hidden tab to simulate no tab being selected -->
-            <b-tab title="" active title-item-class="d-none" class="d-none"/>
-
-            <!-- Members tab -->
-            <b-tab @click="editorTabIndex = (editorTabIndex === 1 ? 0 : 1)">
-              <template #title>
-                <b-icon-person-circle/>&nbsp;
-                <span v-if="memberDetails">{{ memberDetails.displayName }} details ({{memberDetails.stateText}})</span>
-                <span v-else-if="memberCount === 0">Unused Bar</span>
-                <span v-else>Members ({{ memberCount }})</span>
-              </template>
-              <button @click="editorTabIndex = 0" type="button" aria-label="Close" class="close">×</button>
-
-              <MemberDetails v-if="memberDetails" :member-details="memberDetails" :members="members" />
-
-            </b-tab>
+          <div class="editorTabs nav-tabs">
 
             <!-- Bar settings tab -->
-            <b-tab @click="editorTabIndex = (editorTabIndex === 2 ? 0 : 2)" >
-              <template #title>
-                <b-icon-gear-fill/>
-                Settings for this MorphicBar
-              </template>
-              <button @click="editorTabIndex = 0" type="button" aria-label="Close" class="close">×</button>
+<!--            <b-button variant="none" size="sm" class="tabButton nav-link" v-b-toggle="'settingsContent'">-->
+<!--              <b-icon-gear-fill/>-->
+<!--              Settings for this MorphicBar-->
+<!--            </b-button>-->
 
-              <BarSettings :bar-details="barDetails" :member="memberDetails" @rename="showRenameBarDialog()"/>
-            </b-tab>
+<!--            <b-collapse id="settingsContent" class="tabContent" accordion="editorTabs">-->
+<!--              <b-button aria-label="Close" class="close" v-b-toggle="'settingsContent'">×</b-button>-->
 
-          </b-tabs>
+<!--              <BarSettings :bar-details="barDetails" :member="memberDetails" @rename="showRenameBarDialog()"/>-->
+<!--            </b-collapse>-->
+          </div>
 
         </div>
       </b-col>
 
-      <b-col id="EditorActions" lg="fluid" xs="6">
+      <b-col id="EditorActions" lg="fluid" xs="6" :class="isLite && 'ml-2 mr-2'">
         <b-button variant="secondary"
                   v-b-modal="'copyBarDialog'"
-        >Copy bar from...
-        </b-button>
+                  v-t="'EditorDetails.copy-bar_button'" />
 
         <b-button variant="secondary"
                   :disabled="!isChanged || newBar"
                   @click="revertBar"
-        >Revert to user's current bar
-        </b-button>
+                  v-t="'EditorDetails.revert-bar_button'" />
 
         <b-button variant="primary"
                   style="visibility: hidden"
                   disabled
-        >Try it
-        </b-button>
+                  v-t="'EditorDetails.try-it_button'" />
 
         <b-button variant="primary"
                   :disabled="!isChanged"
                   @click="saveBar"
-        >Save bar
-        </b-button>
+                  v-t="'EditorDetails.save-bar_button'" />
       </b-col>
     </b-row>
   </b-container>
@@ -137,12 +102,12 @@
 import TextInputDialog from "@/components/dialogs/TextInputDialog";
 import * as Bar from "@/utils/bar";
 import { getCommunityBar, updateCommunityBar } from "@/services/communityService";
-import MemberDetails from "@/components/editor/MemberDetails";
-import BarSettings from "@/components/editor/BarSettings";
+import { membersMixin } from "@/mixins/members";
 
 export default {
     name: "EditorDetails",
-    components: {BarSettings, MemberDetails, TextInputDialog},
+    components: {TextInputDialog},
+    mixins: [membersMixin],
     props: {
         /** @type {BarDetails} */
         barDetails: Object,
@@ -158,8 +123,7 @@ export default {
     },
     data() {
         return {
-            barSettings: {},
-            editorTabIndex: 0
+            barSettings: {}
         };
     },
     computed: {
@@ -179,6 +143,16 @@ export default {
          */
         showRenameBarDialog: function () {
             this.$bvModal.show("barNameDialog");
+        },
+
+        /**
+         * Delete the bar.
+         */
+        deleteBar: async function () {
+            const deleted = await this.memberRemoveBar(this.barDetails, this.memberDetails, true);
+            if (deleted) {
+                this.$router.push("/");
+            }
         },
 
         /**
@@ -208,21 +182,39 @@ export default {
             this.$emit("save-bar");
         },
         closeTab: function () {
-            this.editorTabIndex = 0;
+            const openTab = this.$el.querySelector(".tabContent.show");
+            if (openTab) {
+                this.$root.$emit("bv::toggle::collapse", openTab.id);
+            }
+
         }
     }
 };
 </script>
 
 <style lang="scss">
+@import "~@/styles/bootstrap-util";
 
 #BarDetails {
   min-width: 20em;
   flex-grow: 1;
+
+  .name {
+    font-weight: bold;
+  }
+
   .bar-name {
     h2 {
       margin-bottom: 0;
+      display: inline-block;
+      font-weight: normal;
     }
+    .actions .btn {
+      margin-left: 1.5em;
+    }
+  }
+  &.rounded {
+    border-radius: 0.6rem !important;
   }
 }
 
@@ -247,31 +239,58 @@ export default {
   display: flex;
   align-items: center;
 
+  .state-invited, .state-uninvited {
+    color: $danger;
+  }
+
   & > :not(:last-child) {
     margin-right: 1em;
   }
 
   .editorTabs {
     margin-bottom: -1px;
-    .nav-tabs {
-      flex-wrap: nowrap;
-      white-space: nowrap;
+
+    .tabButton {
+      display: inline-block;
+      position: relative;
+      z-index: $zindex-dropdown + 2;
+
+      background-color: #fff;
+
+      outline: unset;
+      box-shadow: none;
+
+      &:focus-visible {
+        border-color: $gray-800;
+      }
+      &.not-collapsed {
+        border-color: $border-color $border-color #fff;
+      }
+      border-bottom-color: $border-color;
     }
-    .tab-content {
+
+    .tabContent {
+      background-color: white;
       position: absolute;
-      z-index: 10;
+
+      z-index: $zindex-dropdown;
+
       max-width: 70%;
       min-width: 25rem;
+
+      border: $border-width solid $border-color;
       border-radius: 0 3px 3px 3px;
+      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+
+      &.show {
+        z-index: $zindex-dropdown + 1;
+      }
 
       & > div {
         margin-top: 0;
         padding: 0.3rem;
       }
 
-    }
-    .hidden-tab {
-      display: none;
     }
     .card {
       border: 0;

@@ -1,6 +1,7 @@
 <template>
   <b-link class="previewItem" id="previewItemButton"
           :class="[buttonClass, {broken: hasError}]"
+          :disabled="disabled"
           v-b-tooltip="{title: 'This button has an issue. Click for more information', placement: 'left', variant: 'warning', disabled: !hasError}"
            :to="linkTo"
           @click="$emit('click', {data: item})"
@@ -10,18 +11,18 @@
     <template v-if="buttonClass === 'simplified'">
       <div v-if="item.data.visual && item.data.visual.type === 'multiButton'" class="multiButton">
         <div class="buttons" style="margin-top: 5px;">
-          <button v-for="(button, index) in item.data.visual.buttons" v-bind:key="index"
+          <span v-for="(button, index) in item.data.visual.buttons" v-bind:key="index"
                   class="rounded multiButton"
-                  :style="'background: '+colors.default_button"
+                  :style="'background: ' + defaultColor"
                   v-bind:class="{ 'extraBig': item.data.visual.extraBig}">
-          </button>
+          </span>
         </div>
       </div>
-      <div v-else-if="noImage" class="noImage" :style="'background: '+colors.default_button">
+      <div v-else-if="noImage" class="noImage" :style="'background: ' + defaultColor">
       </div>
-      <div v-else class="regular" :style="'background: '+colors.default_button">
-        <div class="imageContainer" :style="'border-color: '+colors.default_button">
-          <b-img :src="getIconUrl(item.configuration.image_url)" :alt="item.configuration.label + ' logo'"></b-img>
+      <div v-else class="regular" :style="'background: ' + defaultColor">
+        <div class="imageContainer" :style="'border-color: ' + defaultColor">
+          <b-img :src="getIconUrl(item.configuration.image_url)" alt="" />
         </div>
       </div>
     </template>
@@ -31,9 +32,9 @@
       <label>{{ item.configuration.label }}</label>
       <div class="buttons">
         <button v-for="(button, index) in item.data.visual.buttons" v-bind:key="index"
-                :style="'background: '+colors.default_button + '; background-color: ' + (item.configuration.color || colors.default_button) + ';'"
+                :style="'background: ' + defaultColor + '; background-color: ' + (item.configuration.color || defaultColor) + ';'"
                 v-bind:class="{ 'extraBig': item.data.visual.extraBig}"
-              tabindex="-1">
+                tabindex="-1">
           {{ button }}
         </button>
       </div>
@@ -42,11 +43,11 @@
     <!-- Normal button with/without image -->
     <template v-else>
       <div v-if="item.configuration.image_url && !noImage"
-           :style="'border-color: ' + (item.configuration.color || colors.default_button) + '; color: ' + (item.configuration.color || colors.default_button) + ';'"
+           :style="'border-color: ' + (item.configuration.color || defaultColor) + '; color: ' + (item.configuration.color || defaultColor) + ';'"
            class="iconHolder">
-        <b-img :src="getIconUrl(item.configuration.image_url)" :alt="item.configuration.label + ' logo'"/>
+        <b-img :src="getIconUrl(item.configuration.image_url)" alt="" />
       </div>
-      <b :style="'background-color: ' + (item.configuration.color || colors.default_button) + ';'"
+      <b :style="'background-color: ' + (item.configuration.color || defaultColor) + ';'"
          v-bind:class="{ withImage: !noImage && item.configuration.image_url }">{{ item.configuration.label }}</b>
     </template>
 
@@ -229,11 +230,13 @@ export default {
         item: Object,
         simplified: Boolean,
         noImage: Boolean,
-        to: Object
+        to: Object,
+        disabled: Boolean
     },
     data() {
         return {
             colors: colors,
+            defaultColor: colors.blue,
             icons: icons
         };
     },

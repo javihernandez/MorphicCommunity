@@ -76,11 +76,20 @@ export function generateId(item) {
  * @param {BarDetails} bar The bar.
  * @param {BarItem} sourceItem The item to add (either from the catalog, or the service.
  * @param {Number} [index] The position to insert the item. [default: at the end]
+ * @param {Boolean} fromCatalog true if the button has been added from the catalog.
  * @return {BarItem} The new item added (a modified copy of `barItem`).
  */
-export function addItem(bar, sourceItem, index) {
+export function addItem(bar, sourceItem, index, fromCatalog) {
     /** @type {BarItem} */
     const barItem = JSON.parse(JSON.stringify(sourceItem));
+
+    if (!barItem.data) {
+        barItem.data = {};
+    }
+
+    if (fromCatalog) {
+        barItem.data.isNew = true;
+    }
 
     // The item refers to the bar by id, to avoid circular references in the object.
     bars[bar.id] = bar;
@@ -91,7 +100,6 @@ export function addItem(bar, sourceItem, index) {
     }
     delete barItem.data.catalogItem;
     delete barItem.data.catalogLabel;
-
 
     if (index === undefined) {
         bar.items.push(barItem);
@@ -130,10 +138,13 @@ export function checkBar(bar) {
     /** @type {BarError[]} */
     const errors = [];
 
-    // Check for duplicate items.
-    errors.push.apply(errors, checkDuplicates(bar));
+    // Don't check the new items
+    const checkItems = bar.items.filter(item => !item.data.isNew);
 
-    bar.items.forEach((item) => {
+    // Check for duplicate items.
+    errors.push.apply(errors, checkDuplicates(bar, checkItems));
+
+    checkItems.forEach((item) => {
         errors.push.apply(errors, getItemErrors(item));
     });
 
@@ -186,22 +197,23 @@ export function getItemErrors(item) {
 /**
  * Checks a bar for duplicate items.
  * @param {BarDetails} bar The bar.
+ * @param {BarDetails} items The bar items to check.
  * @return {Array<BarError>} The list of errors.
  */
-function checkDuplicates(bar) {
+function checkDuplicates(bar, items = bar.items) {
 
     /** @type {Array<BarError>} */
     const errors = [];
 
-    bar.items.forEach(item => delete item.configuration.duplicates);
+    items.forEach(item => delete item.configuration.duplicates);
 
-    const max = bar.items.length - 1;
+    const max = items.length - 1;
     for (let outerIndex = 0; outerIndex <= max; outerIndex++) {
-        const a = bar.items[outerIndex];
+        const a = items[outerIndex];
         const dups = [];
 
         for (let innerIndex = outerIndex + 1; innerIndex <= max; innerIndex++) {
-            const b = bar.items[innerIndex];
+            const b = items[innerIndex];
             if (itemSimilar(a, b)) {
                 dups.push(b);
             }

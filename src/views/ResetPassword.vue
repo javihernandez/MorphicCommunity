@@ -41,6 +41,7 @@ import { required, email } from "vuelidate/lib/validators";
 import ValidatedInput from "@/components/ValidatedInput";
 
 export default {
+    name: "ResetPassword",
     components: {ValidatedInput},
     data() {
         return {

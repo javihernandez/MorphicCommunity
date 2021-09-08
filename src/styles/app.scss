@@ -34,6 +34,10 @@ body.focusMode, body:not(.focusMode) #EditorActions, body:not(.focusMode) #SideP
   }
 }
 
+.modal-footer .btn {
+  min-width: 5em;
+}
+
 // Make disabled buttons grey
 .btn {
   &.disabled, &:disabled {
@@ -108,7 +112,7 @@ body.isLite {
     .modal {
       padding: 0 !important;
 
-      .modal-dialog.modal-lg {
+      .modal-dialog.modal-lg, .modal-dialog.modal-xl {
         background-color: $light;
         max-width: none;
         width: 100%;
@@ -140,5 +144,31 @@ body.isMobile {
   }
 }
 
-@import "./expander";
+.hint-box {
+  display: inline-block;
+  background-color: #ffffcc;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+  font-family: 'Coming Soon', sans-serif;
+  font-size: 15px;
+}
 
+// Hide the widget for a radio button, so it can be customised.
+.customRadio {
+  input {
+    position: absolute !important;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+// this gets overridden in App.vue with the real value - sane default to avoid adjustment during load.
+body:not(.isMobile, .focusMode) .desktop-headerMarginTop {
+  margin-top: 56px;
+}
+body:not(.isMobile, .focusMode) .desktop-headerPaddingTop {
+  padding-top: 56px;
+}

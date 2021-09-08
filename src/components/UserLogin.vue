@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 class="mb-3" id="user-login-heading" v-t="'UserLogin.heading'" />
+    <h1 v-if="!formOnly" class="mb-3" id="user-login-heading" v-t="'UserLogin.heading'" />
     <b-alert variant="danger" :show="errorAlert">
       {{ errorMessage }}
     </b-alert>
-    <b-form @submit.stop.prevent="onSubmit" role="form" aria-labelledby="user-login-heading">
+    <b-form @submit.stop.prevent="onSubmit(false)" role="form" aria-labelledby="user-login-heading">
       <ValidatedInput id="login-user-email"
                       :label="$t('UserLogin.email_label')"
                       :validation="$v.userInfo.email"
@@ -19,24 +19,18 @@
                       password-toggle
       />
       <br/>
-      <b-link to="/reset-password" v-t="'UserLogin.password-reset_link'" class="alignRight" />
-<!--        <b-form-checkbox-group>-->
-<!--            <b-form-checkbox-->
-<!--                v-model="userInfo.keep_logged"-->
-<!--                value="1"-->
-<!--                unchecked-value="0"-->
-<!--            >-->
-<!--                Keep me logged in-->
-<!--            </b-form-checkbox>-->
-<!--        </b-form-checkbox-group>-->
-      <div class="loginAction">
+
+      <b-button v-if="linkEvents" variant="link" @click.prevent="$emit('reset-password')" v-t="'UserLogin.password-reset_link'" class="alignRight" />
+      <b-link v-else to="/reset-password" v-t="'UserLogin.password-reset_link'" class="alignRight" />
+
+      <div v-if="!formOnly" class="loginAction">
         <b-button type="submit"
                   id="loginButton"
                   variant="success"
                   class="w-25"
                   v-t="'UserLogin.sign-in_button'" />
       </div>
-      <div class="loginAction">
+      <div v-if="!formOnly" class="loginAction mb-4">
         <b-link :to="{name: 'Register'}" v-t="'UserLogin.create-account_link'" />
       </div>
     </b-form>
@@ -62,13 +56,21 @@ export default {
     data() {
         return {
             userInfo: {
-                email: "",
+                email: this.initialEmail || "",
                 password: "",
                 keep_logged: 1
             },
             errorAlert: false,
             errorMessage: null
         };
+    },
+    props: {
+        /** true to only show the input fields */
+        formOnly: Boolean,
+        /** true to raise events for the links ("reset-password" and "create-account"), rather than navigating. */
+        linkEvents: Boolean,
+        /** pre-fill the email */
+        initialEmail: String
     },
     validations: {
         userInfo: {
@@ -85,16 +87,18 @@ export default {
         storeResetEmail() {
             this.$store.commit("reset_password_email", this.userInfo.email);
         },
-        onSubmit() {
+        onSubmit(noNavigate) {
             if (!this.validateForm(this.$v.userInfo)) {
                 return;
             }
 
-            this.$store.dispatch("login", this.$v.userInfo.$model)
+            return this.$store.dispatch("login", this.$v.userInfo.$model)
                 .then((dest) => {
-                    this.userInfo.email = "";
                     this.userInfo.password = "";
-                    this.$router.push(dest);
+                    if (!noNavigate) {
+                        this.$router.push(dest);
+                    }
+                    return true;
                 })
                 .catch(this.handleServerError);
         }

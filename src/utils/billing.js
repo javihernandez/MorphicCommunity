@@ -17,6 +17,7 @@ import * as billingService from "@/services/billingService";
  * @property {String} monthly_price_text The monthly price of the plan, for displaying.
  *
  * @property {String} name The name of the plan.
+ * @property {String} sizeName The name of the plan, without the time period.
  * @property {String} size Plan size (basic, medium, large).
  * @property {Boolean} listed Displayed in the list of plans.
  * @property {String} savings_text Bulk-buy savings (if any).
@@ -31,6 +32,7 @@ import * as billingService from "@/services/billingService";
  * @property {PaymentStatus} status Payment status.
  * @property {String} contact_member_id The ID of the member who is the billing contact.
  * @property {BillingCard} card The payment card.
+ * @property {BillingPlan} [plan] The plan.
  */
 
 /**
@@ -70,36 +72,43 @@ var allPlans;
 const planExtras = {
     "basic-1-month": {
         name: "Standard Monthly",
+        sizeName: "Standard",
         size: "basic",
         listed: true
     },
     "basic-6-month": {
         name: "Standard Plan",
+        sizeName: "Standard",
         size: "basic",
         listed: true
     },
     "midsize-1-month": {
         name: "Medium Monthly",
+        sizeName: "Medium",
         size: "medium",
         listed: true
     },
     "midsize-6-month": {
         name: "Medium Plan",
+        sizeName: "Medium",
         size: "medium",
         listed: true
     },
     "large-1-month": {
         name: "Large Monthly",
+        sizeName: "Large",
         size: "large",
         listed: true
     },
     "large-6-month": {
         name: "Large Plan",
+        sizeName: "Large",
         size: "large",
         listed: true
     },
     "enterprise-1": {
         name: "Enterprise",
+        sizeName: "Enterprise",
         size: "enterprise"
     }
 };
@@ -137,6 +146,20 @@ export function getPlans() {
         });
     }
     return togo;
+}
+
+/**
+ * Gets the billing info (and plan details) for the community
+ * @param {GUID} communityId The current community ID.
+ * @return {Promise<BillingInfo>} Resolves when complete.
+ */
+export async function getCurrentPlan(communityId) {
+    const [plans, billingInfo] = await Promise.all([
+        getPlans(),
+        billingService.getBillingInfo(communityId).then(resp => resp.data)
+    ]);
+
+    return plans[billingInfo.plan_id];
 }
 
 /**

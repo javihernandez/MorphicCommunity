@@ -1,32 +1,28 @@
 <template>
-  <b-navbar toggleable="md" type="light" variant="light" id="top" ref="nav" tag="div" role="">
-    <b-navbar-brand role="banner">
-      <b-link to="/">
-        <img src="/img/logo-wordmark.svg" alt="" />
-      </b-link>
-      <span class="headerTitle d-none"
-            :class="{
-               'd-xl-inline': isLite,
-               'd-lg-inline': !isLite
-            }"
-            v-t="'Header.product-name'" />
-    </b-navbar-brand>
+  <b-navbar toggleable="md" type="light" variant="light" id="top" ref="nav" tag="div" role="banner">
+    <header>
+      <a class="contentLink" id="SkipToContent" href="#PageContent" @click.prevent="skipToContent">Skip to content</a>
+      <b-navbar-brand>
+        <b-link to="/">
+          <img src="/img/logo-color.svg" class="logo" :alt="$t('Header.product-name')" />
+        </b-link>
+        <span class="headerTitle"
+              aria-hidden="true"
+              v-t="'Header.product-name'" />
+      </b-navbar-brand>
+    </header>
 
     <template v-if="isLoggedIn">
       <b-navbar-toggle target="nav-actions" ref="navToggle"/>
       <b-collapse id="nav-actions" is-nav v-model="showMenu">
-        <b-navbar-nav v-if="isLoggedIn" class="ml-auto loggedInNav">
-          <b-nav-text>
-            <b-button v-if="focusMode"
+        <b-navbar-nav class="ml-auto loggedInNav" :role="isMobile && 'presentation'">
+          <b-nav-text v-if="!isMobile">
+            <b-button v-if="focusMode && !isMobile"
                       variant="invert-dark"
                       @click="showMenu = false; setFocusMode(false)" v-t="'Header.standard-mode_button'" />
-            <b-button v-else
+            <b-button v-else-if="!isMobile"
                       variant="invert-dark"
                       @click="showMenu = false; setFocusMode(true)" v-t="'Header.focus-mode_button'" />
-          </b-nav-text>
-
-          <b-nav-text v-if="focusMode">
-            <b-button variant="invert-dark" @click="showMenu = false; $router.push('/')" v-t="'Header.home_button'" />
           </b-nav-text>
 
           <b-nav-text>
@@ -36,9 +32,9 @@
       </b-collapse>
     </template>
 
-    <b-navbar-nav v-else-if="$route.name !== 'Login'" class="ml-auto loggedOutNav">
+    <b-navbar-nav v-else-if="$route.name !== 'Login'" class="ml-auto loggedOutNav" role="presentation">
       <b-nav-text>
-        <b-button variant="invert-dark" :to="{name: 'Login'}"><b-icon icon="box-arrow-left"/> {{ $t('Header.login_button') }}</b-button>
+        <b-button variant="invert-dark" :to="{name: 'Login'}"><b-icon icon="box-arrow-in-right"/> {{ $t('Header.login_button') }}</b-button>
       </b-nav-text>
     </b-navbar-nav>
 
@@ -51,6 +47,27 @@
   @import "~@/styles/bootstrap-util";
 
   #top {
+    border-bottom: 2px solid $morphic-blue-color;
+    padding: 0;
+
+    // Skip to content link - off-screen until focused
+    .contentLink {
+      font-size: larger;
+      background-color: white;
+      padding: 2px;
+      position: absolute;
+      z-index: 100;
+      transform: translateX(-100%);
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: transform 250ms ease-out;
+      }
+
+      &:not(.screenReader):focus-visible {
+        transform: translateX(0);
+      }
+    }
+
     a.nav-link:focus {
       outline: 0;
     }
@@ -61,12 +78,12 @@
       border-bottom: 3px solid #84c661;
     }
 
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
 
-    & > :first-child {
+    .navbar-brand {
       margin-left: 1rem;
+      @include media-breakpoint-down(sm) {
+        margin-left: 3px;
+      }
     }
 
     max-width: 100%;
@@ -74,17 +91,31 @@
 
     .navbar-toggler, .navbar-collapse,  {
       margin-right: 1rem;
+      @include media-breakpoint-down(sm) {
+        margin-right: 0.3rem;
+      }
     }
 
     .navbar-brand {
       flex-grow: 0;
-      margin-right: 0.5em;
       .headerTitle {
-        margin-left: 2em;
+        color:  $morphic-blue-color;
+
         font-weight: bold;
+
+        margin-left: 0.8em;
+        font-size: 22px;
+
+        @include media-breakpoint-down(sm) {
+          margin-left: 0.4em;
+          font-size: 20px;
+        }
       }
-      img {
+      .logo {
         height: 2.4rem;
+        @include media-breakpoint-down(sm) {
+          height: 2rem;
+        }
       }
     }
 
@@ -190,6 +221,17 @@ export default {
          */
         setFocusMode: function (flag) {
             this.$store.dispatch("forceFocusMode", !!flag);
+        },
+        /**
+         * Scroll the content to the top of the window, and set the focus to the first focusable element in the content.
+         */
+        skipToContent() {
+            const content = document.querySelector("#PageContent");
+            content.scrollIntoView(true);
+            const firstFocusable = content.querySelector("a,input,button,[tabindex]");
+            if (firstFocusable?.focus) {
+                firstFocusable.focus();
+            }
         }
     },
     watch: {

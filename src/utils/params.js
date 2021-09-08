@@ -17,9 +17,12 @@ These are then used to create input fields in the editor dialog.
  * A parameter.
  * @typedef {Object} ParameterInfo
  * @property {Any} initial The initial value.
+ * @property {"text"|"select"|"checkbox"} type The type of field.
  * @property {String} label Text displayed with the input field.
- * @property {Array<Object>} [selectOptions] A list of items for a select field.
+ * @property {Array<Object>} selectOptions A list of items for a select field (type="select").
+ * @property {Array<String>} values Array containing the values of the parameter, depending on the checkbox state.
  * @property {String} attrs The HTML attributes for the input element.
+ * @property {changedFunc} [onChange] A function called when the value has changed.
  * @property {isEnabledFunc} [isApplicable] A function, returning true if the field should be shown.
  * @property {isEnabledFunc} [isEnabled] A function, returning true if the field should be enabled.
  * @property {Object<String,String>} validation The validation rules. Key is the key in {@link validators}, value is the message.
@@ -46,6 +49,13 @@ These are then used to create input fields in the editor dialog.
  * @param {BarItem} barItem The bar item being checked.
  * @param {String} paramKey The parameter key.
  * @return {Promise<CheckResult>} Resolves when complete.
+ */
+
+/**
+ * Callback for when a value has changed.
+ * @callback changedFunc
+ * @param {BarItem} item The bar item being checked.
+ * @param {String} value The new value
  */
 
 
@@ -80,20 +90,33 @@ export const allParameters = {
             urlWorking: {}
         }
     },
+    skypeNoCall: {
+        type: "checkbox",
+        label: "Open Skype App without starting a call",
+        onChange: (button, value) => {
+            button.kind = value ? "application" : "link";
+        }
+    },
     skypeId: {
-        label: "Skype ID of who to call"
+        label: "Skype ID of who to call",
+        isEnabled: (button) => !button.data.parameters.skypeNoCall,
+        validation: {
+            required: "Skype ID of who to call needs to be entered"
+        }
     },
     skypeAction: {
+        type: "select",
         label: "Type of call",
         initial: "call",
-        isEnabled: (button) => !!button.data.parameters.skypeId,
+        isEnabled: (button) => !!button.data.parameters.skypeId && !button.data.parameters.skypeNoCall,
         selectOptions: [
-            { value: "call", text: "Voice" },
-            { value: "call&video=true", text: "Video" },
-            { value: "chat", text: "Chat" }
+            { value: "?call", text: "Voice" },
+            { value: "?call&video=true", text: "Video" },
+            { value: "?chat", text: "Chat" }
         ]
     },
     defaultApp: {
+        type: "select",
         label: "App",
         initial: null,
         selectOptions: [
@@ -235,6 +258,10 @@ Object.values(allParameters).forEach(
         if (typeof(paramInfo.isEnabled) !== "function") {
             paramInfo.isEnabled = constantFunction(paramInfo.isEnabled === undefined ? true : paramInfo.isEnabled);
         }
+
+        if (!paramInfo.type) {
+            paramInfo.type = "text";
+        }
     });
 
 const origFieldPrefix = "_orig_";
@@ -267,7 +294,7 @@ export function prepareBarItem(button) {
                         label: paramKey
                     });
                 }
-                params[paramKey] = paramInfo.initial || "";
+                params[paramKey] = paramInfo.initial || button.configuration[`$${paramKey}`] || "";
             });
 
             paramFields.push(key);
@@ -319,8 +346,8 @@ export function applyParameters(button) {
     button.data.hasError = validate(button) ? undefined : true;
 }
 
-// Matches all `${name1}` or `$name2` in a string.
-const matchExpanders = /\$\{(?<name1>[^}]+)\}|\$(?<name2>\w+)/g;
+// Matches all `${name1}`, `${name1?v1:v2}` or `$name2` in a string.
+const matchExpanders = /\$\{(?<name1>[^}:]+)(?<ternary>\?(?<v1>[^}:]*):(?<v2>[^}:]*))?\}|\$(?<name2>\w+)/g;
 
 /**
  * Gets the parameter expanders in a string.
@@ -330,10 +357,22 @@ const matchExpanders = /\$\{(?<name1>[^}]+)\}|\$(?<name2>\w+)/g;
  */
 function getParameterNames(input) {
     const paramNames = [];
+    var matches = [];
+
+    // Get all matches upfront, otherwise the recursive call will reset the lastIndex of the regex.
     var match;
     while ((match = matchExpanders.exec(input))) {
-        paramNames.push(match.groups.name1 || match.groups.name2);
+        matches.push(match);
     }
+
+    matches.forEach(match => {
+        paramNames.push(match.groups.name1 || match.groups.name2);
+
+        if (match.groups.ternary) {
+            paramNames.push.apply(paramNames, getParameterNames(match.groups.v1));
+            paramNames.push.apply(paramNames, getParameterNames(match.groups.v2));
+        }
+    });
 
     return paramNames;
 }
@@ -345,9 +384,19 @@ function getParameterNames(input) {
  * @return {String} The input string, with the parameter expanders replaced with their value.
  */
 function replaceParameters(params, input) {
-    return input.replace(matchExpanders, (match, name1, name2) => {
+    return input.replace(matchExpanders, (match, name1, ternary, v1, v2, name2) => {
         var name = name1 || name2;
-        return params[name] || "";
+        const value = params[name] || "";
+
+        let togo;
+        if (ternary) {
+            togo = value ? replaceParameters(params, v1) : replaceParameters(params, v2);
+        } else {
+            togo = value;
+        }
+
+        return togo;
+
     });
 }
 

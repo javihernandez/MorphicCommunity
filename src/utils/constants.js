@@ -13,7 +13,8 @@ export const MESSAGES = {
     leavePageAlert: "Do you really want to leave? You have unsaved changes!",
     successfulRoleChange: "Member role changed successfully",
     successfulMemberDelete: "Member deleted successfully.",
-    successfulBarDelete: "Bar successfully deleted."
+    successfulBarDelete: "Bar successfully deleted.",
+    successfulMemberRename: "Member name updated."
 };
 
 export const colors = {
@@ -22,8 +23,7 @@ export const colors = {
     purple: "#662261",
     red: "#8c191b",
     green: "#46622d",
-    orange: "#a33e1f",
-    default_button: "#002f57"
+    orange: "#a33e1f"
 };
 
 
@@ -189,7 +189,7 @@ export const buttonCatalog = {
     news: {
         title: "News",
         editTitle: "News Site",
-        defaultIcon: "newspaper",
+        defaultIcon: "news$newspaper",
         more: {
             description: "Create a button to open a news web-site"
         }
@@ -275,9 +275,11 @@ Object.keys(allButtons).sort((a, b) => {
     }
 
     // Use the site's favicon if there's no local image.
+    var usingFavicon;
     if (!button.configuration.image_url && button.configuration.url) {
         var m = getHost.exec(button.configuration.url);
         if (m) {
+            usingFavicon = true;
             button.configuration.image_url = `https://icons.duckduckgo.com/ip2/${m[1]}.ico`;
         }
     }
@@ -301,7 +303,10 @@ Object.keys(allButtons).sort((a, b) => {
         delete button.configuration.groups;
     }
 
-    defaultIcons[buttonKey] = button.configuration.image_url;
+    if (!usingFavicon) {
+        // So the button edit dialog can show the default icon for this item.
+        defaultIcons[buttonKey] = button.configuration.image_url;
+    }
 });
 
 

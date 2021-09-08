@@ -6,15 +6,23 @@
                 searchResults: !!searchState
                }">
 
+    <h3 id="ButtonCatalogHeader">Button Catalog</h3>
+    <div id="CatalogDescription">
+      <span v-if="isLite">Click on a button name to configure and add to MorphicBar</span>
+      <span v-else>Click or Drag name (below) to add button to the bar</span>
+    </div>
+
     <!-- search -->
     <b-input-group id="search-group" class="catalogSearch" size="sm">
-      <b-form-input type="search" placeholder="Search buttons" v-model="searchText"/>
+      <b-form-input type="search" placeholder="Search buttons" v-model="searchText" aria-label="Search the button catalog"/>
       <b-input-group-append>
-        <b-button variant="outline-secondary">
+        <b-button variant="outline-secondary" aria-label="Search" @click="searchButtonClick">
           <b-icon-search/>
         </b-button>
       </b-input-group-append>
     </b-input-group>
+
+    <div ref="SearchResultSummary" class="screenReader" aria-live="polite" aria-atomic="true" >{{ resultSummary }}</div>
 
     <drop class="cut" mode="cut">
       <template v-slot:drag-image="">
@@ -22,6 +30,8 @@
       </template>
       <ul v-for="(catalog, isSearchResult) in [buttonCatalog, searchResult]"
           :key="isSearchResult"
+          aria-describedby="CatalogDescription"
+          aria-labelledby="ButtonCatalogHeader"
           class="buttonCatalogListing linkList list-unstyled"
           :class="{ searchResults: isSearchResult}">
 
@@ -39,9 +49,10 @@
                         searchResult: buttonGroup.isSearchResult
                     }">
 
-            <h3 v-if="buttonGroup.title">{{buttonGroup.title}}</h3>
+            <h4 v-if="buttonGroup.title">{{buttonGroup.title}}</h4>
 
-            <ul class="buttonCatalogEntries">
+            <ul class="buttonCatalogEntries"
+                :aria-label="buttonGroup.isSearchResult && 'Search results'">
               <template v-for="(button, buttonId) in buttonGroup.items">
                 <li v-if="!(button.data.isExpander && alwaysShowSecondaryItems)"
                     :key="button.data.buttonKey"
@@ -49,28 +60,24 @@
                     :class="{
                               noImage: !button.configuration.image_url && !button.data.isExpander,
                               secondaryItem: !button.is_primary,
-                              expander: button.data.isExpander,
+                              expander: button.data.isExpander
                           }"
                     :style="{order: button.searchResult && button.searchResult.order}"
-                    :title="button.configuration.description"
+                    :aria-details="button.configuration.description"
                     :ref="'catalog_' + buttonId"
-                    tabindex="-1"
-                      @keypress.enter="isLite || onItemSelected(button)"
                 >
                   <!-- Render each button as draggable -->
                   <drag :data="button" type="catalogButtonWithImage" :disabled="isLite">
                     <!-- Define looks when dragged -->
                     <template v-slot:drag-image>
-                      <PreviewItem :item="button" :noImage="false" xclass="noImage"/>
+                      <PreviewItem :item="button" disabled :noImage="false" />
                     </template>
 
-                    <!-- Define looks when not selected -->
-                    <b-button v-if="buttonId !== expandedCatalogButtonId"
-                              variant="link"
-                              @click="expandCatalogButton(button, buttonId, subkind)"
+                    <b-button variant="link"
+                              @click="onItemSelected(button, $event.altKey)"
                               :style="'color: ' + (button.configuration.color || colors.blue) + ';'"
                               class="buttonCatalogEntry nonExpandedCatalogEntry">
-                      <div class="imageWrapper" :class="{expanderIcon:button.data.isExpander}">
+                      <div class="imageWrapper" :class="{expanderIcon:button.data.isExpander}" aria-hidden="true">
                         <b-iconstack v-if="button.data.isExpander">
                           <b-icon stacked icon="circle-fill"/>
                           <b-icon stacked icon="caret-right-fill"
@@ -79,49 +86,11 @@
                         </b-iconstack>
 
                         <b-img v-else-if="button.configuration.image_url"
-                               :src="getIconUrl(button.configuration.image_url)" alt="Logo"/>
+                               :src="getIconUrl(button.configuration.image_url)" alt=""/>
                       </div>
                       <span v-html="getCatalogItemLabel(button, buttonGroup.searchWords)" />
                     </b-button>
 
-                    <!-- Define looks when selected (expanded) -->
-                    <div v-else class="active" @click="expandedCatalogButtonId = undefined"
-                    >
-                      <div style="width: 100%; display: inline-flex; align-items: center;">
-                        <b-img v-if="button.configuration.image_url" :src="getIconUrl(button.configuration.image_url)"
-                               style="width: 20px; height: 20px; max-width: 20px; max-height: 20px;"/>
-                        <b-img v-else :src="'/icons/bootstrap.svg'"
-                               style="width: 20px; height: 20px; max-width: 20px; max-height: 20px;"></b-img>
-                        <h3 style="margin-block-start: inherit; text-decoration-line: underline; margin-left: 0.5rem; margin-bottom: 0.05rem;">
-                          {{button.configuration.label}}</h3>
-                      </div>
-                      <div class="description">{{button.configuration.description || "A button that enables the functionality described above"}}
-                      </div>
-                      <div class="help">To add this button, press ENTER, RETURN, or drag button below onto the bar</div>
-                      <div class="buttons"
-                           @click="$event.stopPropagation()"
-                      >
-                        <drag :data="button" type="catalogButtonNoImage" :disabled="isLite">
-                          <PreviewItem :item="button"
-                                       :simplified="true" :noImage="true"
-                                       class="noImage"
-                                             @click="onItemSelected(button, true)"
-                          />
-                        </drag>
-
-                        <drag v-if="button.kind !== 'action'" :data="button" type="catalogButtonWithImage" :disabled="isLite">
-                          <template v-slot:drag-image>
-                            <PreviewItem :item="button" :noImage="false" class="noImage"
-                                               @click="onItemSelected(button, true)"
-                            />
-                          </template>
-                          <PreviewItem v-if="button.configuration.image_url"
-                                       :item="button" :simplified="true" class="withImage"
-                                             @click="onItemSelected(button)"
-                          />
-                        </drag>
-                      </div>
-                    </div>
                   </drag>
                 </li>
               </template>
@@ -137,6 +106,15 @@
 
 #ButtonCatalog {
   padding: 0.5rem;
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 0.1em;
+  }
+  #CatalogDescription {
+    font-size: 15px;
+    margin-bottom: 0.5em;
+  }
 
   .catalogSearch {
   }
@@ -237,55 +215,18 @@
               display: none;
             }
           }
-
-          .active {
-            background-color: #e0f1d7;
-            border: solid 1px #008145;
-            border-radius: 5px;
-            padding: 10px;
-
-            .buttons {
-              display: flex;
-              justify-content: space-around;
-              align-items: flex-end;
-            }
-
-            h3 {
-              margin-top: 15px;
-              font-size: 20px;
-              margin-bottom: 0px;
-            }
-
-            div.description {
-              font-size: 14px;
-            }
-
-            div.help {
-              font-size: 14px;
-              font-weight: bold;
-              margin-top: 15px;
-              line-height: 18px;
-            }
-          }
         }
       }
     }
 
-    .nonExpandedCatalogEntry {
+    .buttonCatalogEntry {
       width: 100%;
       display: block;
 
       img, svg {
         max-width: 16px;
         width: 16px;
-        max-width: 16px;
-        width: 16px;
         display: inline-block;
-      }
-
-      .buttonCatalogEntry {
-        width: 100%;
-        display: block;
       }
     }
   }
@@ -318,7 +259,6 @@ export default {
     data() {
         return {
             colors: colors,
-            expandedCatalogButtonId: undefined,
 
             /**
              * Catalog search text
@@ -331,6 +271,9 @@ export default {
 
             /** @type {ButtonCatalog} */
             searchResult: false,
+            searchResultCount: undefined,
+            resultSummary: null,
+
             /**
              * The display of secondary items in each catalog group.
              * @type {Object<String,Boolean>}
@@ -352,20 +295,6 @@ export default {
                 item: item,
                 noImage: !!noImage
             });
-        },
-        expandCatalogButton: function (button, buttonId, subkind) {
-            if (!button) {
-                this.expandedCatalogButtonId = undefined;
-                this.expandedCatalogButton = undefined;
-            } else if (button.data.isExpander) {
-                this.showSecondaryItems(subkind);
-                this.expandedCatalogButtonId = undefined;
-                this.expandedCatalogButton = undefined;
-            } else {
-                this.expandedCatalogButtonId = buttonId;
-                this.expandedCatalogButton = button;
-                this.$refs["catalog_" + buttonId][0].focus();
-            }
         },
 
         /**
@@ -423,9 +352,18 @@ export default {
 
                 this.searchResult = groups;
                 this.searchState = results.length > 0 ? "gotResults" : "noResults";
+                this.searchResultCount = results.length;
             } else {
                 this.searchState = null;
                 this.searchResult = null;
+                this.searchResultCount = undefined;
+            }
+        },
+        searchButtonClick() {
+            if (this.searchResultCount === undefined) {
+                this.resultSummary = "";
+            } else {
+                this.resultSummary = this.$tc("ButtonCatalog.search-result-summary", this.searchResultCount);
             }
         },
 
@@ -445,7 +383,6 @@ export default {
     },
     watch: {
         searchText: function () {
-            this.expandCatalogButton(null);
             this.searchCatalog();
         }
     }

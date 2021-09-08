@@ -1,25 +1,34 @@
 <template>
   <div id="SidePanel">
-    <h2 class="accountName">{{ community.name }}</h2>
-    <div class="accountInfo">
-      <b-link :to="{ name: 'MyCommunity'}" ><b-icon icon="gear-fill" />{{ $t('SidePanel.account-settings_link') }}</b-link>
+    <div class="panelSection">
+      <div class="accountName">{{ community.name }}</div>
+      <!-- temporarily removed
+      <div class="accountInfo">
+        <b-link :to="{ name: 'MyCommunity'}" ><b-icon icon="gear-fill" />{{ $t('SidePanel.account-settings_link') }}</b-link>
+      </div>
+      -->
+
+      <!-- member's own bars -->
+      <div class="panelDetails" >
+        <div class="header">
+          <h2 id="OwnBarsHeading" v-t="'SidePanel.own-bars_heading'" />
+        </div>
+        <div>
+          <BarsList ref="BarsList"
+                    :button-attrs="buttonAttrs"
+                    id="MyMorphicBars"
+                    :bars="bars"
+                    :activeBarId="activeBarId"
+                    :member="currentMember"
+                    @newbar="newBar(currentMember)"
+          />
+        </div>
+      </div>
     </div>
 
-
-    <!-- member's own bars -->
-    <h3 v-t="'SidePanel.own-bars_heading'" />
-    <BarsList ref="BarsList"
-              :button-attrs="buttonAttrs"
-              id="MyMorphicBars"
-              :bars="bars"
-              :activeBarId="activeBarId"
-              :member="currentMember"
-              @newbar="newBar(currentMember)"
-    />
-
     <!-- managed members -->
-    <template v-if="isManager">
-      <h3 v-t="'SidePanel.other-bars_heading'" />
+    <div v-if="isManager" class="panelSection">
+      <h2 id="OtherBarsHeading" v-t="'SidePanel.other-bars_heading'" />
       <MembersList ref="MembersList"
                    id="MembersList"
                    :button-attrs="buttonAttrs"
@@ -29,27 +38,54 @@
                    :bars="bars"
                    :activeMemberId="activeMemberId"
                    :expandedMembers="expandedMembers"
-                   @expandClick="expandClick"
                    @newbar="newBar($event)"
-                   @addMember="$event.promise = addMember($event.name)"
+                   @addMember="showModalDialog('NewMemberDialog')"
+                   @memberDetails="showMemberDetails($event)"
+                   aria-labelledby="OtherBarsHeading"
       />
-    </template>
+    </div>
 
     <!-- hiding group bars for now -->
-    <template v-if="false">
+    <div v-if="false" class="panelSection">
       <!-- group bars -->
-      <h3 v-t="'SidePanel.group-bars_heading'" />
+      <h2 v-t="'SidePanel.group-bars_heading'" />
       <BarsList ref="BarsList"
                 :bars="bars"
                 :activeBarId="activeBarId"
                 @newBar="newBar()"
       />
-    </template>
+    </div>
+
+    <MemberDetailsDialog v-if="memberDetails" id="SidePanelMemberDetailsDialog"
+                         :member-details="memberDetails"
+                         :members="members"
+                         :active-member-id="activeMemberId"
+                         @close="reloadAll()"
+    />
+
+    <NewMemberDialog id="NewMemberDialog"
+                     :bars="bars"
+                     :members="members"
+                     :community="community"
+                     @ok="$event.promise = addMember($event.data.name)"
+    />
+
+    <b-modal  id="NewMemberConfirm"
+              ok-only
+    >
+      <template #modal-title>Person added: {{ newestMember && newestMember.displayName }}</template>
+      <p id="NewMemberNextSteps">Next steps:</p>
+      <ol aria-labelledby="NewMemberNextSteps">
+        <li>Add buttons to the person's bar.</li>
+        <li>Save the bar (when it's done).</li>
+        <li>Invite the person.</li>
+      </ol>
+    </b-modal>
   </div>
 </template>
 
 <style lang="scss">
-  @import "~@/styles/_variables.scss";
+  @import "~@/styles/_bootstrap-util.scss";
 
   #SidePanel {
     font-size: 1rem;
@@ -61,88 +97,59 @@
       margin: 1em 0 0.5em 0;
     }
 
-    h2 {
+    .accountName {
       margin-top: 0;
       font-size: 1.5em;
+      font-weight: bold;
     }
 
-    h3 {
+    .accountInfo {
+        margin-bottom: 1em;
+    }
+
+    h2 {
       margin-top: 3em;
     }
 
-    h4, h5 {
+    h2, h3, h4 {
       margin: 4px 2px;
     }
 
   }
 
-  $indent: 0.3em;
+  $indent: 0.1em;
 
   // non-mobile
   body:not(.isLite) #SidePanel {
-    //noinspection CssUnknownTarget
-    background: #a5d58a url(/img/bg-green.png) repeat-x bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+
+    & > *:last-child {
+      flex-grow: 1;
+    }
+
     min-height: 600px;
-    height: 100%;
+
+    padding-left: 1px;
 
     .btn-link, a {
-      color: black;
-    }
-
-    button:not(.btn-link) {
-      margin: 1px;
-      min-width: 50%;
-    }
-
-    a {
+      color: inherit;
       text-decoration: underline;
-
-      &.barLink {
-        padding: 0.1em 0.4em;
-        font-size: 1em;
-        color: black;
-        display: block;
-      }
     }
 
-    // Indentation
-    padding-left: $indent;
+    .panelSection {
 
-    .accountInfo {
-      padding-left: $indent * 2;
-    }
-
-    .panelBox {
-      padding: 0.3em 0 0.3em $indent * 2;
-
-      button {
-        margin-left: $indent * 2;
-      }
-    }
-
-    // Make the list items full width of the panel
-    li {
-      margin-left: $indent * -3;
-      padding-left: $indent * 3;
-    }
-
-    .expander .text-link {
-      color: $morphic-green-color;
+      background-color: $morphic-green-color;
+      color: white;
+      padding: 0.5em;
+      margin-bottom: 0.5em;
     }
 
   }
 
   #SidePanel {
-
-    .memberName {
-      display: flex;
-      & > :first-child {
-        flex-grow: 1;
-      }
-      .expander {
-        margin-right: 0.5em;
-      }
-    }
 
     .buttonRow {
       button:first-child {
@@ -154,59 +161,156 @@
       }
     }
 
-    ul {
-      margin: 0.5em 0;
+    $panelDetailsCollapsed-color: #BFDFD0;
+    $panelDetails-color: white;
 
-      li {
+    * {
+      transition-duration: 0.35s;
+      transition-property: background-color, color, transform, opacity, height;
+    }
+
+    $detailsPadding: 0.5em;
+
+    .panelSection {
+      border-radius: 8px;
+
+      .panelDetails {
+
+        position: relative;
+
+        margin-top: 0.5em;
+        padding: $detailsPadding 0;
+        border-radius: 8px;
+
+        font-size: 0.95em;
+
+        & > :not(.unpadded) {
+          padding: 0 $detailsPadding;
+        }
+
+        background-color: $panelDetails-color;
+        &.expandable:not(.expanded) {
+          background-color: $panelDetailsCollapsed-color;
+        }
+
+        color: black;
+        .btn-link, a {
+          color: $morphic-blue-color;
+          text-decoration: underline;
+        }
+
+
+        .btn-none {
+          padding: 0;
+        }
+        .btn:not(.btn-none) {
+          margin-top: 0.5em;
+        }
+
         &.active {
-          background-color: $primary-color;
+          background-color: lighten($panelDetails-color, 7%);
+        }
 
-          .barLink {
-            color: white !important;
+        &.expanded {
+          .header .expander {
+            // Turn the icon around
+            svg {
+              transform: rotate(180deg) scale(1.2);
+            }
           }
         }
 
-        // Custom bullet to reduce the space after the bullet.
-        a::before {
-          content: "\2022";
-          color: black;
-          text-decoration: none !important;
-          display: inline-block;
-          font-size: 1em;
-          transform: scale(1.3);
-          margin-right: $indent * 1.5;
+        .whenExpanded {
+          transition-property: opacity;
+          opacity: 0;
+          filter: none;
         }
-      }
-    }
+        &.expanded .whenExpanded {
+          opacity: 1;
+        }
 
-    $panelBox-color: #85C399;
-    .panelBox {
-      overflow: hidden;
-      .expandable {
-        color: black;
-      }
-      .memberName {
-        margin: 0;
-        padding: 0.2em 0;
-      }
+        &:not(.expanded):not(.anim) {
+          .whenExpanded {
+            // Move out the way so it can't get clicked
+            position: absolute !important;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            clip: rect(1px, 1px, 1px, 1px);
+          }
+        }
 
-      font-size: 0.95em;
-      border-radius: 8px;
-      margin-top: 0.5em;
-      margin-right: $indent;
-      background-color: $panelBox-color;
+        .header {
+          display: flex;
+          flex-basis: 0;
+          cursor: pointer;
 
-      &:last-of-type {
-        margin-bottom: 0.5em;
-        background-color: red !important;
-      }
+          & > :first-child {
+            flex-grow: 1;
+          }
 
-      &.active {
-        background-color: lighten($panelBox-color, 7%);
-      }
+          .expander {
+          }
 
-      & > .expandable {
-        font-weight: bold;
+          .memberName {
+            margin: 0;
+            padding: 0.3em 0.1em;
+          }
+
+          .expander {
+            margin-left: 0.6em;
+            order: 5;
+
+            // make the icon round
+            & > svg {
+              clip-path: circle(50% at center);
+              transform: scale(1.2);
+            }
+          }
+        }
+
+        overflow: hidden;
+
+        .barsList {
+          background-color: inherit;
+          margin: 0.3em (-$detailsPadding);
+
+          &.border-top {
+            margin-top: 0.5em;
+            padding-top: 3px;
+            border-top-color: black !important;
+          }
+
+          & > :not(ul) {
+            padding: 0 $detailsPadding;
+          }
+
+          ul {
+            margin-bottom: 0.2em;
+            font-size: 1.1em;
+
+            li {
+              padding: 0.2em $detailsPadding;
+              margin-bottom: 0.1em;
+
+              line-height: 1.3em;
+
+              &:hover {
+                background-color: $list-group-hover-bg;
+              }
+              &.active {
+                background-color: $primary-color;
+
+                .barLink {
+                  color: white !important;
+                }
+              }
+              a {
+                display: block;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -234,25 +338,27 @@
       display: block;
     }
 
-    .expander {
-      right: 2em;
-    }
     .expander-background {
       color: $link-color-darker;
     }
 
-    .panelBox {
+    .panelDetails {
       padding: 0.5em;
       margin-right: 0;;
       &:nth-child(even) {
-        background-color: #e0f1d7;
+        background-color: #e0f1d7 !important;
       }
       &:nth-child(odd) {
-        background-color: #bfdfd0;
+        background-color: #bfdfd0 !important;
+      }
+
+      .header .btn {
+        transform: scale(1.5);
+        margin-left: 2em;
       }
     }
 
-    button:not(.btn-link) {
+    button:not(.btn-link, .btn-none) {
       padding-left: 1.5em;
       padding-right: 1.5em;
     }
@@ -271,14 +377,19 @@ import BarsList from "@/components/side-panel/BarsList";
 import * as Bar from "@/utils/bar";
 import * as communityService from "@/services/communityService";
 import { membersMixin } from "@/mixins/members.js";
+import MemberDetailsDialog from "@/components/dialogs/MemberDetailsDialog";
+import { dialogMixin } from "@/mixins/dialog";
+import NewMemberDialog from "@/components/dialogs/NewMemberDialog";
 
 export default {
     name: "SidePanel",
     components: {
+        NewMemberDialog,
+        MemberDetailsDialog,
         MembersList,
         BarsList
     },
-    mixins: [membersMixin],
+    mixins: [membersMixin, dialogMixin],
     props: {
         /** @type {Community} */
         community: Object,
@@ -293,14 +404,13 @@ export default {
         activeMemberId: String
     },
     mounted() {
-        this.$el.querySelectorAll("button.collapseAll").forEach(b => {
-            b.disabled = true;
-        });
     },
     data() {
         return {
-            /** @type {GUID} The member that was just added */
-            newestMemberId: null
+            /** @type {CommunityMember} The member that was just added */
+            newestMember: null,
+            /** @type {CommunityMember} The member to show the details' dialog for. */
+            memberDetails: {}
         };
     },
     computed: {
@@ -324,7 +434,7 @@ export default {
             return this.currentMember.role === "manager";
         },
         expandedMembers() {
-            return [this.newestMemberId];
+            return this.makeArray(this.newestMember && this.newestMember.id);
         },
         buttonAttrs() {
             return this.isLite
@@ -341,35 +451,6 @@ export default {
     methods: {
         reloadAll() {
             this.$emit("reload");
-        },
-        /**
-         * Toggles a collapsable element (or all collapsable child elements).
-         * @param {Element|String} el The element, or the expand-group to toggle all.
-         * @param {Boolean?} toggle true/false to expand/collapse, omit to toggle.
-         */
-        expandClick(el, toggle) {
-            const all = typeof(el) === "string";
-            const expandGroup = all ? el : el.getAttribute("expand-group");
-
-            const e = all
-                ? this.$el.querySelectorAll(`.expandable[expand-group=${expandGroup}]`)
-                : [el];
-
-            e.forEach(e => e.classList.toggle("expanded", toggle));
-
-            // Disable the expand/collapse all buttons, if required
-            if (expandGroup) {
-                const expandAllButton = this.$el.querySelector(`button[expand-group=${expandGroup}].expandAll`);
-                const collapseAllButton = this.$el.querySelector(`button[expand-group=${expandGroup}].collapseAll`);
-
-                if (expandAllButton || collapseAllButton) {
-                    const someExpanded = this.$el.querySelectorAll(`.expandable.expanded[expand-group=${expandGroup}]`).length;
-                    const someCollapsed = this.$el.querySelectorAll(`.expandable:not(.expanded)[expand-group=${expandGroup}]`).length;
-
-                    expandAllButton.disabled = !someCollapsed;
-                    collapseAllButton.disabled = !someExpanded;
-                }
-            }
         },
 
         /**
@@ -396,13 +477,10 @@ export default {
          * @return {Promise<BarDetails>} Resolves when the new bar has been created.
          */
         async createBar(member, name) {
-            let barName = name || (member ? member.fullName : undefined);
-            if (barName === "(no name)") {
-                barName = "My MorphicBar";
-            }
+            const barName = name || (member.isCurrent ? "My MorphicBar" : `Bar for ${member.fullName}`);
 
             const existingNames = this.bars.filter(b => member.bar_ids.includes(b.id)).map(b => b.name);
-            let suffixNumber = 1;
+            let suffixNumber = 2;
             let newBarName = barName;
             while (existingNames.includes(newBarName)) {
                 newBarName = `${barName} (${suffixNumber})`;
@@ -437,16 +515,27 @@ export default {
             const member = addResult.data.member;
 
             // Create a new bar for the member
-            const bar = await this.createBar(member, `Bar for ${member.fullName}`);
+            const bar = await this.createBar(member);
 
-            this.newestMemberId = member.id;
+            this.newestMember = member;
             this.reloadAll();
-            this.showMessage("New member added");
 
-            const route = Bar.getUserBarEditRoute(bar.id, member);
-            this.$router.push(route);
+            this.showModalDialog("NewMemberConfirm").then(() => {
+                this.showMessage("New member added");
+                const route = Bar.getUserBarEditRoute(bar.id, member);
+                this.$router.push(route);
+            });
+
 
             return member;
+        },
+        /**
+         * Shows the member details dialog.
+         * @param {CommunityMember }member The member.
+         */
+        showMemberDetails(member) {
+            this.memberDetails = member;
+            this.$nextTick(() => this.$bvModal.show("SidePanelMemberDetailsDialog"));
         }
     }
 };
