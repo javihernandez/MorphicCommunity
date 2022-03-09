@@ -294,56 +294,56 @@
             "<b>¿Creando una Barra de Morphic para ti?</b>",
             "En mi Barra de Morphic, hacer clic en <i>@:(BarsList.new-bar_button)</i>.",
             "",
-            "<b>Making a bar for someone else?</b>",
-            "Click the <i>@:(MembersList.add-member_button)</i> button. Then click <i>@:(MembersList.add-bar_button)</i> for that person."
+            "<b>¿Creando una Barra de Morphic para otra persona?</b>",
+            "Haga clic en el botón <i>@:(MembersList.add-member_button)</i>. A continuación, haga clic en <i>@:(MembersList.add-bar_button)</i> para esa persona."
           ]
         },
         {
           "text": [
-            "<b>Step 2: View & edit the bar</b>",
-            "The MorphicBar you selected appears in the middle section of the screen.",
+            "<b>Paso 2: Ver y editar la Barra de Morphic</b>",
+            "La Barra de Morphic que ha seleccionado aparece en la sección central de la pantalla.",
             "",
-            "It looks the way it might look on a computer."
+            "Así se vería aproximadamente en un ordenador."
           ]
         },
         {
           "text": [
-            "<b>Step 3: Adding buttons</b>",
-            "The right column lists different buttons you can add.",
+            "<b>Paso 3: Añadir botones</b>",
+            "La columna derecha muestra los botones que puede añadir.",
             "",
-            "Add buttons by clicking or dragging."
+            "Añadir botones haciendo clic o arrastrando."
           ]
         },
         {
           "text": [
-            "<b>Step 4: Making changes to a button</b>",
-            "Do you want to make changes to a button?",
+            "<b>Paso 4: Personalizar un botón</b>",
+            "¿Quiere hacer cambios a un botón?",
             "",
-            "Click a button on the bar and make your changes."
+            "Haga clic en un botón de la Barra de Morphic y personalícelo."
           ]
         },
         {
           "text": [
-            "<b>Step 5: Pushing the bar to the user</b>",
-            "When you like how the bar looks, push it to the user and it will appear on the user’s computer.",
+            "<b>Paso 5: Enviar la Barra de Morphic</b>",
+            "Cuando esté conforme con el aspecto de la Barra de Morphic, envíesela a la persona y aparecerá en su ordenador.",
             "",
-            "Click the <i>@:(EditorDetails.save-bar_button)</i> button"
+            "Haga clic en el botón <i>@:(EditorDetails.save-bar_button)</i>"
           ]
         },
         {
           "text": [
-            "<b>Done!</b>",
-            "When you are done, select another bar or just close the tool.",
+            "<b>¡Hecho!</b>",
+            "Cuando haya terminado, seleccione otra Barra de Morphic o simplemente cierre la herramienta.",
             "",
-            "You can come back and make changes at any time."
+            "Puede volver y hacer cambios en cualquier momento."
           ]
         }
       ],
-      "title": "Tutorial: Getting started with Morphic Plus"
+      "title": "Tutorial: Primeros pasos con Morphic Plus"
     },
-    "next_aria-label": "Next Step",
-    "previous_aria-label": "Previous step",
-    "step_arial-label": "Step {step}"
+    "next_aria-label": "Siguiente",
+    "previous_aria-label": "Anterior",
+    "step_arial-label": "Paso {step}"
   },
   "UserLogin": {
     "create-account_link": "Todavía no tengo una cuenta morfológica",
