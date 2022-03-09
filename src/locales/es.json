@@ -292,7 +292,7 @@
         {
           "text": [
             "<b>¿Creando una Barra de Morphic para ti?</b>",
-            "Under My MorphicBar, click <i>@:(BarsList.new-bar_button)</i>.",
+            "En mi Barra de Morphic, hacer clic en <i>@:(BarsList.new-bar_button)</i>.",
             "",
             "<b>Making a bar for someone else?</b>",
             "Click the <i>@:(MembersList.add-member_button)</i> button. Then click <i>@:(MembersList.add-bar_button)</i> for that person."
