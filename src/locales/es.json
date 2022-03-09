@@ -7,9 +7,9 @@
     "search-result-summary": "No items found | 1 item found | {n} items found"
   },
   "ConfirmEmail": {
-    "dialog_title": "Confirm your email",
-    "loading": "Loading...",
-    "ok_button": "Resend email"
+    "dialog_title": "Confirme su correo electrónico",
+    "loading": "Cargando...",
+    "ok_button": "Reenviar correo electrónico"
   },
   "CopyBarDialog": {
     "confirm-dialog": {
@@ -25,19 +25,19 @@
     "title": "Copiar barra"
   },
   "EditorDetails": {
-    "copy-bar_button": "Copy bar from...",
-    "revert-bar_button": "Revert to user's current bar",
-    "save-bar_button": "Save bar",
-    "try-it_button": "Try it"
+    "copy-bar_button": "Copiar Barra desde...",
+    "revert-bar_button": "Revertir a la barra actual del usuario",
+    "save-bar_button": "Guardar Barra",
+    "try-it_button": "Probar"
   },
   "General": {
     "no_button": "Nu",
     "yes_button": "Sí",
-    "ok_button": "OK",
+    "ok_button": "Aceptar",
     "cancel_button": "Cancelar",
     "member-state": {
       "active": "Activo",
-      "invited": "Not yet accepted",
+      "invited": "No aceptado todavía",
       "uninvited": "No invitado"
     }
   },
@@ -67,7 +67,7 @@
   "BarItemLink": {},
   "BarPreview": {},
   "BarsList": {
-    "bars_aria-label": "Bars for {name}",
+    "bars_aria-label": "Barras de Morphic para {name}",
     "default-bar": "Barra por defecto",
     "new-bar_button": "Añadir una nueva barra",
     "new-bar_button_aria-label": "Add a new bar for {name}"
