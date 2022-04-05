@@ -4,7 +4,7 @@
     "rename_button": "Editar nombre de barra"
   },
   "ButtonCatalog": {
-    "search-result-summary": "No items found | 1 item found | {n} items found"
+    "search-result-summary": "No se encontraron artículos | 1 elemento encontrado | {n} elementos encontrados"
   },
   "ConfirmEmail": {
     "dialog_title": "Confirme su correo electrónico",
@@ -19,19 +19,19 @@
       "title": "Confirmar copia de barra",
       "yes_button": "@:(General.yes_button)"
     },
-    "intro": "Puede copiar cualquiera de las MorphicBars abajo en el MorphicBar que está editando. (Sustituyendo TODOS los contenidos actuales de la Barra Morfológica que estás editando)",
+    "intro": "Puede copiar cualquiera de las Barras de Morphic disponibles en la Barra de Morphic que está editando. (Sustituyendo TODOS los contenidos actuales de la Barra de Morphic que estás editando)",
     "no-bars": "No hay otras barras de las que copiar elementos.",
     "select-instruction": "Seleccione una barra desde la que copiar:",
-    "title": "Copiar barra"
+    "title": "Copiar Barra"
   },
   "EditorDetails": {
     "copy-bar_button": "Copiar Barra desde...",
-    "revert-bar_button": "Revertir a la barra actual del usuario",
+    "revert-bar_button": "Revertir a la Barra actualmente en uso",
     "save-bar_button": "Guardar Barra",
     "try-it_button": "Probar"
   },
   "General": {
-    "no_button": "Nu",
+    "no_button": "No",
     "yes_button": "Sí",
     "ok_button": "Aceptar",
     "cancel_button": "Cancelar",
@@ -44,22 +44,22 @@
   "Errors": {
     "generic-server-error": "Error del servidor: {message}",
     "generic-title": "Incapaz de {action}",
-    "generic-action": "realizar la última acción",
-    "invalid_credentials": "Esa dirección de correo electrónico o contraseña no ha sido reconocida.",
+    "generic-action": "rehacer la última acción",
+    "invalid_credentials": "No hemos reconocido esta dirección de correo electrónico o contraseña.",
     "missing_required": "Falta un campo obligatorio.",
-    "existing_email": "Ya hay una cuenta asociada con esa dirección de correo electrónico.",
-    "existing_username": "Ya existe una cuenta que utiliza ese nombre de usuario.",
+    "existing_email": "Ya existe una cuenta asociada con esa dirección de correo electrónico.",
+    "existing_username": "Ya existe una cuenta con ese nombre de usuario.",
     "limit_reached": "Se ha alcanzado el número máximo de miembros para tu suscripción.",
     "cannot_demote_self": "No puedes degradarte a ti mismo.",
-    "cannot_delete_self": "No puedes borrarte de la comunidad.",
+    "cannot_delete_self": "No puedes borrarte a ti mismo de la comunidad.",
     "http": {
-      "404": "No se puede acceder al servidor. Inténtalo de nuevo más tarde.",
-      "500": "Hay un problema con el servidor. Inténtalo de nuevo más tarde."
+      "404": "No se puede acceder al servidor. Inténtelo de nuevo más tarde.",
+      "500": "Hay un problema con el servidor. Inténtelo de nuevo más tarde."
     },
     "validation": {
-      "app-missing": "La solicitud de apertura no ha sido elegida.",
+      "app-missing": "No se ha seleccionado la aplicación a abrir.",
       "field-missing": "Falta un campo obligatorio: {name}.",
-      "link-missing": "El sitio para abrir no ha sido elegido."
+      "link-missing": "No se ha elegido la página web a abrir."
     }
   },
   "App": {},
@@ -68,42 +68,42 @@
   "BarPreview": {},
   "BarsList": {
     "bars_aria-label": "Barras de Morphic para {name}",
-    "default-bar": "Barra por defecto",
-    "new-bar_button": "Añadir una nueva barra",
+    "default-bar": "Barra de Morphic por defecto",
+    "new-bar_button": "Añadir una nueva Barra de Morphic",
     "new-bar_button_aria-label": "Añadir una nueva Barra de Morphic para {name}"
   },
   "BillingDetails": {},
   "BlockLoginRegister": {},
   "Invite": {
     "cancel_button": "Rechazar invitación",
-    "confirm-decline-no_button": "Nu",
-    "confirm-decline_message": "¿De verdad quiere rechazar su invitación para unirse a Morphic?",
+    "confirm-decline-no_button": "No",
+    "confirm-decline_message": "¿Está seguro de que quiere rechazar su invitación para unirse a Morphic?",
     "confirm-decline-yes_button": "Sí, rechazar",
-    "confirm-decline_title": "Decline Morphic Invitation",
+    "confirm-decline_title": "Rechazar la invitación a Morphic",
     "dialog-sign-in_title": "Inicie sesión en Morphic para aceptar",
     "dialog-register_title": "Regístrese en Morphic para aceptar",
     "home-page_button": "Ir a la página de inicio de Morphic",
     "info-learn-more_link": "Saber más sobre Morphic",
-    "info-p1": "The person or organization who invited you wants to create and manage MorphicBars for you.",
-    "info-p2": "If you accept, they will be able to make and update MorphicBars for your computer. They cannot see or change other bars or things on your computer.",
+    "info-p1": "La persona u organización que le ha invitado quiere crear y administrar Barras de Morphic en su nombre.",
+    "info-p2": "Si acepta, la persona u organización que le ha invitado a Morphic podrán crear y editar Barras de Morphic para su computadora. No podrán ver o cambiar otras Barras de Morphic o ajustes de su equipo.",
     "info_heading": "Aceptar la invitación a Morphic &amp; Barra de Morphic",
     "loading": "Cargando",
-    "message-accepted": "You have accepted your Morphic invitation.",
-    "message-declined": "You have declined your Morphic invitation.",
-    "message-invalid": "Your invitation has expired or this link is valid. Please ask for a new invitation (from the person who invited you).",
+    "message-accepted": "Ha aceptado esta invitación de Morphic.",
+    "message-declined": "Ha rechazado la invitación a Morphic.",
+    "message-invalid": "Su invitación ha caducado o este enlace ya no es válido. Por favor, solicite una nueva invitación (de la persona que le invitó).",
     "message_title": "Invitación a Morphic",
     "ok-sign-in_button": "Aceptar invitación",
     "ok-register_button": "Aceptar y crear cuenta",
     "register-email_description": "Puede cambiar esto si desea utilizar una dirección de correo electrónico diferente",
-    "register-form-lead": "Para aceptar su invitación a Morphic y la Barra de Morphic, necesita crear una cuenta de Morphic pulsando el enlace debajo (a menos que ya tenga una cuenta de Morphic).",
-    "sign-in-form-lead": "Para aceptar su invitación a Morphic y la Barra de Morphic, necesita iniciar sesión en su cuenta de Morphic (o crear una cuenta de Morphic si no tiene una).",
+    "register-form-lead": "Para aceptar su invitación a Morphic y comenzar a utilizar la Barra de Morphic, necesita crear una cuenta de Morphic pulsando el enlace debajo (a menos que ya tenga una cuenta de Morphic).",
+    "sign-in-form-lead": "Para aceptar su invitación a Morphic y comenzar a utilizar la Barra de Morphic, necesita iniciar sesión en su cuenta de Morphic (o crear una cuenta de Morphic si no tiene una).",
     "sign-in-register_link": "Registrarse en Morphic con un correo electrónico diferente",
     "sign-in_button": "Iniciar sesión"
   },
   "MemberDetails": {
-    "bar-unused": "Esta barra no tiene miembros que la utilicen.",
+    "bar-unused": "Esta Barra de Morphic no está siendo utilizada por ningún miembro.",
     "delete-member_button": "Eliminar miembro",
-    "re-invite_button": "Enviar una invitación",
+    "re-invite_button": "Enviar nueva invitación",
     "invite_button": "Enviar una invitación"
   },
   "NewMember": {
@@ -118,13 +118,13 @@
       "Añadir persona (está usted aquí)",
       "Crear una Barra de Morphic",
       "Guardar la Barra de Morphic",
-      "Invitar persona (la invitación se enviará por correo electrónico)"
+      "Invitar a la persona (la invitación se enviará por correo electrónico)"
     ],
     "member-plan-limit": "Puedes añadir hasta {limit} personas con tu suscripción Morphic Plus {plan}.",
-    "member-steps": "La persona a la que has invitado tendrá que...",
+    "member-steps": "La persona a la que ha invitado tendrá que...",
     "member-steps_info": "Es posible que deseas ayudar en persona o utilizando herramientas remotas.",
     "member-steps_list": [
-      "Haz click en el enlace en el correo de invitación",
+      "Haz clic en el enlace en el correo de invitación",
       "Crear una cuenta y aceptar invitación",
       "Descargar e instalar Morphic en su equipo",
       "Iniciar sesión en la aplicación de Morphic"
