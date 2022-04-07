@@ -43,14 +43,14 @@
   },
   "Errors": {
     "generic-server-error": "Error del servidor: {message}",
-    "generic-title": "Incapaz de {action}",
+    "generic-title": "No se puede {action}",
     "generic-action": "rehacer la última acción",
     "invalid_credentials": "No hemos reconocido esta dirección de correo electrónico o contraseña.",
     "missing_required": "Falta un campo obligatorio.",
     "existing_email": "Ya existe una cuenta asociada con esa dirección de correo electrónico.",
     "existing_username": "Ya existe una cuenta con ese nombre de usuario.",
-    "limit_reached": "Se ha alcanzado el número máximo de miembros para tu suscripción.",
-    "cannot_demote_self": "No puedes degradarte a ti mismo.",
+    "limit_reached": "Se ha alcanzado el número máximo de invitados para su suscripción.",
+    "cannot_demote_self": "No puedes destituirte a ti mismo.",
     "cannot_delete_self": "No puedes borrarte a ti mismo de la comunidad.",
     "http": {
       "404": "No se puede acceder al servidor. Inténtelo de nuevo más tarde.",
@@ -107,7 +107,7 @@
     "invite_button": "Enviar una invitación"
   },
   "NewMember": {
-    "title": "Añadir una persona"
+    "title": "Añadir persona"
   },
   "NewMemberDialog": {
     "add_button": "Añadir Persona",
@@ -189,11 +189,11 @@
   "InviteMemberDialog": {
     "cancel_button": "@:(General.cancel_button)",
     "email-copy": "Morphic también le enviará una copia del correo electrónico de invitación que incluirá instrucciones y vídeos de ayuda.",
-    "email_label": "Correo electrónico del invitado",
+    "email_label": "Correo electrónico de la persona invitada",
     "form-lead": "Morphic le recomienda que se ponga en contacto con el invitado con antelación, para que sepa que le llegará un correo de invitación (y que no lo borre).",
     "from-email_aria-label": "Desde el correo electrónico",
     "from-name_aria-label": "Nombre del remitente",
-    "from_heading": "Desde:",
+    "from_heading": "De:",
     "invite-member_title": "Invitar a {name}",
     "invite_button": "Invitar",
     "phone_description": "Número de teléfono al que puede llamar la persona invitada para recibir ayuda sobre la instalación y configuración de Morphic",
@@ -209,7 +209,7 @@
     ]
   },
   "MembersList": {
-    "add-bar_button": "Añadir una nueva barra",
+    "add-bar_button": "Añadir una nueva Barra de Morphic",
     "add-member_button": "Añadir persona",
     "collapse-all": "Colapsar todo",
     "expand-all": "Expandir todo",
@@ -236,7 +236,7 @@
     "no-subscription-message": "Para crear Barras de Morphic personalizadas necesita tener una suscripción a Morphic Plus"
   },
   "PlanPicker": {
-    "12-month-payment": "(pagado anualmente)",
+    "12-month-payment": "(pago anual)",
     "6-month-payment": "(pago semestral)",
     "contact_link": "Contáctenos para más información",
     "current-plan-marker": "Su plan actual",
@@ -244,7 +244,7 @@
     "future-upgrade-hint": "¿No está seguro de cuántos miembros invitará? Puede actualizar su suscripción cuando lo necesite.",
     "payment_button": "Continuar con el pago",
     "plan-limit": "ninguno | Gestionar 1 miembro | Gestionar hasta {n} miembros",
-    "plan-monthly-price": "{price} al mes",
+    "plan-monthly-price": "{price} mensual",
     "plan-savings": "Ahorros de {savings} con descuento por pago anual.",
     "plan-too-small": "Su grupo actual es demasiado grande para este plan.",
     "renew-monthly": "se renueva automáticamente cada mes hasta que se cancele"
@@ -254,7 +254,7 @@
     "group_bullet": "Grupo: {name}",
     "leave_heading": "¿No está seguro de continuar en Morphic?",
     "leave_text": "Si ya no desea administrar su grupo, puede cerrarlo. Una vez que el grupo esté cerrado, todos \n          los miembros del grupo perderán sus Barras de Morphic personalizadas. Cada miembro tendrá la Barra de Morphic básica.",
-    "member-count_bullet": "Miembros actuales: {member_count}",
+    "member-count_bullet": "Personas afiliadas: {member_count}",
     "pick-subscription_heading": "Escoja una suscripción",
     "trial-ended": "Su periodo de prueba termina hoy. | Su periodo de prueba terminó ayer. | Su periodo de prueba terminó hace {n} días.",
     "trial-ending": "Su periodo de prueba termina hoy. | Su periodo de prueba terminará mañana. | Su periodo de prueba terminará en {n} días."
@@ -278,8 +278,8 @@
   "ResetPassword": {
     "enter-your-email-address": "Introduzca su dirección de correo electrónico",
     "instructions": "Introduzca su dirección de correo electrónico y le enviaremos las instrucciones para restablecer su contraseña.",
-    "heading": "Restablecer su contraseña",
-    "reset-password_button": "Restablecer contraseña",
+    "heading": "Restablecer contraseña",
+    "reset-password_button": "Restablecer Contraseña",
     "return-to-login_link": "Volver al inicio de sesión",
     "success": "Le hemos enviado las instrucciones para restablecer su contraseña por correo electrónico."
   },
@@ -361,14 +361,14 @@
     "changeRole": {
       "apply_button": "Cambiar a {role}",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Por favor, confirma el cambio de rol de {member} a {role}",
-      "title": "Cambiar rol del miembro"
+      "confirm": "Por favor confirme el cambio de rol de {member} a {role}",
+      "title": "Cambiar rol de la persona asociada"
     },
     "delete": {
       "apply_button": "Eliminar {member}",
       "cancel_button": "@:(General.cancel_button)",
       "confirm": "Por favor, confirme que desea eliminar a {member} del grupo",
-      "title": "Eliminar miembro"
+      "title": "Eliminar persona asociada"
     },
     "removeBar": {
       "apply_button": "Borrar Barra de Morphic",
