@@ -91,48 +91,48 @@
     "message-accepted": "You have accepted your Morphic invitation.",
     "message-declined": "You have declined your Morphic invitation.",
     "message-invalid": "Your invitation has expired or this link is valid. Please ask for a new invitation (from the person who invited you).",
-    "message_title": "Morphic Invitation",
-    "ok-sign-in_button": "Accept Invitation",
-    "ok-register_button": "Accept & create account",
-    "register-email_description": "You can change this if you want to use a different email address",
-    "register-form-lead": "To accept your Morphic invitation and MorphicBar, you need to create a Morphic account below (unless you already have a Morphic account).",
-    "sign-in-form-lead": "To accept your Morphic invitation and MorphicBar, you need to sign into your Morphic account below (or create a Morphic account if you do not have one).",
-    "sign-in-register_link": "Sign up for a new Morphic account with a different email",
+    "message_title": "Convite Morphic",
+    "ok-sign-in_button": "Aceitar Convite",
+    "ok-register_button": "Aceitar e criar conta",
+    "register-email_description": "Pode alterar isso se quiser usar um endereço de e-mail diferente",
+    "register-form-lead": "Para aceitar seu convite Morphic e MorphicBar, precisa criar uma conta Morphic abaixo (a menos que já tenha uma conta Morphic).",
+    "sign-in-form-lead": "Para aceitar seu convite Morphic e MorphicBar, precisa entrar na sua conta Morphic abaixo (ou criar uma conta Morphic se não tiver uma).",
+    "sign-in-register_link": "Cadastre-se para uma nova conta Morphic com um e-mail diferente",
     "sign-in_button": "Sign in"
   },
   "MemberDetails": {
     "bar-unused": "This bar has no members using it.",
     "delete-member_button": "Delete member",
-    "re-invite_button": "Send a new invitation",
-    "invite_button": "Send an invitation"
+    "re-invite_button": "Enviar novo convite",
+    "invite_button": "Enviar convite"
   },
   "NewMember": {
     "title": "Add a person"
   },
   "NewMemberDialog": {
-    "add_button": "Add Person",
+    "add_button": "Adicionar Pessoa",
     "cancel_button": "@:(General.cancel_button)",
-    "lead": "Manage MorphicBars for other people by adding them to your Morphic Plus subscription.",
-    "manager-steps": "First, you will need to...",
+    "lead": "Gerencie MorphicBars para outras pessoas adicionando-as à sua assinatura Morphic Plus.",
+    "manager-steps": "Primeiro, precisará...",
     "manager-steps_list": [
-      "Add the person (you are here)",
-      "Make a Bar",
-      "Save the Bar",
-      "Invite the person (invite will be sent by email)"
+      "Adicione a pessoa (está aqui)",
+      "Criar uma Barra",
+      "Salvar a Barra",
+      "Convidar a pessoa (o convite será enviado por e-mail)"
     ],
-    "member-plan-limit": "You can add up to {limit} people on your {plan} Morphic Plus subscription.",
-    "member-steps": "The person you invited will need to...",
-    "member-steps_info": "You may wish to help in person or using remote tools.",
+    "member-plan-limit": "Pode adicionar até {limit} pessoas na sua assinatura Morphic Plus {plan}.",
+    "member-steps": "A pessoa que convidou precisará...",
+    "member-steps_info": "Pode querer ajudar pessoalmente ou usando ferramentas remotas.",
     "member-steps_list": [
-      "Click link in invitation email",
-      "Sign up for account & accept invitation",
-      "Download & install Morphic app on their computer",
-      "Sign into the Morphic app"
+      "Clicar no link no e-mail de convite",
+      "Cadastrar-se para uma conta & aceitar o convite",
+      "Baixar & instalar o aplicativo Morphic no computador dela",
+      "Entrar no aplicativo Morphic"
     ],
-    "name-duplicate_error": "There is already a member with this name.",
-    "name_label": "Name or nickname of person to add",
-    "steps-info": "Morphic recommends that you contact the person you are inviting ahead of time.",
-    "steps_heading": "What are the steps?"
+    "name-duplicate_error": "Já existe um membro com este nome.",
+    "name_label": "Nome ou apelido da pessoa a adicionar",
+    "steps-info": "O Morphic recomenda que entre em contato com a pessoa que você está convidando antes de enviar o convite.",
+    "steps_heading": "Quais são os passos?"
   },
   "SidePanel": {
     "account-settings_link": "Account settings",
@@ -148,9 +148,9 @@
         "Em seguida, pode criar barras.",
         "Finalmente, pode convidar a pessoa para baixar e usar o Morphic."
       ],
-      "edit-bar": "Want to edit a bar? Click its name to get started!",
-      "new-bar": "Want to make a MorphicBar for yourself? Start with \"@:(MembersList.add-bar_button)\"",
-      "other-bars": "Click a person's name to see their MorphicBars"
+      "edit-bar": "Quer editar uma barra? Clique no nome dela para começar!",
+      "new-bar": "Quer criar uma MorphicBar para você mesmo? Comece com \"@:(MembersList.add-bar_button)\"",
+      "other-bars": "Clique no nome de uma pessoa para ver suas MorphicBars"
     }
   },
   "EarlyReleaseProgram": {
@@ -179,33 +179,33 @@
     "copyright": "Copyright © {year} Raising the Floor - US Inc. All rights Reserved."
   },
   "Header": {
-    "focus-mode_button": "Mobile Mode",
-    "logout_button": "Sign out",
+    "focus-mode_button": "Modo Mobile",
+    "logout_button": "Sair",
     "login_button": "Sign in",
-    "product-name": "Custom MorphicBar Tool",
+    "product-name": "Ferramenta Personalizada de MorphicBar",
     "standard-mode_button": "Standard Mode"
   },
   "Home": {},
   "InviteMemberDialog": {
     "cancel_button": "@:(General.cancel_button)",
-    "email-copy": "Morphic will also send you a copy of the invitation email that will include steps & videos for helping.",
-    "email_label": "Email of person to be invited",
-    "form-lead": "Morphic recommends that you contact the person, so they know the email invitation is coming (and don't delete it).",
-    "from-email_aria-label": "From email",
-    "from-name_aria-label": "From name",
-    "from_heading": "From:",
+    "email-copy": "O Morphic também enviará a você uma cópia do e-mail de convite que incluirá etapas e vídeos para ajudar.",
+    "email_label": "E-mail da pessoa a ser convidado",
+    "form-lead": "O Morphic recomenda que entre em contato com a pessoa, para que ela saiba que o e-mail de convite está chegando (e não o exclua).",
+    "from-email_aria-label": "Do e-mail",
+    "from-name_aria-label": "Do nome",
+    "from_heading": "De:",
     "invite-member_title": "Invite {name}",
-    "invite_button": "Invite",
-    "phone_description": "Number the invited person can call for assistance in getting Morphic set up",
-    "phone_label": "Phone number (optional)",
-    "steps-info": "Some people might need some extra help from you to get set up. You can do this in person or using remote tools.",
-    "steps-lead": "After you send the invitation, the person you invited will need to...",
-    "steps_heading": "What are the steps?",
+    "invite_button": "Convidar",
+    "phone_description": "Número que a pessoa convidada pode ligar para obter assistência na configuração do Morphic",
+    "phone_label": "Número de telefone (opcional)",
+    "steps-info": "Algumas pessoas podem precisar de alguma ajuda extra para se configurar. Pode fazer isso pessoalmente ou usando ferramentas remotas.",
+    "steps-lead": "Depois de enviar o convite, a pessoa que convidou precisará...",
+    "steps_heading": "Quais são os passos?",
     "steps_list": [
-      "Click the link in the invitation email",
-      "Sign up for a Morphic account & accept the invitation",
-      "Download & install the Morphic app on their computer",
-      "Sign into the Morphic app"
+      "Clique no link do e-mail de convite",
+      "Cadastre-se para uma conta Morphic & aceite o convite",
+      "Baixe & instale o aplicativo Morphic no computador dela",
+      "Entrar no aplicativo Morphic"
     ]
   },
   "MembersList": {
@@ -215,9 +215,9 @@
     "expand-all": "Expand all",
     "collapse-all_aria-label": "@:(MembersList.collapse-all) members",
     "expand-all_aria-label": "@:(MembersList.expand-all) members",
-    "expand_button_arial-label": "Expand {name}",
-    "invitation-not-accepted": "Invited, but has not yet accepted.",
-    "invite_button": "Invite",
+    "expand_button_arial-label": "Expandir {name}",
+    "invitation-not-accepted": "Convidado, mas ainda não aceitou.",
+    "invite_button": "Convidar",
     "invite_button_aria-label": "Invite {name}",
     "no-members": "Create and manage MorphicBars for others! Your {subscription} Morphic subscription allows you to invite {maxMembers} people to your account.",
     "not-invited": "Not yet invited.",
