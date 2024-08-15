@@ -7,9 +7,9 @@
     "search-result-summary": "No items found | 1 item found | {n} items found"
   },
   "ConfirmEmail": {
-    "dialog_title": "Confirm your email",
-    "loading": "Loading...",
-    "ok_button": "Resend email"
+    "dialog_title": "Confirme seu email",
+    "loading": "Carregando...",
+    "ok_button": "Reenviar email"
   },
   "CopyBarDialog": {
     "confirm-dialog": {
