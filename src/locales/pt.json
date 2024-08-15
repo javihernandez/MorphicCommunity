@@ -25,10 +25,10 @@
     "title": "Copy bar"
   },
   "EditorDetails": {
-    "copy-bar_button": "Copy bar from...",
-    "revert-bar_button": "Revert to user's current bar",
-    "save-bar_button": "Save bar",
-    "try-it_button": "Try it"
+    "copy-bar_button": "Copiar barra de...",
+    "revert-bar_button": "Reverter para a barra atual do usuário",
+    "save-bar_button": "Salvar barra",
+    "try-it_button": "Experimente"
   },
   "General": {
     "no_button": "No",
@@ -37,7 +37,7 @@
     "cancel_button": "Cancel",
     "member-state": {
       "active": "Active",
-      "invited": "Not yet accepted",
+      "invited": "Ainda não aceito",
       "uninvited": "Uninvited"
     }
   },
@@ -67,27 +67,27 @@
   "BarItemLink": {},
   "BarPreview": {},
   "BarsList": {
-    "bars_aria-label": "Bars for {name}",
+    "bars_aria-label": "Barras para {name}",
     "default-bar": "Default Bar",
     "new-bar_button": "Add a new bar",
-    "new-bar_button_aria-label": "Add a new bar for {name}"
+    "new-bar_button_aria-label": "Adicionar nova barra para {name}"
   },
   "BillingDetails": {},
   "BlockLoginRegister": {},
   "Invite": {
-    "cancel_button": "Decline invitation",
+    "cancel_button": "Recusar convite",
     "confirm-decline-no_button": "No",
-    "confirm-decline_message": "Do you really want to decline your invitation for Morphic?",
-    "confirm-decline-yes_button": "Yes, decline",
+    "confirm-decline_message": "Realmente deseja recusar o seu convite para o Morphic?",
+    "confirm-decline-yes_button": "Sim, recusar",
     "confirm-decline_title": "Decline Morphic Invitation",
-    "dialog-sign-in_title": "Sign into Morphic to accept",
-    "dialog-register_title": "Sign up for Morphic to accept",
-    "home-page_button": "Go to Morphic home page",
-    "info-learn-more_link": "Learn more about Morphic",
+    "dialog-sign-in_title": "Entre no Morphic para aceitar",
+    "dialog-register_title": "Cadastre-se no Morphic para aceitar",
+    "home-page_button": "Ir para a página inicial do Morphic",
+    "info-learn-more_link": "Saiba mais sobre o Morphic",
     "info-p1": "The person or organization who invited you wants to create and manage MorphicBars for you.",
     "info-p2": "If you accept, they will be able to make and update MorphicBars for your computer. They cannot see or change other bars or things on your computer.",
-    "info_heading": "Accept your Morphic invitation &amp; MorphicBar",
-    "loading": "Loading",
+    "info_heading": "Aceite seu convite Morphic &amp; MorphicBar",
+    "loading": "Carregando",
     "message-accepted": "You have accepted your Morphic invitation.",
     "message-declined": "You have declined your Morphic invitation.",
     "message-invalid": "Your invitation has expired or this link is valid. Please ask for a new invitation (from the person who invited you).",
@@ -138,15 +138,15 @@
     "account-settings_link": "Account settings",
     "group-bars_heading": "Group Bars",
     "other-bars_heading": "MorphicBars for Others",
-    "own-bars_heading": "MorphicBars for Me"
+    "own-bars_heading": "Minhas MorphicBars"
   },
   "Dashboard": {
     "hints": {
-      "create-member": "Do you want to make and manage MorphicBars for other people?",
+      "create-member": "Quer criar e gerenciar MorphicBars para outras pessoas?",
       "create-member_instructions": [
-        "Start by adding a person.",
-        "Next you can create bars.",
-        "Finally, you can invite the person to download and use Morphic."
+        "Comece adicionando uma pessoa.",
+        "Em seguida, pode criar barras.",
+        "Finalmente, pode convidar a pessoa para baixar e usar o Morphic."
       ],
       "edit-bar": "Want to edit a bar? Click its name to get started!",
       "new-bar": "Want to make a MorphicBar for yourself? Start with \"@:(MembersList.add-bar_button)\"",
