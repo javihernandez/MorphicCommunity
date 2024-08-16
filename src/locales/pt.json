@@ -220,10 +220,10 @@
     "invite_button": "Convidar",
     "invite_button_aria-label": "Invite {name}",
     "no-members": "Create and manage MorphicBars for others! Your {subscription} Morphic subscription allows you to invite {maxMembers} people to your account.",
-    "not-invited": "Not yet invited.",
-    "re-invite_button": "Re-send invitation",
+    "not-invited": "Ainda não foi convidado.",
+    "re-invite_button": "Reenviar convite",
     "re-invite_button_aria-label": "Re-send invitation to {name}",
-    "settings_tooltip": "Settings for {name}"
+    "settings_tooltip": "Configurações para {name}"
   },
   "MorphicBarEditor": {},
   "MorphicBarPreconfigured": {},
