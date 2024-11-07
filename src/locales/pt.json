@@ -1,10 +1,10 @@
 {
   "BarSettings": {
-    "delete_button": "Delete Bar",
-    "rename_button": "Edit bar name"
+    "delete_button": "Barra de Excluir",
+    "rename_button": "Editar nome da barra"
   },
   "ButtonCatalog": {
-    "search-result-summary": "No items found | 1 item found | {n} items found"
+    "search-result-summary": "Nenhum item encontrado | 1 Item encontrado | {n} itens encontrado"
   },
   "ConfirmEmail": {
     "dialog_title": "Confirme seu email",
@@ -13,14 +13,14 @@
   },
   "CopyBarDialog": {
     "confirm-dialog": {
-      "no_button": "@:(General.no_button)",
-      "question": "Do you wish to continue?",
-      "summary": "This will copy the contents of the bar {barToCopy}, replacing all items of the current bar, {currentBar}.",
-      "title": "Confirm Bar Copy",
-      "yes_button": "@:(General.yes_button)"
+      "no_button": "@:(Geral.no_button)",
+      "question": "Você deseja continuar?",
+      "summary": "Isso copiará o conteúdo da barra {barToCopy}, substituindo todos os itens da barra atual, {currentBar}.",
+      "title": "Confirmar cópia da barra",
+      "yes_button": "@:(Geral.yes_button)"
     },
-    "intro": "You can copy any of the MorphicBars below into the MorphicBar you are editing. (Replacing the ALL of current contents of the MorphicBar you are editing)",
-    "no-bars": "There are no other bars to copy items from.",
+    "intro": "Você pode copiar qualquer uma das MorphicBars abaixo para a MorphicBar que você está editando. (Substituindo TODO o conteúdo atual da MorphicBar que você está editando)",
+    "no-bars": "Não há outras barras para copiar itens.",
     "select-instruction": "Select a bar to copy from:",
     "title": "Copy bar"
   },
