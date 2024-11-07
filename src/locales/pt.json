@@ -21,8 +21,8 @@
     },
     "intro": "Você pode copiar qualquer uma das MorphicBars abaixo para a MorphicBar que você está editando. (Substituindo TODO o conteúdo atual da MorphicBar que você está editando)",
     "no-bars": "Não há outras barras para copiar itens.",
-    "select-instruction": "Select a bar to copy from:",
-    "title": "Copy bar"
+    "select-instruction": "Selecione uma barra para copiar:",
+    "title": "Copiar barra"
   },
   "EditorDetails": {
     "copy-bar_button": "Copiar barra de...",
@@ -31,23 +31,23 @@
     "try-it_button": "Experimente"
   },
   "General": {
-    "no_button": "No",
-    "yes_button": "Yes",
+    "no_button": "Não",
+    "yes_button": "Sim",
     "ok_button": "OK",
-    "cancel_button": "Cancel",
+    "cancel_button": "Cancelar",
     "member-state": {
-      "active": "Active",
+      "active": "Ativo",
       "invited": "Ainda não aceito",
-      "uninvited": "Uninvited"
+      "uninvited": "Não convidado"
     }
   },
   "Errors": {
-    "generic-server-error": "Server error: {message}",
-    "generic-title": "Unable to {action}",
-    "generic-action": "perform the last action",
-    "invalid_credentials": "That email address or password has not been recognized.",
-    "missing_required": "A required field is missing.",
-    "existing_email": "There is already an account associated with that email address.",
+    "generic-server-error": "Erro no servidor: {message}",
+    "generic-title": "Incapaz de {action}",
+    "generic-action": "executar a última ação",
+    "invalid_credentials": "Este endereço de e-mail ou senha não foi reconhecido.",
+    "missing_required": "Um campo obrigatório está faltando.",
+    "existing_email": "Já existe uma conta associada a esse endereço de e-mail.",
     "existing_username": "There is already an account which uses that user name.",
     "limit_reached": "The maximum number of members for your subscription has been reached.",
     "cannot_demote_self": "You are unable to demote yourself.",
