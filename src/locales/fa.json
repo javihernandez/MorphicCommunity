@@ -19,7 +19,7 @@
       "title": "Confirm Bar Copy",
       "yes_button": "@:(General.yes_button)"
     },
-    "intro": "You can copy any of the MorphicBars below into the MorphicBar you are editing. (Replacing the ALL of current contents of the MorphicBar you are editing)",
+    "intro": "شما میتوانید نوار مورفیک پایین را در مورفیک باری که ویرایش میکنید جای دهید. (محتوی کامل را با مورفیک باری که ویرایش میکنید جایگزین کنید)",
     "no-bars": "There are no other bars to copy items from.",
     "select-instruction": "Select a bar to copy from:",
     "title": "Copy bar"
