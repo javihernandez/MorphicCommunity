@@ -1,6 +1,6 @@
 {
   "BarSettings": {
-    "delete_button": "Delete Bar",
+    "delete_button": "پاک کنید",
     "rename_button": "Edit bar name"
   },
   "ButtonCatalog": {
@@ -167,11 +167,11 @@
   "EditButtonDialog": {
     "color": {
       "teal": "Teal",
-      "blue": "Blue",
-      "purple": "Purple",
-      "red": "Red",
-      "green": "Green",
-      "orange": "Orange",
+      "blue": "آبی",
+      "purple": "بنفش",
+      "red": "قرمز",
+      "green": "سبز",
+      "orange": "نارنجی",
       "other": "Other"
     }
   },
