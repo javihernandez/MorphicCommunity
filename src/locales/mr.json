@@ -22,10 +22,10 @@
     "intro": "You can copy any of the MorphicBars below into the MorphicBar you are editing. (Replacing the ALL of current contents of the MorphicBar you are editing)",
     "no-bars": "There are no other bars to copy items from.",
     "select-instruction": "Select a bar to copy from:",
-    "title": "Copy bar"
+    "title": "कॉपी बार"
   },
   "EditorDetails": {
-    "copy-bar_button": "Copy bar from...",
+    "copy-bar_button": "वरून बार कॉपी करा...",
     "revert-bar_button": "Revert to user's current bar",
     "save-bar_button": "Save bar",
     "try-it_button": "Try it"
@@ -189,7 +189,7 @@
   "InviteMemberDialog": {
     "cancel_button": "@:(General.cancel_button)",
     "email-copy": "Morphic will also send you a copy of the invitation email that will include steps & videos for helping.",
-    "email_label": "Email of person to be invited",
+    "email_label": "आमंत्रित करण्यासाठी व्यक्तीचा ईमेल",
     "form-lead": "Morphic recommends that you contact the person, so they know the email invitation is coming (and don't delete it).",
     "from-email_aria-label": "From email",
     "from-name_aria-label": "From name",
