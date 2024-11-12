@@ -1,7 +1,7 @@
 {
   "BarSettings": {
     "delete_button": "Delete Bar",
-    "rename_button": "Edit bar name"
+    "rename_button": ""
   },
   "ButtonCatalog": {
     "search-result-summary": "No items found | 1 item found | {n} items found"
