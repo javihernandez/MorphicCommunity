@@ -4,12 +4,12 @@
     "rename_button": "Modifier le nom de la barre"
   },
   "ButtonCatalog": {
-    "search-result-summary": "No items found | 1 item found | {n} items found"
+    "search-result-summary": "Aucun élément trouvé | 1 élément trouvé | {n} éléments trouvés "
   },
   "ConfirmEmail": {
-    "dialog_title": "Confirm your email",
-    "loading": "Loading...",
-    "ok_button": "Resend email"
+    "dialog_title": "Confirmez votre email",
+    "loading": "Chargement...",
+    "ok_button": "Renvoyer l'e-mail"
   },
   "CopyBarDialog": {
     "confirm-dialog": {
@@ -25,16 +25,16 @@
     "title": "Barre de copie"
   },
   "EditorDetails": {
-    "copy-bar_button": "Copy bar from...",
-    "revert-bar_button": "Revert to user's current bar",
-    "save-bar_button": "Save bar",
-    "try-it_button": "Try it"
+    "copy-bar_button": "Copier la barre à partir de...",
+    "revert-bar_button": "Revenir à la barre actuelle de l'utilisateur",
+    "save-bar_button": "Sauver la barre",
+    "try-it_button": "Essayez-le"
   },
   "General": {
     "no_button": "Non",
     "yes_button": "Oui",
     "ok_button": "OK",
-    "cancel_button": "Cancel",
+    "cancel_button": "Annuler",
     "member-state": {
       "active": "Actif",
       "invited": "Not yet accepted",
@@ -138,19 +138,19 @@
     "account-settings_link": "Configuration du compte",
     "group-bars_heading": "Barres de groupe",
     "other-bars_heading": "Barres morphiques pour les autres",
-    "own-bars_heading": "MorphicBars for Me"
+    "own-bars_heading": "Barres morphiques pour moi"
   },
   "Dashboard": {
     "hints": {
-      "create-member": "Do you want to make and manage MorphicBars for other people?",
+      "create-member": "Voulez-vous créer et gérer des Barres Morphicques pour d'autres personnes ?",
       "create-member_instructions": [
-        "Start by adding a person.",
-        "Next you can create bars.",
-        "Finally, you can invite the person to download and use Morphic."
+        "Commencez par ajouter une personne.",
+        "Ensuite, vous pouvez créer des barres.",
+        "Enfin, vous pouvez inviter la personne à télécharger et utiliser Morphique."
       ],
-      "edit-bar": "Want to edit a bar? Click its name to get started!",
-      "new-bar": "Want to make a MorphicBar for yourself? Start with \"@:(MembersList.add-bar_button)\"",
-      "other-bars": "Click a person's name to see their MorphicBars"
+      "edit-bar": "Vous voulez modifier une barre ? Cliquez sur son nom pour commencer !",
+      "new-bar": "Vous voulez créer une MorphicBar pour vous-même ? Commencez par \"@:(MembersList.add-bar_button)\"",
+      "other-bars": "Cliquez sur le nom d'une personne pour voir sa barre morphique"
     }
   },
   "EarlyReleaseProgram": {
@@ -179,8 +179,8 @@
     "copyright": "Copyright ©️ {year} Étage - US Inc. Tous droits réservés."
   },
   "Header": {
-    "focus-mode_button": "Mobile Mode",
-    "logout_button": "Sign out",
+    "focus-mode_button": "Mode Mobile",
+    "logout_button": "Se déconnecter",
     "login_button": "Se connecter",
     "product-name": "Custom MorphicBar Tool",
     "standard-mode_button": "Mode standard"
@@ -354,26 +354,26 @@
     "sign-in_button": "Se connecter"
   },
   "UserRegistration": {
-    "success": "Registration completed successfully"
+    "success": "L'enregistrement a été réalisé avec succès"
   },
   "ValidatedInput": {},
   "members": {
     "changeRole": {
-      "apply_button": "Change to {role}",
+      "apply_button": "Changer pour {role}",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Please confirm changing the role of {member} to {role}",
-      "title": "Change member role"
+      "confirm": "Veuillez confirmer la modification du rôle de {member} en {role}",
+      "title": "Changer le rôle du membre"
     },
     "delete": {
       "apply_button": "Remove {member}",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Please confirm the removal of {member} from the group",
-      "title": "Remove member"
+      "confirm": "Veuillez confirmer la suppression de {member} du groupe",
+      "title": "Retirer le membre"
     },
     "removeBar": {
-      "apply_button": "Delete bar",
+      "apply_button": "Supprimer la barre",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Are you sure you want to delete the bar?\nThis will remove the bar from this account. This cannot be undone."
+      "confirm": "Êtes-vous sûr de vouloir supprimer la barre ?\nCela supprimera la barre de ce compte. Cela ne peut pas être annulé."
     }
   }
 }
