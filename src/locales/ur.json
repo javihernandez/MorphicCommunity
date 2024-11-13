@@ -1,56 +1,56 @@
 {
   "BarSettings": {
-    "delete_button": "Delete Bar",
-    "rename_button": "Edit bar name"
+    "delete_button": "بار کو حذف کریں",
+    "rename_button": "بار کے نام میں ترمیم کریں"
   },
   "ButtonCatalog": {
-    "search-result-summary": "No items found | 1 item found | {n} items found"
+    "search-result-summary": "کوئی آئٹم نہیں ملا | 1 آئٹم ملا | {n} آئٹمز ملے"
   },
   "ConfirmEmail": {
-    "dialog_title": "Confirm your email",
-    "loading": "Loading...",
-    "ok_button": "Resend email"
+    "dialog_title": "اپنے ای میل کی تصدیق کریں",
+    "loading": "لوڈ ہو رہا ہے...",
+    "ok_button": "پھر بھیجیں ای میل"
   },
   "CopyBarDialog": {
     "confirm-dialog": {
       "no_button": "@:(General.no_button)",
-      "question": "Do you wish to continue?",
-      "summary": "This will copy the contents of the bar {barToCopy}, replacing all items of the current bar, {currentBar}.",
-      "title": "Confirm Bar Copy",
+      "question": "کیا آپ جاری رکھنا چاہتے ہیں؟",
+      "summary": "یہ موجودہ بار، {currentBar} کے تمام آئٹمز کو بدل کر بار {barToCopy} کے مواد کو کاپی کر دے گا۔",
+      "title": "بار کاپی کی تصدیق کریں",
       "yes_button": "@:(General.yes_button)"
     },
-    "intro": "You can copy any of the MorphicBars below into the MorphicBar you are editing. (Replacing the ALL of current contents of the MorphicBar you are editing)",
-    "no-bars": "There are no other bars to copy items from.",
-    "select-instruction": "Select a bar to copy from:",
-    "title": "Copy bar"
+    "intro": "آپ نیچے دیے گئے مورفک بار میں سے کسی بھی مورفک بار میں کاپی کر سکتے ہیں جس میں آپ ترمیم کر رہے ہیں۔ (مورفک بار کے تمام موجودہ مواد کو تبدیل کرنا جس میں آپ ترمیم کر رہے ہیں)",
+    "no-bars": "آئٹمز کو کاپی کرنے کے لیے کوئی اور بار نہیں ہے.",
+    "select-instruction": "کاپی کرنے کے لیے ایک بار منتخب کریں:",
+    "title": "کاپی بار"
   },
   "EditorDetails": {
-    "copy-bar_button": "Copy bar from...",
-    "revert-bar_button": "Revert to user's current bar",
-    "save-bar_button": "Save bar",
-    "try-it_button": "Try it"
+    "copy-bar_button": "سے بار کاپی کریں...",
+    "revert-bar_button": "صارف کے موجودہ بار پر واپس جائیں",
+    "save-bar_button": "بار کو محفوظ کریں",
+    "try-it_button": "یہ کوشش کریں"
   },
   "General": {
-    "no_button": "No",
-    "yes_button": "Yes",
-    "ok_button": "OK",
-    "cancel_button": "Cancel",
+    "no_button": "نہیں",
+    "yes_button": "ہاں",
+    "ok_button": "ٹھیک ہے",
+    "cancel_button": "منسوخ کریں",
     "member-state": {
-      "active": "Active",
-      "invited": "Not yet accepted",
-      "uninvited": "Uninvited"
+      "active": "فعال",
+      "invited": "ابھی تک قبول نہیں ہوا",
+      "uninvited": "غیر مدعو"
     }
   },
   "Errors": {
-    "generic-server-error": "Server error: {message}",
-    "generic-title": "Unable to {action}",
-    "generic-action": "perform the last action",
-    "invalid_credentials": "That email address or password has not been recognized.",
-    "missing_required": "A required field is missing.",
-    "existing_email": "There is already an account associated with that email address.",
-    "existing_username": "There is already an account which uses that user name.",
-    "limit_reached": "The maximum number of members for your subscription has been reached.",
-    "cannot_demote_self": "You are unable to demote yourself.",
+    "generic-server-error": "سرور کی خرابی: {message}",
+    "generic-title": "{action} سے قاصر",
+    "generic-action": "آخری کارروائی کریں",
+    "invalid_credentials": "وہ ای میل پتہ یا پاس ورڈ تسلیم نہیں کیا گیا ہے.",
+    "missing_required": "ایک مطلوبہ فیلڈ غائب ہے.",
+    "existing_email": "اس ای میل ایڈریس کے ساتھ پہلے سے ہی ایک اکاؤنٹ وابستہ ہے.",
+    "existing_username": "پہلے سے ہی ایک اکاؤنٹ ہے جو اس صارف کا نام استعمال کرتا ہے.",
+    "limit_reached": "پ کے سبسکرپشن کے ممبران کی زیادہ سے زیادہ تعداد تک پہنچ گئی ہے.",
+    "cannot_demote_self": "آپ اپنے آپ کو کم کرنے سے قاصر ہیں.",
     "cannot_delete_self": "You are unable to delete yourself from the community.",
     "http": {
       "404": "Unable to access to the server. Please try again later.",
