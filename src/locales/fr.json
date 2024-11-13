@@ -98,7 +98,7 @@
     "register-form-lead": "Pour accepter votre invitation Morphic et MorphicBar, vous devez créer un compte Morphic ci-dessous (sauf si vous avez déjà un compte Morphic).",
     "sign-in-form-lead": "Accepter votre invitation Morphic et MorphicBar, vous devez vous connecter à votre compte Morphic ci-dessous (ou créer un compte Morphic si vous n'en avez pas un).",
     "sign-in-register_link": "Sign up for a new Morphic account with a different email",
-    "sign-in_button": "Sign in"
+    "sign-in_button": "Se connecter"
   },
   "MemberDetails": {
     "bar-unused": "Cette barre n'a aucun membre l'utilisant.",
@@ -181,7 +181,7 @@
   "Header": {
     "focus-mode_button": "Mobile Mode",
     "logout_button": "Sign out",
-    "login_button": "Sign in",
+    "login_button": "Se connecter",
     "product-name": "Custom MorphicBar Tool",
     "standard-mode_button": "Mode standard"
   },
@@ -271,17 +271,17 @@
     "form_heading": "New to Morphic?",
     "form_lead": "Create your Morphic account now",
     "side-heading": "Morphic is better with a Morphic account",
-    "submit_button": "Sign up"
+    "submit_button": "S'enregistrer"
   },
   "RenderList": {},
   "RenderListItem": {},
   "ResetPassword": {
-    "enter-your-email-address": "Enter your email address",
-    "instructions": "Please enter your email address, and we will email you instructions to you on how to reset your password.",
+    "enter-your-email-address": "Entrez votre adresse email",
+    "instructions": "Veuillez entrer votre adresse e-mail et nous vous enverrons les instructions pour réinitialiser votre mot de passe.",
     "heading": "Reset your password",
     "reset-password_button": "Reset Password",
     "return-to-login_link": "Return to Login",
-    "success": "Instructions to recover your password have been emailed to you."
+    "success": "Les instructions pour récupérer votre mot de passe vous ont été envoyées par e-mail."
   },
   "TextInputDialog": {},
   "Tutorial": {
@@ -347,11 +347,11 @@
   },
   "UserLogin": {
     "create-account_link": "I do not have a Morphic account yet",
-    "email_label": "Sign in with Email",
+    "email_label": "Connectez-vous avec un e-mail",
     "heading": "Sign into Morphic",
-    "password-reset_link": "I forgot my password",
+    "password-reset_link": "J'ai oublié mon mot de passe",
     "password_label": "Password for Morphic",
-    "sign-in_button": "Sign in"
+    "sign-in_button": "Se connecter"
   },
   "UserRegistration": {
     "success": "Registration completed successfully"
