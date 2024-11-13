@@ -21,8 +21,8 @@
     },
     "intro": "شما میتوانید نوار مورفیک پایین را در مورفیک باری که ویرایش میکنید جای دهید. (محتوی کامل را با مورفیک باری که ویرایش میکنید جایگزین کنید)",
     "no-bars": "",
-    "select-instruction": "Select a bar to copy from:",
-    "title": "Copy bar"
+    "select-instruction": "یک بار را برای کپی کردن انتخاب کنید:",
+    "title": "بار را کپی کنید"
   },
   "EditorDetails": {
     "copy-bar_button": "Copy bar from...",
@@ -36,30 +36,30 @@
     "ok_button": "OK",
     "cancel_button": "Cancel",
     "member-state": {
-      "active": "Active",
+      "active": "فعال",
       "invited": "Not yet accepted",
-      "uninvited": "Uninvited"
+      "uninvited": "لغو دعوت"
     }
   },
   "Errors": {
-    "generic-server-error": "Server error: {message}",
-    "generic-title": "Unable to {action}",
-    "generic-action": "perform the last action",
-    "invalid_credentials": "That email address or password has not been recognized.",
-    "missing_required": "A required field is missing.",
-    "existing_email": "There is already an account associated with that email address.",
-    "existing_username": "There is already an account which uses that user name.",
-    "limit_reached": "The maximum number of members for your subscription has been reached.",
-    "cannot_demote_self": "You are unable to demote yourself.",
-    "cannot_delete_self": "You are unable to delete yourself from the community.",
+    "generic-server-error": "غلط سرور {پیام}",
+    "generic-title": "عدم امکان انجام {عمل}",
+    "generic-action": "انجام عمل قبل",
+    "invalid_credentials": "آدرس ایمیل یا رمز عبور شناسایی نشد.",
+    "missing_required": "یک فیلد ضروری پر نشده است.",
+    "existing_email": "یک حساب کاربری دیگر با این ایمییل آدرس مرتبط است.",
+    "existing_username": "یک حساب کاربری دیگر از این نام کاربری استفاده میکند.",
+    "limit_reached": "تعداد اعضا برای اشتراک شما به حد اکثر ممکن رسیده است.",
+    "cannot_demote_self": "شما نمیتوانید رتبه خود را پایین بیاورید.",
+    "cannot_delete_self": "شما نمیتوانید خود را از جامعه حذف کنید.",
     "http": {
-      "404": "Unable to access to the server. Please try again later.",
-      "500": "There is a problem with the server. Please try again later."
+      "404": "قادر به دسترسی به سرور نیست.",
+      "500": "لطفا بعدا دوباره امتحان کنید."
     },
     "validation": {
-      "app-missing": "The application to open has not been chosen.",
-      "field-missing": "A required field is missing: {name}.",
-      "link-missing": "The site to open has not been chosen."
+      "app-missing": "برنامه برای باز کردن انتخاب نشده است.",
+      "field-missing": "یک فیلد الزامی وجود ندارد: {نام}.",
+      "link-missing": "سایتی که باید باز شود انتخاب نشده است."
     }
   },
   "App": {},
@@ -68,8 +68,8 @@
   "BarPreview": {},
   "BarsList": {
     "bars_aria-label": "Bars for {name}",
-    "default-bar": "Default Bar",
-    "new-bar_button": "Add a new bar",
+    "default-bar": "نوار پیش فرض",
+    "new-bar_button": "یک نوار جدید اضافه کنید",
     "new-bar_button_aria-label": "Add a new bar for {name}"
   },
   "BillingDetails": {},
@@ -101,7 +101,7 @@
     "sign-in_button": "Sign in"
   },
   "MemberDetails": {
-    "bar-unused": "This bar has no members using it.",
+    "bar-unused": "این نوار هیچ عضوی از آن استفاده نمی کند.",
     "delete-member_button": "Delete member",
     "re-invite_button": "Send a new invitation",
     "invite_button": "Send an invitation"
@@ -209,7 +209,7 @@
     ]
   },
   "MembersList": {
-    "add-bar_button": "Add a new bar",
+    "add-bar_button": "یک نوار جدید اضافه کنید",
     "add-member_button": "Add a person",
     "collapse-all": "Collapse all",
     "expand-all": "Expand all",
