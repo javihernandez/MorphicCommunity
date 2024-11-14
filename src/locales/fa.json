@@ -4,40 +4,40 @@
     "rename_button": "ویرایش"
   },
   "ButtonCatalog": {
-    "search-result-summary": "No items found | 1 item found | {n} items found"
+    "search-result-summary": "موردی یافت نشد | 1 مورد پیدا شد | {n} مورد پیدا شد"
   },
   "ConfirmEmail": {
-    "dialog_title": "Confirm your email",
-    "loading": "Loading...",
-    "ok_button": "Resend email"
+    "dialog_title": "ایمیل خود را تایید کنید",
+    "loading": "در حال بارگیری...",
+    "ok_button": "ارسال مجدد ایمیل"
   },
   "CopyBarDialog": {
     "confirm-dialog": {
-      "no_button": "@:(General.no_button)",
-      "question": "Do you wish to continue?",
-      "summary": "This will copy the contents of the bar {barToCopy}, replacing all items of the current bar, {currentBar}.",
-      "title": "Confirm Bar Copy",
-      "yes_button": "@:(General.yes_button)"
+      "no_button": "نه",
+      "question": "آیا می خواهید ادامه دهید؟",
+      "summary": "با این کار محتویات نوار {barToCopy} کپی می‌شود و همه موارد نوار فعلی، {currentBar} را جایگزین می‌کند.",
+      "title": "کپی نوار را تأیید کنید",
+      "yes_button": "بله"
     },
     "intro": "شما میتوانید نوار مورفیک پایین را در مورفیک باری که ویرایش میکنید جای دهید. (محتوی کامل را با مورفیک باری که ویرایش میکنید جایگزین کنید)",
-    "no-bars": "",
+    "no-bars": "هیچ نوار دیگری برای کپی کردن موارد وجود ندارد.",
     "select-instruction": "یک بار را برای کپی کردن انتخاب کنید:",
     "title": "بار را کپی کنید"
   },
   "EditorDetails": {
-    "copy-bar_button": "Copy bar from...",
-    "revert-bar_button": "Revert to user's current bar",
-    "save-bar_button": "Save bar",
-    "try-it_button": "Try it"
+    "copy-bar_button": "نوار کپی از...",
+    "revert-bar_button": "به نوار فعلی کاربر برگردید",
+    "save-bar_button": "نوار ذخیره",
+    "try-it_button": "آن را امتحان کنید"
   },
   "General": {
-    "no_button": "No",
-    "yes_button": "Yes",
-    "ok_button": "OK",
+    "no_button": "نه",
+    "yes_button": "بله",
+    "ok_button": "خوب",
     "cancel_button": "لغو کنید",
     "member-state": {
       "active": "فعال",
-      "invited": "Not yet accepted",
+      "invited": "هنوز پذیرفته نشده است",
       "uninvited": "لغو دعوت"
     }
   },
@@ -67,90 +67,90 @@
   "BarItemLink": {},
   "BarPreview": {},
   "BarsList": {
-    "bars_aria-label": "Bars for {name}",
+    "bars_aria-label": "میله‌های {name}",
     "default-bar": "نوار پیش فرض",
     "new-bar_button": "یک نوار جدید اضافه کنید",
-    "new-bar_button_aria-label": "Add a new bar for {name}"
+    "new-bar_button_aria-label": "یک نوار جدید برای {name} اضافه کنید"
   },
   "BillingDetails": {},
   "BlockLoginRegister": {},
   "Invite": {
-    "cancel_button": "Decline invitation",
-    "confirm-decline-no_button": "No",
-    "confirm-decline_message": "Do you really want to decline your invitation for Morphic?",
-    "confirm-decline-yes_button": "Yes, decline",
-    "confirm-decline_title": "Decline Morphic Invitation",
-    "dialog-sign-in_title": "Sign into Morphic to accept",
-    "dialog-register_title": "Sign up for Morphic to accept",
-    "home-page_button": "Go to Morphic home page",
-    "info-learn-more_link": "Learn more about Morphic",
-    "info-p1": "The person or organization who invited you wants to create and manage MorphicBars for you.",
-    "info-p2": "If you accept, they will be able to make and update MorphicBars for your computer. They cannot see or change other bars or things on your computer.",
-    "info_heading": "Accept your Morphic invitation &amp; MorphicBar",
-    "loading": "Loading",
-    "message-accepted": "You have accepted your Morphic invitation.",
-    "message-declined": "You have declined your Morphic invitation.",
-    "message-invalid": "Your invitation has expired or this link is valid. Please ask for a new invitation (from the person who invited you).",
-    "message_title": "Morphic Invitation",
-    "ok-sign-in_button": "Accept Invitation",
-    "ok-register_button": "Accept & create account",
-    "register-email_description": "You can change this if you want to use a different email address",
-    "register-form-lead": "To accept your Morphic invitation and MorphicBar, you need to create a Morphic account below (unless you already have a Morphic account).",
-    "sign-in-form-lead": "To accept your Morphic invitation and MorphicBar, you need to sign into your Morphic account below (or create a Morphic account if you do not have one).",
-    "sign-in-register_link": "Sign up for a new Morphic account with a different email",
+    "cancel_button": "رد کردن دعوت",
+    "confirm-decline-no_button": "نه",
+    "confirm-decline_message": "آیا واقعاً می خواهید دعوت خود را برای Morphic رد کنید؟",
+    "confirm-decline-yes_button": "بله، کاهش",
+    "confirm-decline_title": "رد کردن دعوت مورفیک",
+    "dialog-sign-in_title": "برای پذیرش وارد Morphic شوید",
+    "dialog-register_title": "برای پذیرش Morphic ثبت نام کنید",
+    "home-page_button": "به صفحه اصلی Morphic بروید",
+    "info-learn-more_link": "درباره Morphic بیشتر بدانید",
+    "info-p1": "شخص یا سازمانی که شما را دعوت کرده است می خواهد MorphicBars را برای شما ایجاد و مدیریت کند.",
+    "info-p2": "اگر بپذیرید، آنها می توانند MorphicBars را برای رایانه شما بسازند و به روز کنند. آنها نمی توانند نوارها یا چیزهای دیگر را در رایانه شما ببینند یا تغییر دهند.",
+    "info_heading": "دعوت Morphic خود را بپذیرید &amp; MorphicBar",
+    "loading": "در حال بارگیری",
+    "message-accepted": "شما دعوت Morphic خود را پذیرفته اید.",
+    "message-declined": "شما دعوت Morphic خود را رد کرده اید.",
+    "message-invalid": "دعوتنامه شما منقضی شده است یا این پیوند معتبر است. لطفاً یک دعوت نامه جدید (از طرف شخصی که شما را دعوت کرده است) بخواهید.",
+    "message_title": "Morphic دعوت",
+    "ok-sign-in_button": "قبول کردن دعوتنامه",
+    "ok-register_button": "پذیرش و ایجاد حساب",
+    "register-email_description": "اگر می‌خواهید از آدرس ایمیل دیگری استفاده کنید، می‌توانید این مورد را تغییر دهید",
+    "register-form-lead": "برای پذیرش دعوتنامه Morphic و MorphicBar، باید یک حساب Morphic در زیر ایجاد کنید (مگر اینکه قبلاً یک حساب Morphic داشته باشید).",
+    "sign-in-form-lead": "برای پذیرش دعوتنامه Morphic و MorphicBar خود، باید وارد حساب Morphic خود در زیر شوید (یا اگر ندارید یک حساب Morphic ایجاد کنید).",
+    "sign-in-register_link": "برای یک حساب جدید Morphic با ایمیل دیگری ثبت نام کنید",
     "sign-in_button": "وارد شوید"
   },
   "MemberDetails": {
     "bar-unused": "این نوار هیچ عضوی از آن استفاده نمی کند.",
     "delete-member_button": "حذف عضو",
-    "re-invite_button": "Send a new invitation",
-    "invite_button": "Send an invitation"
+    "re-invite_button": "یک دعوت نامه جدید ارسال کنید",
+    "invite_button": "ارسال دعوتنامه"
   },
   "NewMember": {
     "title": "یک نفر را اضافه کنید"
   },
   "NewMemberDialog": {
-    "add_button": "Add Person",
-    "cancel_button": "@:(General.cancel_button)",
-    "lead": "Manage MorphicBars for other people by adding them to your Morphic Plus subscription.",
-    "manager-steps": "First, you will need to...",
+    "add_button": "یک نفر را اضافه کنید",
+    "cancel_button": "لغو",
+    "lead": "با افزودن آنها به اشتراک Morphic Plus، MorphicBars را برای افراد دیگر مدیریت کنید.",
+    "manager-steps": "ابتدا باید...",
     "manager-steps_list": [
-      "Add the person (you are here)",
-      "Make a Bar",
-      "Save the Bar",
-      "Invite the person (invite will be sent by email)"
+      "شخص را اضافه کنید (شما اینجا هستید)",
+      "یک نوار درست کنید",
+      "نوار را ذخیره کنید",
+      "دعوت از شخص (دعوت از طریق ایمیل ارسال خواهد شد)"
     ],
-    "member-plan-limit": "You can add up to {limit} people on your {plan} Morphic Plus subscription.",
-    "member-steps": "The person you invited will need to...",
-    "member-steps_info": "You may wish to help in person or using remote tools.",
+    "member-plan-limit": "می توانید حداکثر {limit} نفر را در اشتراک {plan} Morphic Plus خود اضافه کنید.",
+    "member-steps": "فردی که دعوت کردید باید...",
+    "member-steps_info": "ممکن است بخواهید شخصا یا با استفاده از ابزارهای راه دور کمک کنید.",
     "member-steps_list": [
-      "Click link in invitation email",
-      "Sign up for account & accept invitation",
-      "Download & install Morphic app on their computer",
-      "Sign into the Morphic app"
+      "روی پیوند در ایمیل دعوت کلیک کنید",
+      "برای حساب کاربری ثبت نام کنید و دعوت را بپذیرید",
+      "برنامه Morphic را در رایانه خود دانلود و نصب کنید",
+      "وارد برنامه Morphic شوید"
     ],
-    "name-duplicate_error": "There is already a member with this name.",
-    "name_label": "Name or nickname of person to add",
-    "steps-info": "Morphic recommends that you contact the person you are inviting ahead of time.",
-    "steps_heading": "What are the steps?"
+    "name-duplicate_error": "قبلاً عضوی با این نام وجود دارد.",
+    "name_label": "نام یا نام مستعار فردی که باید اضافه شود",
+    "steps-info": "Morphic توصیه می کند که از قبل با شخصی که دعوت می کنید تماس بگیرید.",
+    "steps_heading": "مراحلش چیه؟"
   },
   "SidePanel": {
     "account-settings_link": "تنظیمات حساب",
     "group-bars_heading": "نوار گروه",
     "other-bars_heading": "MorphicBars برای دیگران",
-    "own-bars_heading": "MorphicBars for Me"
+    "own-bars_heading": "MorphicBars برای دیگران"
   },
   "Dashboard": {
     "hints": {
-      "create-member": "Do you want to make and manage MorphicBars for other people?",
+      "create-member": "آیا می خواهید MorphicBars را برای افراد دیگر بسازید و مدیریت کنید؟",
       "create-member_instructions": [
-        "Start by adding a person.",
-        "Next you can create bars.",
-        "Finally, you can invite the person to download and use Morphic."
+        "با اضافه کردن یک نفر شروع کنید.",
+        "بعد می توانید نوار ایجاد کنید.",
+        "در نهایت می توانید فرد مورد نظر را به دانلود و استفاده از Morphic دعوت کنید."
       ],
-      "edit-bar": "Want to edit a bar? Click its name to get started!",
-      "new-bar": "Want to make a MorphicBar for yourself? Start with \"@:(MembersList.add-bar_button)\"",
-      "other-bars": "Click a person's name to see their MorphicBars"
+      "edit-bar": "می خواهید یک نوار را ویرایش کنید؟ برای شروع روی نام آن کلیک کنید!",
+      "new-bar": "آیا می خواهید یک MorphicBar برای خود بسازید؟ با \"@:(MembersList.add-bar_button)\" شروع کنید",
+      "other-bars": "برای مشاهده MorphicBars، روی نام یک فرد کلیک کنید"
     }
   },
   "EarlyReleaseProgram": {
@@ -179,33 +179,33 @@
     "copyright": "حق چاپ {سال} Raising the Floor - US Inc. کلیه حقوق محفوظ است."
   },
   "Header": {
-    "focus-mode_button": "Mobile Mode",
-    "logout_button": "Sign out",
+    "focus-mode_button": "حالت موبایل",
+    "logout_button": "از سیستم خارج شوید",
     "login_button": "وارد شوید",
-    "product-name": "Custom MorphicBar Tool",
+    "product-name": "ابزار سفارشی MorphicBar",
     "standard-mode_button": "حالت استاندارد"
   },
   "Home": {},
   "InviteMemberDialog": {
-    "cancel_button": "@:(General.cancel_button)",
-    "email-copy": "Morphic will also send you a copy of the invitation email that will include steps & videos for helping.",
-    "email_label": "Email of person to be invited",
-    "form-lead": "Morphic recommends that you contact the person, so they know the email invitation is coming (and don't delete it).",
-    "from-email_aria-label": "From email",
-    "from-name_aria-label": "From name",
-    "from_heading": "From:",
+    "cancel_button": "لغو",
+    "email-copy": "Morphic همچنین یک کپی از ایمیل دعوت را برای شما ارسال می کند که شامل مراحل و ویدیوهایی برای کمک است.",
+    "email_label": "ایمیل فردی که قرار است دعوت شود",
+    "form-lead": "Morphic توصیه می‌کند که با آن شخص تماس بگیرید، تا بداند دعوت نامه ایمیل در راه است (و آن را حذف نکنید).",
+    "from-email_aria-label": "از ایمیل",
+    "from-name_aria-label": "از نام",
+    "from_heading": "از:",
     "invite-member_title": "دعوت از {name}",
-    "invite_button": "Invite",
-    "phone_description": "Number the invited person can call for assistance in getting Morphic set up",
-    "phone_label": "Phone number (optional)",
-    "steps-info": "Some people might need some extra help from you to get set up. You can do this in person or using remote tools.",
-    "steps-lead": "After you send the invitation, the person you invited will need to...",
-    "steps_heading": "What are the steps?",
+    "invite_button": "دعوت",
+    "phone_description": "شماره ای که فرد دعوت شده می تواند برای راه‌اندازی Morphic برای کمک تماس بگیرد",
+    "phone_label": "شماره تلفن (اختیاری)",
+    "steps-info": "برخی از افراد ممکن است برای راه‌اندازی به کمک بیشتری از شما نیاز داشته باشند. شما می توانید این کار را شخصا یا با استفاده از ابزارهای راه دور انجام دهید.",
+    "steps-lead": "پس از ارسال دعوتنامه، فردی که دعوت کرده اید باید...",
+    "steps_heading": "مراحلش چیه؟",
     "steps_list": [
-      "Click the link in the invitation email",
-      "Sign up for a Morphic account & accept the invitation",
-      "Download & install the Morphic app on their computer",
-      "Sign into the Morphic app"
+      "روی پیوند در ایمیل دعوت کلیک کنید",
+      "برای حساب کاربری ثبت نام کنید و دعوت را بپذیرید",
+      "برنامه Morphic را در رایانه خود دانلود و نصب کنید",
+      "وارد برنامه Morphic شوید"
     ]
   },
   "MembersList": {
@@ -213,17 +213,17 @@
     "add-member_button": "یک نفر را اضافه کنید",
     "collapse-all": "همه را جمع کن",
     "expand-all": "همه را گسترش دهید",
-    "collapse-all_aria-label": "@:(MembersList.collapse-all) members",
-    "expand-all_aria-label": "@:(MembersList.expand-all) members",
-    "expand_button_arial-label": "Expand {name}",
-    "invitation-not-accepted": "Invited, but has not yet accepted.",
-    "invite_button": "Invite",
+    "collapse-all_aria-label": "همه را ببند",
+    "expand-all_aria-label": "همه را گسترش دهید",
+    "expand_button_arial-label": "بزرگ کردن {name}",
+    "invitation-not-accepted": "دعوت شده ولی هنوز قبول نکرده",
+    "invite_button": "دعوت",
     "invite_button_aria-label": "دعوت از {name}",
     "no-members": "MorphicBars را برای دیگران ایجاد و مدیریت کنید!\nاشتراک Morphic {subscription} به شما امکان می‌دهد {maxMembers} نفر را به حساب خود دعوت کنید.",
-    "not-invited": "Not yet invited.",
-    "re-invite_button": "Re-send invitation",
-    "re-invite_button_aria-label": "Re-send invitation to {name}",
-    "settings_tooltip": "Settings for {name}"
+    "not-invited": "هنوز دعوت نشده.",
+    "re-invite_button": "ارسال دعوتنامه",
+    "re-invite_button_aria-label": "ارسال مجدد دعوتنامه به {name}",
+    "settings_tooltip": "تنظیمات برای {name}"
   },
   "MorphicBarEditor": {},
   "MorphicBarPreconfigured": {},
@@ -285,65 +285,65 @@
   },
   "TextInputDialog": {},
   "Tutorial": {
-    "done_button": "Done",
+    "done_button": "انجام شده",
     "getting-started": {
       "link": "30 Second Tutorial:<br/>Getting Started with the Customization Tool",
       "steps": [
         {
           "text": [
-            "<b>Making a bar for yourself?</b>",
-            "Under My MorphicBar, click <i>@:(BarsList.new-bar_button)</i>.",
+            "<b>یک نوار برای خود درست می‌کنید؟</b>",
+            "در زیر My MorphicBar، روی <i>@:(BarsList.new-bar_button)</i> کلیک کنید.",
             "",
-            "<b>Making a bar for someone else?</b>",
-            "Click the <i>@:(MembersList.add-member_button)</i> button. Then click <i>@:(MembersList.add-bar_button)</i> for that person."
+            "<b>برای شخص دیگری نوار درست می کنید؟</b>",
+            "روی دکمه <i>@:(MembersList.add-member_button)</i> کلیک کنید. سپس روی <i>@:(MembersList.add-bar_button)</i> برای آن شخص کلیک کنید."
           ]
         },
         {
           "text": [
-            "<b>Step 2: View & edit the bar</b>",
-            "The MorphicBar you selected appears in the middle section of the screen.",
+            "<b>مرحله 2: نوار را مشاهده و ویرایش کنید</b>",
+            "MorphicBar که انتخاب کرده اید در بخش میانی صفحه ظاهر می شود.",
             "",
-            "It looks the way it might look on a computer."
+            "به همان شکلی که ممکن است در رایانه به نظر برسد."
           ]
         },
         {
           "text": [
-            "<b>Step 3: Adding buttons</b>",
-            "The right column lists different buttons you can add.",
+            "<b>مرحله 3: افزودن دکمه‌ها</b>",
+            "ستون سمت راست دکمه های مختلفی را که می توانید اضافه کنید فهرست می کند.",
             "",
-            "Add buttons by clicking or dragging."
+            "با کلیک کردن یا کشیدن دکمه ها را اضافه کنید."
           ]
         },
         {
           "text": [
-            "<b>Step 4: Making changes to a button</b>",
-            "Do you want to make changes to a button?",
+            "<b>مرحله 4: ایجاد تغییرات در یک دکمه</b>",
+            "آیا می خواهید تغییراتی در یک دکمه ایجاد کنید؟",
             "",
-            "Click a button on the bar and make your changes."
+            "روی یک دکمه در نوار کلیک کنید و تغییرات خود را انجام دهید."
           ]
         },
         {
           "text": [
-            "<b>Step 5: Pushing the bar to the user</b>",
-            "When you like how the bar looks, push it to the user and it will appear on the user’s computer.",
+            "<b>مرحله 5: فشار دادن نوار به کاربر</b>",
+            "هنگامی که ظاهر نوار را دوست داشتید، آن را به سمت کاربر فشار دهید تا در رایانه کاربر ظاهر شود.\n",
             "",
-            "Click the <i>@:(EditorDetails.save-bar_button)</i> button"
+            "روی دکمه <i>@:(EditorDetails.save-bar_button)</i> کلیک کنید"
           ]
         },
         {
           "text": [
-            "<b>Done!</b>",
-            "When you are done, select another bar or just close the tool.",
+            "<b>تمام شد!</b>",
+            "وقتی کارتان تمام شد، نوار دیگری را انتخاب کنید یا فقط ابزار را ببندید.",
             "",
-            "You can come back and make changes at any time."
+            "هر زمان که بخواهید می توانید برگردید و تغییراتی ایجاد کنید."
           ]
         }
       ],
-      "title": "Tutorial: Getting started with Morphic Plus"
+      "title": "آموزش: شروع کار با Morphic Plus"
     },
-    "next_aria-label": "Next Step",
-    "previous_aria-label": "Previous step",
-    "step_arial-label": "Step {step}"
+    "next_aria-label": "مرحله بعدی",
+    "previous_aria-label": "گام قبلی",
+    "step_arial-label": "مرحله {مرحله}"
   },
   "UserLogin": {
     "create-account_link": "من هنوز اکانت Morphic ندارم",
@@ -360,19 +360,19 @@
   "members": {
     "changeRole": {
       "apply_button": "تغییر به {role}",
-      "cancel_button": "@:(General.cancel_button)",
+      "cancel_button": "لغو",
       "confirm": "لطفاً تغییر نقش {member} به {role} را تأیید کنید",
       "title": "تغییر نقش اعضا"
     },
     "delete": {
       "apply_button": "حذف {member}\n",
-      "cancel_button": "@:(General.cancel_button)",
+      "cancel_button": "لغو",
       "confirm": "لطفاً حذف {member} از گروه را تأیید کنید",
       "title": "حذف عضو"
     },
     "removeBar": {
       "apply_button": "پاک کنید",
-      "cancel_button": "@:(General.cancel_button)",
+      "cancel_button": "لغو",
       "confirm": "Are you sure you want to delete the bar?\nThis will remove the bar from this account. This cannot be undone."
     }
   }
