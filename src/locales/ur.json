@@ -264,116 +264,116 @@
     "account-benefits-lead": "ایک اکاؤنٹ آپ کو اجازت دیتا ہے",
     "account-benefits_list": [
       "اپنی رسائی اور استعمال کی ترتیبات کا مورفک میں بیک اپ لیں",
-      "Apply your settings quickly to any computer with Morphic on it",
-      "Make your own MorphicBar (with a subscription or if part of the Early Release Program)"
+      "ورفک والے کسی بھی کمپیوٹر پر اپنی سیٹنگز کو تیزی سے لاگو کریں",
+      "اپنا مورفک بار بنائیں (سبسکرپشن کے ساتھ یا اگر ابتدائی ریلیز پروگرام کا حصہ)"
     ],
-    "back_link": "I already have a Morphic account",
-    "form_heading": "New to Morphic?",
-    "form_lead": "Create your Morphic account now",
-    "side-heading": "Morphic is better with a Morphic account",
-    "submit_button": "Sign up"
+    "back_link": "میرے پاس پہلے سے ہی ایک مورفک اکاؤنٹ ہے",
+    "form_heading": "مورفک میں نئے؟",
+    "form_lead": "ابھی اپنا مورفک اکاؤنٹ بنائیں",
+    "side-heading": "مورفک ایک مورفک اکاؤنٹ کے ساتھ بہتر ہے",
+    "submit_button": "سائن اپ کریں"
   },
   "RenderList": {},
   "RenderListItem": {},
   "ResetPassword": {
-    "enter-your-email-address": "Enter your email address",
-    "instructions": "Please enter your email address, and we will email you instructions to you on how to reset your password.",
-    "heading": "Reset your password",
-    "reset-password_button": "Reset Password",
-    "return-to-login_link": "Return to Login",
-    "success": "Instructions to recover your password have been emailed to you."
+    "enter-your-email-address": "اپنا ای میل ایڈریس درج کریں",
+    "instructions": "براہ کرم اپنا ای میل ایڈریس درج کریں، اور ہم آپ کو اپنا پاس ورڈ دوبارہ ترتیب دینے کے بارے میں ہدایات ای میل کریں گے.",
+    "heading": "اپنا پاس ورڈ دوبارہ ترتیب دیں",
+    "reset-password_button": "پاس ورڈ ری سیٹ کریں",
+    "return-to-login_link": "لاگ ان پر واپس جائیں",
+    "success": "آپ کا پاس ورڈ بازیافت کرنے کی ہدایات آپ کو ای میل کر دی گئی ہیں"
   },
   "TextInputDialog": {},
   "Tutorial": {
-    "done_button": "Done",
+    "done_button": "ہو گیا",
     "getting-started": {
-      "link": "30 Second Tutorial:<br/>Getting Started with the Customization Tool",
+      "link": "30 دوسرا سبق:<br/>حسب ضرورت ٹول کے ساتھ شروع کرنا",
       "steps": [
         {
           "text": [
-            "<b>Making a bar for yourself?</b>",
-            "Under My MorphicBar, click <i>@:(BarsList.new-bar_button)</i>.",
+            "</b>اپنے لیے بار بنا رہے ہیں؟</b>",
+            "My MorphicBar کے تحت، <i>@:(BarsList.new-bar_button)</i> پر کلک کریں",
             "",
-            "<b>Making a bar for someone else?</b>",
-            "Click the <i>@:(MembersList.add-member_button)</i> button. Then click <i>@:(MembersList.add-bar_button)</i> for that person."
+            "<b>کسی اور کے لیے بار بنانا؟<b>",
+            "<i>@:(MembersList.add-member_button)</i> بٹن پر کلک کریں۔ پھر اس شخص کے لیے <i>@:(MembersList.add-bar_button)</i> پر کلک کریں"
           ]
         },
         {
           "text": [
-            "<b>Step 2: View & edit the bar</b>",
-            "The MorphicBar you selected appears in the middle section of the screen.",
+            "</b>مرحلہ 2: بار دیکھیں اور اس میں ترمیم کریں</b>",
+            "آپ کا منتخب کردہ MorphicBar اسکرین کے درمیانی حصے میں ظاہر ہوتا ہے.",
             "",
-            "It looks the way it might look on a computer."
+            "ایسا لگتا ہے جیسے یہ کمپیوٹر پر نظر آتا ہے."
           ]
         },
         {
           "text": [
-            "<b>Step 3: Adding buttons</b>",
-            "The right column lists different buttons you can add.",
+            "</b>مرحلہ 3: بٹن شامل کرنا</b>",
+            "دائیں کالم میں مختلف بٹنوں کی فہرست ہے جو آپ شامل کر سکتے ہیں.",
             "",
-            "Add buttons by clicking or dragging."
+            "کلک کرکے یا گھسیٹ کر بٹن شامل کریں۔"
           ]
         },
         {
           "text": [
-            "<b>Step 4: Making changes to a button</b>",
-            "Do you want to make changes to a button?",
+            "</b>مرحلہ 4: بٹن میں تبدیلیاں کرنا</b>\n",
+            "کیا آپ بٹن میں تبدیلیاں کرنا چاہتے ہیں؟",
             "",
-            "Click a button on the bar and make your changes."
+            "بار پر ایک بٹن پر کلک کریں اور اپنی تبدیلیاں کریں"
           ]
         },
         {
           "text": [
-            "<b>Step 5: Pushing the bar to the user</b>",
-            "When you like how the bar looks, push it to the user and it will appear on the user’s computer.",
+            "</b>مرحلہ 5: بار کو صارف تک پہنچانا</b>",
+            "جب آپ یہ پسند کریں کہ بار کیسا دکھتا ہے، تو اسے صارف کی طرف دھکیلیں اور یہ صارف کے کمپیوٹر پر ظاہر ہوگا.",
             "",
-            "Click the <i>@:(EditorDetails.save-bar_button)</i> button"
+            "<i>@:(EditorDetails.save-bar_button)</i> بٹن پر کلک کریں"
           ]
         },
         {
           "text": [
-            "<b>Done!</b>",
-            "When you are done, select another bar or just close the tool.",
+            "<b>ہو گیا!</b>",
+            "جب آپ کام کر لیں، کوئی اور بار منتخب کریں یا صرف ٹول بند کر دیں.",
             "",
-            "You can come back and make changes at any time."
+            "آپ کسی بھی وقت واپس آ سکتے ہیں اور تبدیلیاں کر سکتے ہیں."
           ]
         }
       ],
-      "title": "Tutorial: Getting started with Morphic Plus"
+      "title": "ٹیوٹوریل: مورفک پلس کے ساتھ شروع کرنا"
     },
-    "next_aria-label": "Next Step",
-    "previous_aria-label": "Previous step",
-    "step_arial-label": "Step {step}"
+    "next_aria-label": "اگلا مرحلہ",
+    "previous_aria-label": "پچھلا مرحلہ",
+    "step_arial-label": "مرحلہ {step}"
   },
   "UserLogin": {
-    "create-account_link": "I do not have a Morphic account yet",
-    "email_label": "Sign in with Email",
-    "heading": "Sign into Morphic",
-    "password-reset_link": "I forgot my password",
-    "password_label": "Password for Morphic",
-    "sign-in_button": "Sign in"
+    "create-account_link": "میرے پاس ابھی تک مورفک اکاؤنٹ نہیں ہے",
+    "email_label": "ای میل کے ساتھ سائن ان کریں",
+    "heading": "مورفک میں سائن ان کریں",
+    "password-reset_link": "میں اپنا پاس ورڈ بھول گیا ہوں",
+    "password_label": "مورفک کے لیے پاس ورڈ",
+    "sign-in_button": "سائن ان کریں"
   },
   "UserRegistration": {
-    "success": "Registration completed successfully"
+    "success": "رجسٹریشن کامیابی سے مکمل ہو گئی"
   },
   "ValidatedInput": {},
   "members": {
     "changeRole": {
-      "apply_button": "Change to {role}",
+      "apply_button": "{role} میں تبدیل کریں",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Please confirm changing the role of {member} to {role}",
-      "title": "Change member role"
+      "confirm": "براہ کرم {member} کے کردار کو {role} میں تبدیل کرنے کی تصدیق کریں",
+      "title": "ممبر کا کردار تبدیل کریں"
     },
     "delete": {
-      "apply_button": "Remove {member}",
+      "apply_button": "member} کو ہٹائیں",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Please confirm the removal of {member} from the group",
-      "title": "Remove member"
+      "confirm": " براہ کرم گروپ سے {member} کو نکالنے کی تصدیق کریں",
+      "title": "ممبر کو ہٹا دیں"
     },
     "removeBar": {
-      "apply_button": "Delete bar",
+      "apply_button": "بار کو حذف کریں",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Are you sure you want to delete the bar?\nThis will remove the bar from this account. This cannot be undone."
+      "confirm": "کیا آپ واقعی بار کو حذف کرنا چاہتے ہیں؟\nیہ اس اکاؤنٹ سے بار کو ہٹا دے گا۔ اسے کالعدم نہیں کیا جا سکتا"
     }
   }
 }
