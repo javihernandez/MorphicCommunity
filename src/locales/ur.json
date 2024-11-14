@@ -51,15 +51,15 @@
     "existing_username": "پہلے سے ہی ایک اکاؤنٹ ہے جو اس صارف کا نام استعمال کرتا ہے.",
     "limit_reached": "پ کے سبسکرپشن کے ممبران کی زیادہ سے زیادہ تعداد تک پہنچ گئی ہے.",
     "cannot_demote_self": "آپ اپنے آپ کو کم کرنے سے قاصر ہیں.",
-    "cannot_delete_self": "You are unable to delete yourself from the community.",
+    "cannot_delete_self": "آپ کو کمیونٹی سے اپنے آپ کو حذف کرنے کی اجازت نہیں ہے.",
     "http": {
-      "404": "Unable to access to the server. Please try again later.",
-      "500": "There is a problem with the server. Please try again later."
+      "404": "سرور تک رسائی حاصل نہیں کر سکتے۔ براہ کرم بعد میں دوبارہ کوشش کریں.",
+      "500": "سرور کے ساتھ ایک مسئلہ ہے۔ براہ کرم بعد میں دوبارہ کوشش کریں."
     },
     "validation": {
-      "app-missing": "The application to open has not been chosen.",
-      "field-missing": "A required field is missing: {name}.",
-      "link-missing": "The site to open has not been chosen."
+      "app-missing": "ھولنے کے لیے درخواست کا انتخاب نہیں کیا گیا ہے.",
+      "field-missing": "ایک مطلوبہ فیلڈ غائب ہے: {name}.",
+      "link-missing": "کھولنے کے لیے سائٹ کا انتخاب نہیں کیا گیا ہے."
     }
   },
   "App": {},
@@ -67,62 +67,62 @@
   "BarItemLink": {},
   "BarPreview": {},
   "BarsList": {
-    "bars_aria-label": "Bars for {name}",
-    "default-bar": "Default Bar",
-    "new-bar_button": "Add a new bar",
-    "new-bar_button_aria-label": "Add a new bar for {name}"
+    "bars_aria-label": "{name} کے لیے بارز",
+    "default-bar": "ڈیفالٹ بار",
+    "new-bar_button": "ایک نیا بار شامل کریں",
+    "new-bar_button_aria-label": "{name} کے لیے ایک نیا بار شامل کریں"
   },
   "BillingDetails": {},
   "BlockLoginRegister": {},
   "Invite": {
-    "cancel_button": "Decline invitation",
-    "confirm-decline-no_button": "No",
-    "confirm-decline_message": "Do you really want to decline your invitation for Morphic?",
-    "confirm-decline-yes_button": "Yes, decline",
-    "confirm-decline_title": "Decline Morphic Invitation",
-    "dialog-sign-in_title": "Sign into Morphic to accept",
-    "dialog-register_title": "Sign up for Morphic to accept",
-    "home-page_button": "Go to Morphic home page",
-    "info-learn-more_link": "Learn more about Morphic",
-    "info-p1": "The person or organization who invited you wants to create and manage MorphicBars for you.",
-    "info-p2": "If you accept, they will be able to make and update MorphicBars for your computer. They cannot see or change other bars or things on your computer.",
-    "info_heading": "Accept your Morphic invitation &amp; MorphicBar",
-    "loading": "Loading",
-    "message-accepted": "You have accepted your Morphic invitation.",
-    "message-declined": "You have declined your Morphic invitation.",
-    "message-invalid": "Your invitation has expired or this link is valid. Please ask for a new invitation (from the person who invited you).",
-    "message_title": "Morphic Invitation",
-    "ok-sign-in_button": "Accept Invitation",
-    "ok-register_button": "Accept & create account",
-    "register-email_description": "You can change this if you want to use a different email address",
-    "register-form-lead": "To accept your Morphic invitation and MorphicBar, you need to create a Morphic account below (unless you already have a Morphic account).",
-    "sign-in-form-lead": "To accept your Morphic invitation and MorphicBar, you need to sign into your Morphic account below (or create a Morphic account if you do not have one).",
-    "sign-in-register_link": "Sign up for a new Morphic account with a different email",
-    "sign-in_button": "Sign in"
+    "cancel_button": "دعوت کو مسترد کریں",
+    "confirm-decline-no_button": "نہیں",
+    "confirm-decline_message": "کیا آپ واقعی مورفک کے لیے اپنی دعوت کو مسترد کرنا چاہتے ہیں؟",
+    "confirm-decline-yes_button": "ہاں، انکار",
+    "confirm-decline_title": "مورفک دعوت کو مسترد کریں",
+    "dialog-sign-in_title": "قبول کرنے کے لیے مورفک میں سائن ان کریں",
+    "dialog-register_title": "قبول کرنے کے لیے مورفک کے لیے سائن اپ کریں",
+    "home-page_button": "مورفک ہوم پیج پر جائیں",
+    "info-learn-more_link": "مورفک کے بارے میں مزید جانیں",
+    "info-p1": "وہ شخص یا تنظیم جس نے آپ کو مدعو کیا ہے وہ آپ کے لیے MorphicBars بنانا اور ان کا نظم کرنا چاہتا ہے",
+    "info-p2": "اگر آپ قبول کرتے ہیں، تو وہ آپ کے کمپیوٹر کے لیے MorphicBars بنانے اور اپ ڈیٹ کرنے کے قابل ہو جائیں گے۔ وہ آپ کے کمپیوٹر پر دیگر بارز یا چیزوں کو دیکھ یا تبدیل نہیں کر سکتے ہیں.",
+    "info_heading": "اپنی مورفک دعوت قبول کریں اور مورفک بار",
+    "loading": "لوڈ ہو رہا ہے",
+    "message-accepted": "آپ نے اپنی مورفک دعوت قبول کر لی ہے.",
+    "message-declined": "آپ نے اپنی مورفک دعوت کو مسترد کر دیا ہے.",
+    "message-invalid": "آپ کی دعوت کی میعاد ختم ہو گئی ہے یا یہ لنک درست ہے۔ براہ کرم ایک نیا دعوت نامہ طلب کریں (اس شخص سے جس نے آپ کو مدعو کیا تھا).",
+    "message_title": "مورفک دعوت",
+    "ok-sign-in_button": "دعوت قبول کریں",
+    "ok-register_button": "قبول کریں اور اکاؤنٹ بنائیں",
+    "register-email_description": "اگر آپ کوئی مختلف ای میل پتہ استعمال کرنا چاہتے ہیں تو آپ اسے تبدیل کر سکتے ہیں",
+    "register-form-lead": "اپنی مورفک دعوت اور مورفک بار کو قبول کرنے کے لیے، آپ کو نیچے ایک مورفک اکاؤنٹ بنانا ہوگا (جب تک کہ آپ کے پاس پہلے سے ہی مورفک اکاؤنٹ نہ ہو).",
+    "sign-in-form-lead": "اپنی مورفک دعوت اور مورفک بار کو قبول کرنے کے لیے، آپ کو ذیل میں اپنے مورفک اکاؤنٹ میں سائن ان کرنے کی ضرورت ہے (یا اگر آپ کے پاس نہیں ہے تو ایک مورفک اکاؤنٹ بنائیں)",
+    "sign-in-register_link": "ایک مختلف ای میل کے ساتھ ایک نئے مورفک اکاؤنٹ کے لیے سائن اپ کریں",
+    "sign-in_button": "سائن ان کریں"
   },
   "MemberDetails": {
-    "bar-unused": "This bar has no members using it.",
-    "delete-member_button": "Delete member",
-    "re-invite_button": "Send a new invitation",
-    "invite_button": "Send an invitation"
+    "bar-unused": "اس بار کا کوئی ممبر اسے استعمال کرنے والا نہیں ہے.",
+    "delete-member_button": "ممبر کو حذف کریں",
+    "re-invite_button": "ایک نیا دعوت نامہ بھیجیں",
+    "invite_button": "دعوت نامہ بھیجیں"
   },
   "NewMember": {
-    "title": "Add a person"
+    "title": "ایک شخص کو شامل کریں"
   },
   "NewMemberDialog": {
-    "add_button": "Add Person",
+    "add_button": "شخص کو شامل کریں",
     "cancel_button": "@:(General.cancel_button)",
-    "lead": "Manage MorphicBars for other people by adding them to your Morphic Plus subscription.",
-    "manager-steps": "First, you will need to...",
+    "lead": "دوسرے لوگوں کو اپنے Morphic Plus سبسکرپشن میں شامل کرکے MorphicBars کا نظم کریں",
+    "manager-steps": "سب سے پہلے، آپ کو ضرورت ہو گی ...",
     "manager-steps_list": [
-      "Add the person (you are here)",
-      "Make a Bar",
-      "Save the Bar",
-      "Invite the person (invite will be sent by email)"
+      "اس شخص کو شامل کریں (آپ یہاں ہیں)",
+      "ایک بار بنائیں",
+      "ایک بار بنائیں",
+      "شخص کو دعوت دیں (دعوت ای میل کے ذریعے بھیجی جائے گی)"
     ],
-    "member-plan-limit": "You can add up to {limit} people on your {plan} Morphic Plus subscription.",
-    "member-steps": "The person you invited will need to...",
-    "member-steps_info": "You may wish to help in person or using remote tools.",
+    "member-plan-limit": "آپ اپنی {plan} Morphic Plus سبسکرپشن پر {limit} لوگوں کو شامل کر سکتے ہیں.",
+    "member-steps": "جس شخص کو آپ نے مدعو کیا ہے اس کی ضرورت ہوگی...",
+    "member-steps_info": "آپ ذاتی طور پر یا ریموٹ ٹولز کا استعمال کرتے ہوئے مدد کرنا چاہیں گے",
     "member-steps_list": [
       "Click link in invitation email",
       "Sign up for account & accept invitation",
