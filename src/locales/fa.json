@@ -107,7 +107,7 @@
     "invite_button": "Send an invitation"
   },
   "NewMember": {
-    "title": "Add a person"
+    "title": "یک نفر را اضافه کنید"
   },
   "NewMemberDialog": {
     "add_button": "Add Person",
@@ -183,7 +183,7 @@
     "logout_button": "Sign out",
     "login_button": "Sign in",
     "product-name": "Custom MorphicBar Tool",
-    "standard-mode_button": "Standard Mode"
+    "standard-mode_button": "حالت استاندارد"
   },
   "Home": {},
   "InviteMemberDialog": {
@@ -194,7 +194,7 @@
     "from-email_aria-label": "From email",
     "from-name_aria-label": "From name",
     "from_heading": "From:",
-    "invite-member_title": "Invite {name}",
+    "invite-member_title": "دعوت از {name}",
     "invite_button": "Invite",
     "phone_description": "Number the invited person can call for assistance in getting Morphic set up",
     "phone_label": "Phone number (optional)",
@@ -210,16 +210,16 @@
   },
   "MembersList": {
     "add-bar_button": "یک نوار جدید اضافه کنید",
-    "add-member_button": "Add a person",
-    "collapse-all": "Collapse all",
-    "expand-all": "Expand all",
+    "add-member_button": "یک نفر را اضافه کنید",
+    "collapse-all": "همه را جمع کن",
+    "expand-all": "همه را گسترش دهید",
     "collapse-all_aria-label": "@:(MembersList.collapse-all) members",
     "expand-all_aria-label": "@:(MembersList.expand-all) members",
     "expand_button_arial-label": "Expand {name}",
     "invitation-not-accepted": "Invited, but has not yet accepted.",
     "invite_button": "Invite",
-    "invite_button_aria-label": "Invite {name}",
-    "no-members": "Create and manage MorphicBars for others! Your {subscription} Morphic subscription allows you to invite {maxMembers} people to your account.",
+    "invite_button_aria-label": "دعوت از {name}",
+    "no-members": "MorphicBars را برای دیگران ایجاد و مدیریت کنید!\nاشتراک Morphic {subscription} به شما امکان می‌دهد {maxMembers} نفر را به حساب خود دعوت کنید.",
     "not-invited": "Not yet invited.",
     "re-invite_button": "Re-send invitation",
     "re-invite_button_aria-label": "Re-send invitation to {name}",
@@ -230,34 +230,34 @@
   "MyCommunities": {},
   "MyCommunity": {},
   "NoSubscription": {
-    "go-to-signup_link": "Click here to go to sign up page for Morphic Plus",
+    "go-to-signup_link": "برای رفتن به صفحه ثبت نام برای Morphic Plus اینجا را کلیک کنید",
     "morphic-early-release-program": "برنامه انتشار زودهنگام مورفیک",
-    "morphic-plus-is-free": "Morphic Plus is free through the",
-    "no-subscription-message": "In order to create custom Morphic Bars you need to have a Morphic Plus subscription"
+    "morphic-plus-is-free": "Morphic Plus از طریق شما برای Morphic Plus رایگان است",
+    "no-subscription-message": "برای ایجاد نوارهای مورفیک سفارشی، باید اشتراک Morphic Plus داشته باشید"
   },
   "PlanPicker": {
-    "12-month-payment": "(paid annually)",
-    "6-month-payment": "(paid semiannually)",
-    "contact_link": "Contact us for more information",
-    "current-plan-marker": "Your current plan",
-    "enterprise-information": "Morphic also offers enterprise plans for larger groups, universities, companies, and organizations.",
-    "future-upgrade-hint": "Not sure how many members you will have? You can upgrade your subscription whenever you need to.",
-    "payment_button": "Continue to Payment",
-    "plan-limit": "none | Manage 1 member | Manage up to {n} members",
-    "plan-monthly-price": "{price} per month",
-    "plan-savings": "Savings of {savings} with annual payment discount.",
-    "plan-too-small": "Your current group is too large for this plan.",
-    "renew-monthly": "automatically renews monthly until canceled"
+    "12-month-payment": "(پرداخت سالانه)",
+    "6-month-payment": "(پرداخت شش‌ماهه)",
+    "contact_link": "برای اطلاعات بیشتر با ما تماس بگیرید",
+    "current-plan-marker": "طرح فعلی شما",
+    "enterprise-information": "Morphic همچنین برنامه های سازمانی را برای گروه ها، دانشگاه ها، شرکت ها و سازمان های بزرگتر ارائه می دهد.",
+    "future-upgrade-hint": "اگر مطمئن نیستید چند عضو خواهید داشت؟ هر زمان که نیاز داشتید می توانید اشتراک خود را ارتقا دهید.",
+    "payment_button": "به پرداخت ادامه دهید",
+    "plan-limit": "هیچکدام | مدیریت 1 عضو | حداکثر {n} عضو را مدیریت کنید تا پرداخت",
+    "plan-monthly-price": "{قیمت} در ماه",
+    "plan-savings": "پس انداز {saving} با تخفیف پرداخت سالانه.",
+    "plan-too-small": "گروه فعلی شما برای این طرح خیلی بزرگ است.",
+    "renew-monthly": "به طور خودکار ماهانه تمدید می شود تا زمانی که لغو شود"
   },
   "Plans": {
-    "close_button": "Close your group",
-    "group_bullet": "Group: {name}",
-    "leave_heading": "Not sure you want to stay with Morphic?",
-    "leave_text": "If you no longer want to manage your group, you can close it. Once the group is closed, all of\n          your group members will lose there personalizations. Each person will see the basic Morphic Bar.",
-    "member-count_bullet": "Current members: {member_count}",
-    "pick-subscription_heading": "Pick a subscription",
-    "trial-ended": "Your trial ends today. | Your trial ended yesterday. | Your trial ended {n} days ago.",
-    "trial-ending": "Your trial ends today. | Your trial will end tomorrow. | Your trial will ended in {n} days."
+    "close_button": "گروه خود را ببندید",
+    "group_bullet": "گروه: {name}",
+    "leave_heading": "مطمئن نیستید که می خواهید با Morphic بمانید؟",
+    "leave_text": "اگر دیگر نمی خواهید گروه خود را مدیریت کنید، می توانید آن را ببندید. پس از بسته شدن گروه، همه\n          اعضای گروه شما در آنجا شخصی سازی ها را از دست خواهند داد. هر فرد نوار اصلی Morphic Bar را می بیند.",
+    "member-count_bullet": "اعضای فعلی: {member_count}",
+    "pick-subscription_heading": "اشتراکی را انتخاب کنید",
+    "trial-ended": "آزمایش شما امروز به پایان می رسد. | محاکمه شما دیروز به پایان رسید. | دوره آزمایشی شما {n} روز پیش به پایان رسید.",
+    "trial-ending": "آزمایش شما امروز به پایان می رسد. | محاکمه شما دیروز به پایان رسید. | دوره آزمایشی شما {n} روز پیش به پایان رسید."
   },
   "PreviewItem": {},
   "Registration": {
@@ -367,11 +367,11 @@
     "delete": {
       "apply_button": "Remove {member}",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Please confirm the removal of {member} from the group",
-      "title": "Remove member"
+      "confirm": "لطفاً حذف {member} از گروه را تأیید کنید",
+      "title": "حذف عضو"
     },
     "removeBar": {
-      "apply_button": "Delete bar",
+      "apply_button": "پاک کنید",
       "cancel_button": "@:(General.cancel_button)",
       "confirm": "Are you sure you want to delete the bar?\nThis will remove the bar from this account. This cannot be undone."
     }
