@@ -1,7 +1,7 @@
 {
   "BarSettings": {
     "delete_button": "پاک کنید",
-    "rename_button": "Edit bar name"
+    "rename_button": "ویرایش"
   },
   "ButtonCatalog": {
     "search-result-summary": "No items found | 1 item found | {n} items found"
@@ -102,7 +102,7 @@
   },
   "MemberDetails": {
     "bar-unused": "این نوار هیچ عضوی از آن استفاده نمی کند.",
-    "delete-member_button": "Delete member",
+    "delete-member_button": "حذف عضو",
     "re-invite_button": "Send a new invitation",
     "invite_button": "Send an invitation"
   },
@@ -135,9 +135,9 @@
     "steps_heading": "What are the steps?"
   },
   "SidePanel": {
-    "account-settings_link": "Account settings",
-    "group-bars_heading": "Group Bars",
-    "other-bars_heading": "MorphicBars for Others",
+    "account-settings_link": "تنظیمات حساب",
+    "group-bars_heading": "نوار گروه",
+    "other-bars_heading": "MorphicBars برای دیگران",
     "own-bars_heading": "MorphicBars for Me"
   },
   "Dashboard": {
@@ -154,29 +154,29 @@
     }
   },
   "EarlyReleaseProgram": {
-    "account-created": "Your account has been created.",
-    "already-joined": "You already have an account",
-    "create-dialog-ok_button": "Create Account",
-    "create-dialog-prompt": "What would you like to name this account?",
-    "create-dialog-text-hint": "Examples: Your name, organization name, other...",
-    "create-dialog-title": "Create your account",
-    "heading": "Morphic Early Release Program",
-    "intro": "Welcome to Morphic.",
-    "join_link": "Click here to begin"
+    "account-created": "حساب شما ایجاد شده است.",
+    "already-joined": "شما قبلا یک حساب کاربری دارید",
+    "create-dialog-ok_button": "ساخت نمایه",
+    "create-dialog-prompt": "دوست دارید اسم این حساب را چه بگذارید؟",
+    "create-dialog-text-hint": "مثال: نام شما، نام سازمان، سایر...",
+    "create-dialog-title": "حساب خود را ایجاد کنید",
+    "heading": "برنامه انتشار زودهنگام مورفیک",
+    "intro": "به مورفیک خوش آمدید.",
+    "join_link": "برای شروع اینجا را کلیک کنید"
   },
   "EditButtonDialog": {
     "color": {
-      "teal": "Teal",
+      "teal": "سبز رنگ",
       "blue": "آبی",
       "purple": "بنفش",
       "red": "قرمز",
       "green": "سبز",
       "orange": "نارنجی",
-      "other": "Other"
+      "other": "دیگر"
     }
   },
   "Footer": {
-    "copyright": "Copyright © {year} Raising the Floor - US Inc. All rights Reserved."
+    "copyright": "حق چاپ {سال} Raising the Floor - US Inc. کلیه حقوق محفوظ است."
   },
   "Header": {
     "focus-mode_button": "Mobile Mode",
@@ -231,7 +231,7 @@
   "MyCommunity": {},
   "NoSubscription": {
     "go-to-signup_link": "Click here to go to sign up page for Morphic Plus",
-    "morphic-early-release-program": "Morphic Early Release Program",
+    "morphic-early-release-program": "برنامه انتشار زودهنگام مورفیک",
     "morphic-plus-is-free": "Morphic Plus is free through the",
     "no-subscription-message": "In order to create custom Morphic Bars you need to have a Morphic Plus subscription"
   },
