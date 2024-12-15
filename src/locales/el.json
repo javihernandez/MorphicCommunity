@@ -7,17 +7,17 @@
     "search-result-summary": "No items found | 1 item found | {n} items found"
   },
   "ConfirmEmail": {
-    "dialog_title": "Confirm your email",
-    "loading": "Loading...",
-    "ok_button": "Resend email"
+    "dialog_title": "Επιβεβαιώστε τη διεύθυνση email σας",
+    "loading": "Φόρτωση...",
+    "ok_button": "Επανάληψη αποστολής ηλεκτρονικού ταχυδρομείου"
   },
   "CopyBarDialog": {
     "confirm-dialog": {
-      "no_button": "@:(General.no_button)",
+      "no_button": "@:(Γενικά.no_κουμπί)",
       "question": "Θέλετε να συνεχίσετε;",
       "summary": "Αυτό θα αντιγράψει τα περιεχόμενα της μπάρας {barToCopy}, αντικαθιστώντας όλα τα στοιχεία της τρέχουσας μπάρας, {currentBar}.",
       "title": "Επιβεβαίωση αντιγραφής μπάρας",
-      "yes_button": "@:(General.yes_button)"
+      "yes_button": "@:(Γενικά.ναι_κουμπί)"
     },
     "intro": "Μπορείτε να αντιγράψετε οποιοδήποτε από τα παρακάτω MorphicBars στο MorphicBar που επεξεργάζεστε. (Αντικαθιστώντας όλα τα τρέχοντα περιεχόμενα του MorphicBar που επεξεργάζεστε)",
     "no-bars": "Δεν υπάρχουν άλλες μπάρες για αντιγραφή αντικειμένων.",
@@ -25,19 +25,19 @@
     "title": "Αντιγραφή μπάρας"
   },
   "EditorDetails": {
-    "copy-bar_button": "Copy bar from...",
-    "revert-bar_button": "Revert to user's current bar",
-    "save-bar_button": "Save bar",
-    "try-it_button": "Try it"
+    "copy-bar_button": "Αντιγραφή μπάρας από...",
+    "revert-bar_button": "Επαναφορά στην τρέχουσα μπάρα του χρήστη",
+    "save-bar_button": "Αποθήκευση μπάρας",
+    "try-it_button": "Δοκιμάστε το"
   },
   "General": {
     "no_button": "Όχι",
     "yes_button": "Ναι",
-    "ok_button": "OK",
-    "cancel_button": "Cancel",
+    "ok_button": "ΟΚ",
+    "cancel_button": "Ακύρωση",
     "member-state": {
       "active": "Ενεργό",
-      "invited": "Not yet accepted",
+      "invited": "Δεν έχει γίνει ακόμη δεκτό",
       "uninvited": "Ανακλήθηκε η πρόσκληση"
     }
   },
@@ -98,7 +98,7 @@
     "register-form-lead": "To accept your Morphic invitation and MorphicBar, you need to create a Morphic account below (unless you already have a Morphic account).",
     "sign-in-form-lead": "To accept your Morphic invitation and MorphicBar, you need to sign into your Morphic account below (or create a Morphic account if you do not have one).",
     "sign-in-register_link": "Sign up for a new Morphic account with a different email",
-    "sign-in_button": "Sign in"
+    "sign-in_button": "Συνδεθείτε"
   },
   "MemberDetails": {
     "bar-unused": "Αυτή η μπάρα δεν έχει μέλη που να τη χρησιμοποιούν.",
@@ -117,40 +117,40 @@
     "manager-steps_list": [
       "Add the person (you are here)",
       "Make a Bar",
-      "Save the Bar",
-      "Invite the person (invite will be sent by email)"
+      "Αποθήκευση της μπάρας",
+      "Προσκαλέστε το άτομο (η πρόσκληση θα σταλεί μέσω email)"
     ],
-    "member-plan-limit": "You can add up to {limit} people on your {plan} Morphic Plus subscription.",
-    "member-steps": "The person you invited will need to...",
-    "member-steps_info": "You may wish to help in person or using remote tools.",
+    "member-plan-limit": "Μπορείτε να προσθέσετε μέχρι και {limit} άτομα στη συνδρομή σας {plan} Morphic Plus.",
+    "member-steps": "Το άτομο που προσκαλέσατε θα χρειαστεί να...",
+    "member-steps_info": "Μπορεί να βοηθήσετε αυτοπροσώπως ή να χρησιμοποιήσετε απομακρυσμένα εργαλεία.",
     "member-steps_list": [
-      "Click link in invitation email",
-      "Sign up for account & accept invitation",
-      "Download & install Morphic app on their computer",
-      "Sign into the Morphic app"
+      "Κάντε κλικ στο σύνδεσμο στο email πρόσκλησης",
+      "Εγγραφείτε σε έναν λογαριασμό Morphic & αποδεχτείτε την πρόσκληση",
+      "Λήψη & εγκατάσταση της εφαρμογής Morphic στον υπολογιστή τους",
+      "Συνδεθείτε στην εφαρμογή Morphic"
     ],
-    "name-duplicate_error": "There is already a member with this name.",
-    "name_label": "Name or nickname of person to add",
-    "steps-info": "Morphic recommends that you contact the person you are inviting ahead of time.",
-    "steps_heading": "What are the steps?"
+    "name-duplicate_error": "Υπάρχει ήδη ένα μέλος με αυτό το όνομα.",
+    "name_label": "Όνομα ή ψευδώνυμο του ατόμου προς προσθήκη",
+    "steps-info": "Ο Morphic συνιστά να επικοινωνήσετε με το άτομο που προσκαλείτε πριν την προσθήκη του.",
+    "steps_heading": "Ποια είναι τα βήματα;"
   },
   "SidePanel": {
     "account-settings_link": "Ρυθμίσεις λογαριασμού",
     "group-bars_heading": "Μπάρες ομάδας",
     "other-bars_heading": "MorphicBars για άλλους",
-    "own-bars_heading": "MorphicBars for Me"
+    "own-bars_heading": "MorphicBars για μένα"
   },
   "Dashboard": {
     "hints": {
-      "create-member": "Do you want to make and manage MorphicBars for other people?",
+      "create-member": "Θέλετε να δημιουργήσετε και να διαχειριστείτε MorphicBars για άλλους χρήστες;",
       "create-member_instructions": [
-        "Start by adding a person.",
-        "Next you can create bars.",
-        "Finally, you can invite the person to download and use Morphic."
+        "Ξεκινήστε προσθέτοντας ένα άτομο.",
+        "Στη συνέχεια μπορείτε να δημιουργήσετε μπάρες.",
+        "Τέλος, μπορείτε να καλέσετε το άτομο να κατεβάσει και να χρησιμοποιήσει το Morphic."
       ],
-      "edit-bar": "Want to edit a bar? Click its name to get started!",
-      "new-bar": "Want to make a MorphicBar for yourself? Start with \"@:(MembersList.add-bar_button)\"",
-      "other-bars": "Click a person's name to see their MorphicBars"
+      "edit-bar": "Θέλετε να επεξεργαστείτε μια μπάρα? Κάντε κλικ στο όνομά της για να ξεκινήσετε!",
+      "new-bar": "Θέλετε να κάνετε μια MorphicBar για τον εαυτό σας? Ξεκινήστε με \"@:(MembersList.add-bar_button)\"",
+      "other-bars": "Κάντε κλικ στο όνομα ενός ατόμου για να δείτε τις MorphicBars του"
     }
   },
   "EarlyReleaseProgram": {
@@ -162,78 +162,78 @@
     "create-dialog-title": "Δημιουργήστε το λογαριασμό σας",
     "heading": "Πρόγραμμα πρώιμης κυκλοφορίας Morphic",
     "intro": "Καλώς ήλθατε στο Morphic.",
-    "join_link": "Click here to begin"
+    "join_link": "Κάντε κλικ εδώ για να ξεκινήσετε"
   },
   "EditButtonDialog": {
     "color": {
-      "teal": "Teal",
-      "blue": "Blue",
-      "purple": "Purple",
-      "red": "Red",
-      "green": "Green",
-      "orange": "Orange",
-      "other": "Other"
+      "teal": "Τιρκουάζ",
+      "blue": "Μπλε",
+      "purple": "Μωβ",
+      "red": "Κόκκινο",
+      "green": "Πράσινο",
+      "orange": "Πορτοκαλί",
+      "other": "Άλλο"
     }
   },
   "Footer": {
-    "copyright": "Copyright © {year} Raising the Floor - US Inc. All rights Reserved."
+    "copyright": "Πνευματικά δικαιώματα ©️ {year} Raising the Floor - US Inc. Όλα τα δικαιώματα διατηρούνται."
   },
   "Header": {
-    "focus-mode_button": "Mobile Mode",
-    "logout_button": "Sign out",
-    "login_button": "Sign in",
-    "product-name": "Custom MorphicBar Tool",
-    "standard-mode_button": "Standard Mode"
+    "focus-mode_button": "Λειτουργία κινητής συσκευής",
+    "logout_button": "Αποσύνδεση",
+    "login_button": "Συνδεθείτε",
+    "product-name": "Προσαρμοσμένο εργαλείο Morphicbar",
+    "standard-mode_button": "Κανονική λειτουργία"
   },
   "Home": {},
   "InviteMemberDialog": {
-    "cancel_button": "@:(General.cancel_button)",
-    "email-copy": "Morphic will also send you a copy of the invitation email that will include steps & videos for helping.",
-    "email_label": "Email of person to be invited",
-    "form-lead": "Morphic recommends that you contact the person, so they know the email invitation is coming (and don't delete it).",
-    "from-email_aria-label": "From email",
-    "from-name_aria-label": "From name",
-    "from_heading": "From:",
-    "invite-member_title": "Invite {name}",
-    "invite_button": "Invite",
-    "phone_description": "Number the invited person can call for assistance in getting Morphic set up",
-    "phone_label": "Phone number (optional)",
-    "steps-info": "Some people might need some extra help from you to get set up. You can do this in person or using remote tools.",
-    "steps-lead": "After you send the invitation, the person you invited will need to...",
-    "steps_heading": "What are the steps?",
+    "cancel_button": "@:(Γενικά.κουμπί_ακύρωσης)",
+    "email-copy": "Ο Morphic θα σας στείλει επίσης ένα αντίγραφο του email πρόσκλησης που θα περιλαμβάνει βήματα & βίντεο για βοήθεια.",
+    "email_label": "Ηλεκτρονικό ταχυδρομείο προσώπου που θα προσκληθεί",
+    "form-lead": "Ο Morphic συνιστά να επικοινωνήσετε με το άτομο, ώστε να γνωρίζει ότι έρχεται η πρόσκληση μέσω ηλεκτρονικού ταχυδρομείου (και να μην την διαγράψει).",
+    "from-email_aria-label": "Email αποστολέα",
+    "from-name_aria-label": "Όνομα αποστολέα",
+    "from_heading": "Από:",
+    "invite-member_title": "Προσκάλεσε {name}",
+    "invite_button": "Πρόσκληση",
+    "phone_description": "Αριθμός που το προσκεκλημένο άτομο μπορεί να καλέσει για βοήθεια για να εγκαταστήσει το Morphic",
+    "phone_label": "Αριθμός τηλεφώνου (προαιρετικά)",
+    "steps-info": "Μερικοί άνθρωποι μπορεί να χρειαστούν επιπλέον βοήθεια από εσάς για να ολοκληρώσουν τις ρυθμίσεις. Μπορείτε να το κάνετε αυτοπροσώπως ή χρησιμοποιώντας απομακρυσμένα εργαλεία.",
+    "steps-lead": "Μετά την αποστολή της πρόσκλησης, το άτομο που προσκαλέσατε θα χρειαστεί να...",
+    "steps_heading": "Ποια είναι τα βήματα;",
     "steps_list": [
-      "Click the link in the invitation email",
-      "Sign up for a Morphic account & accept the invitation",
-      "Download & install the Morphic app on their computer",
-      "Sign into the Morphic app"
+      "Κάντε κλικ στο σύνδεσμο στο email πρόσκλησης",
+      "Εγγραφείτε σε έναν λογαριασμό Morphic & αποδεχτείτε την πρόσκληση",
+      "Λήψη & εγκατάσταση της εφαρμογής Morphic στον υπολογιστή τους",
+      "Συνδεθείτε στην εφαρμογή Morphic"
     ]
   },
   "MembersList": {
     "add-bar_button": "Προσθήκη νέας μπάρας",
-    "add-member_button": "Add a person",
-    "collapse-all": "Collapse all",
-    "expand-all": "Expand all",
-    "collapse-all_aria-label": "@:(MembersList.collapse-all) members",
-    "expand-all_aria-label": "@:(MembersList.expand-all) members",
-    "expand_button_arial-label": "Expand {name}",
-    "invitation-not-accepted": "Invited, but has not yet accepted.",
-    "invite_button": "Invite",
-    "invite_button_aria-label": "Invite {name}",
-    "no-members": "Create and manage MorphicBars for others! Your {subscription} Morphic subscription allows you to invite {maxMembers} people to your account.",
-    "not-invited": "Not yet invited.",
-    "re-invite_button": "Re-send invitation",
-    "re-invite_button_aria-label": "Re-send invitation to {name}",
-    "settings_tooltip": "Settings for {name}"
+    "add-member_button": "Προσθέστε ένα άτομο",
+    "collapse-all": "Σύμπτυξη όλων",
+    "expand-all": "Ανάπτυξη όλων",
+    "collapse-all_aria-label": "@:(MembersList.collapse-all) μέλη",
+    "expand-all_aria-label": "@:(MembersList.expand-all) μέλη",
+    "expand_button_arial-label": "Ανάπτυξη {name}",
+    "invitation-not-accepted": "Προσκλήθηκε, αλλά δεν έχει γίνει ακόμα αποδεκτό.",
+    "invite_button": "Πρόσκληση",
+    "invite_button_aria-label": "Προσκάλεσε {name}",
+    "no-members": "Δημιουργήστε και διαχειριστείτε τα MorphicBars για τους άλλους! Η συνδρομή σας {subscription} Morphic σας επιτρέπει να προσκαλέσετε {maxMembers} άτομα στο λογαριασμό σας.",
+    "not-invited": "Δεν έχει προσκληθεί ακόμη.",
+    "re-invite_button": "Επαναποστολή πρόσκλησης",
+    "re-invite_button_aria-label": "Επαναποστολή πρόσκλησης στο {name}",
+    "settings_tooltip": "Ρυθμίσεις για {name}"
   },
   "MorphicBarEditor": {},
   "MorphicBarPreconfigured": {},
   "MyCommunities": {},
   "MyCommunity": {},
   "NoSubscription": {
-    "go-to-signup_link": "Click here to go to sign up page for Morphic Plus",
+    "go-to-signup_link": "Κάντε κλικ εδώ για να μεταβείτε στη σελίδα εγγραφής για το Morphic Plus",
     "morphic-early-release-program": "Πρόγραμμα πρώιμης κυκλοφορίας Morphic",
-    "morphic-plus-is-free": "Morphic Plus is free through the",
-    "no-subscription-message": "In order to create custom Morphic Bars you need to have a Morphic Plus subscription"
+    "morphic-plus-is-free": "Το Morphic Plus είναι δωρεάν μέσω του",
+    "no-subscription-message": "Για να δημιουργήσετε εξατομικευμένα Morphic Bars πρέπει να έχετε μια συνδρομή στο Morphic Plus"
   },
   "PlanPicker": {
     "12-month-payment": "(paid annually)",
@@ -264,24 +264,24 @@
     "account-benefits-lead": "Ένας λογαριασμός σας επιτρέπει να",
     "account-benefits_list": [
       "Δημιουργία αντιγράφων ασφαλείας για τις ρυθμίσεις προσβασιμότητας και χρηστικότητας στο Morphic",
-      "Apply your settings quickly to any computer with Morphic on it",
-      "Make your own MorphicBar (with a subscription or if part of the Early Release Program)"
+      "Εφαρμόστε τις ρυθμίσεις σας γρήγορα σε οποιονδήποτε υπολογιστή με εγκατεστημένο το Morphic",
+      "Φτιάξε τη δική σου MorphicBar (μέσω συνδρομής ή ως μέρος του προγράμματος πρώιμης κυκλοφορίας)"
     ],
-    "back_link": "I already have a Morphic account",
-    "form_heading": "New to Morphic?",
-    "form_lead": "Create your Morphic account now",
-    "side-heading": "Morphic is better with a Morphic account",
-    "submit_button": "Sign up"
+    "back_link": "Έχω ήδη έναν Morphic λογαριασμό",
+    "form_heading": "Νέος στο Morphic;",
+    "form_lead": "Δημιουργήστε τον Morphic λογαριασμό σας τώρα",
+    "side-heading": "Ο Morphic είναι καλύτερος με έναν Morphic λογαριασμό",
+    "submit_button": "Εγγραφείτε"
   },
   "RenderList": {},
   "RenderListItem": {},
   "ResetPassword": {
-    "enter-your-email-address": "Enter your email address",
-    "instructions": "Please enter your email address, and we will email you instructions to you on how to reset your password.",
-    "heading": "Reset your password",
-    "reset-password_button": "Reset Password",
-    "return-to-login_link": "Return to Login",
-    "success": "Instructions to recover your password have been emailed to you."
+    "enter-your-email-address": "Εισάγετε την διεύθυνση του ηλ. ταχυδρομείου σας",
+    "instructions": "Παρακαλώ εισάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας και θα σας στείλουμε οδηγίες για το πώς να επαναφέρετε τον κωδικό πρόσβασης σας.",
+    "heading": "Επαναφέρετε τον κωδικό πρόσβασης σας",
+    "reset-password_button": "Επαναφορά κωδικού πρόσβασης",
+    "return-to-login_link": "Επιστροφή στην σελίδα σύνδεσης",
+    "success": "Οι οδηγίες για την ανάκτηση του κωδικού πρόσβασης, σας έχουν αποσταλεί μέσω ηλεκτρονικού ταχυδρομείου."
   },
   "TextInputDialog": {},
   "Tutorial": {
@@ -346,32 +346,32 @@
     "step_arial-label": "Step {step}"
   },
   "UserLogin": {
-    "create-account_link": "I do not have a Morphic account yet",
-    "email_label": "Sign in with Email",
-    "heading": "Sign into Morphic",
-    "password-reset_link": "I forgot my password",
-    "password_label": "Password for Morphic",
-    "sign-in_button": "Sign in"
+    "create-account_link": "Δεν έχω ακόμη λογαριασμό Morphic",
+    "email_label": "Σύνδεση με e-mail",
+    "heading": "Συνδεθείτε στο Morphic",
+    "password-reset_link": "Ξέχασα τον κωδικό πρόσβασης μου",
+    "password_label": "Κωδικός πρόσβασης για Morphic",
+    "sign-in_button": "Συνδεθείτε"
   },
   "UserRegistration": {
-    "success": "Registration completed successfully"
+    "success": "Η εγγραφή ολοκληρώθηκε επιτυχώς"
   },
   "ValidatedInput": {},
   "members": {
     "changeRole": {
-      "apply_button": "Change to {role}",
+      "apply_button": "Αλλαγή σε {role}",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Please confirm changing the role of {member} to {role}",
-      "title": "Change member role"
+      "confirm": "Παρακαλώ επιβεβαιώστε την αλλαγή του ρόλου του {member} σε {role}",
+      "title": "Αλλαγή ρόλου μέλους"
     },
     "delete": {
-      "apply_button": "Remove {member}",
+      "apply_button": "Αφαίρεση {member}",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Please confirm the removal of {member} from the group",
-      "title": "Remove member"
+      "confirm": "Παρακαλώ επιβεβαιώστε την αφαίρεση του {member} από την ομάδα",
+      "title": "Αφαίρεση μέλους"
     },
     "removeBar": {
-      "apply_button": "Delete bar",
+      "apply_button": "Διαγραφή μπάρας",
       "cancel_button": "@:(General.cancel_button)",
       "confirm": "Are you sure you want to delete the bar?\nThis will remove the bar from this account. This cannot be undone."
     }
