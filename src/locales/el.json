@@ -1,7 +1,7 @@
 {
   "BarSettings": {
-    "delete_button": "Delete Bar",
-    "rename_button": "Edit bar name"
+    "delete_button": "Διαγραφή μπάρας",
+    "rename_button": "Επεξεργασία ονόματος μπάρας"
   },
   "ButtonCatalog": {
     "search-result-summary": "No items found | 1 item found | {n} items found"
@@ -14,15 +14,15 @@
   "CopyBarDialog": {
     "confirm-dialog": {
       "no_button": "@:(General.no_button)",
-      "question": "Do you wish to continue?",
-      "summary": "This will copy the contents of the bar {barToCopy}, replacing all items of the current bar, {currentBar}.",
-      "title": "Confirm Bar Copy",
+      "question": "Θέλετε να συνεχίσετε;",
+      "summary": "Αυτό θα αντιγράψει τα περιεχόμενα της μπάρας {barToCopy}, αντικαθιστώντας όλα τα στοιχεία της τρέχουσας μπάρας, {currentBar}.",
+      "title": "Επιβεβαίωση αντιγραφής μπάρας",
       "yes_button": "@:(General.yes_button)"
     },
-    "intro": "You can copy any of the MorphicBars below into the MorphicBar you are editing. (Replacing the ALL of current contents of the MorphicBar you are editing)",
-    "no-bars": "There are no other bars to copy items from.",
-    "select-instruction": "Select a bar to copy from:",
-    "title": "Copy bar"
+    "intro": "Μπορείτε να αντιγράψετε οποιοδήποτε από τα παρακάτω MorphicBars στο MorphicBar που επεξεργάζεστε. (Αντικαθιστώντας όλα τα τρέχοντα περιεχόμενα του MorphicBar που επεξεργάζεστε)",
+    "no-bars": "Δεν υπάρχουν άλλες μπάρες για αντιγραφή αντικειμένων.",
+    "select-instruction": "Επιλέξτε μια μπάρα για να αντιγράψετε από:",
+    "title": "Αντιγραφή μπάρας"
   },
   "EditorDetails": {
     "copy-bar_button": "Copy bar from...",
@@ -31,35 +31,35 @@
     "try-it_button": "Try it"
   },
   "General": {
-    "no_button": "No",
-    "yes_button": "Yes",
+    "no_button": "Όχι",
+    "yes_button": "Ναι",
     "ok_button": "OK",
     "cancel_button": "Cancel",
     "member-state": {
-      "active": "Active",
+      "active": "Ενεργό",
       "invited": "Not yet accepted",
-      "uninvited": "Uninvited"
+      "uninvited": "Ανακλήθηκε η πρόσκληση"
     }
   },
   "Errors": {
-    "generic-server-error": "Server error: {message}",
-    "generic-title": "Unable to {action}",
-    "generic-action": "perform the last action",
-    "invalid_credentials": "That email address or password has not been recognized.",
-    "missing_required": "A required field is missing.",
-    "existing_email": "There is already an account associated with that email address.",
-    "existing_username": "There is already an account which uses that user name.",
-    "limit_reached": "The maximum number of members for your subscription has been reached.",
+    "generic-server-error": "Λαθος στον διακομιστή: {message}",
+    "generic-title": "Δεν είναι δυνατή η {action}",
+    "generic-action": "εκτελέστε την τελευταία ενέργεια",
+    "invalid_credentials": "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου ή ο κωδικός πρόσβασης δεν αναγνωρίζονται.",
+    "missing_required": "Λείπει ένα υποχρεωτικό πεδίο.",
+    "existing_email": "Υπάρχει ήδη ένας λογαριασμός που σχετίζεται με αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου.",
+    "existing_username": "Υπάρχει ήδη ένας λογαριασμός που χρησιμοποιεί αυτό το όνομα χρήστη.",
+    "limit_reached": "Έχει συμπληρωθεί ο μέγιστος αριθμός μελών για τη συνδρομή σας.",
     "cannot_demote_self": "You are unable to demote yourself.",
-    "cannot_delete_self": "You are unable to delete yourself from the community.",
+    "cannot_delete_self": "Δεν μπορείτε να διαγράψετε τον εαυτό σας από την κοινότητα.",
     "http": {
       "404": "Unable to access to the server. Please try again later.",
-      "500": "There is a problem with the server. Please try again later."
+      "500": "Υπάρχει ένα πρόβλημα με το διακομιστή. Παρακαλώ δοκιμάστε ξανά αργότερα."
     },
     "validation": {
-      "app-missing": "The application to open has not been chosen.",
-      "field-missing": "A required field is missing: {name}.",
-      "link-missing": "The site to open has not been chosen."
+      "app-missing": "Η εφαρμογή για άνοιγμα δεν έχει επιλεγεί.",
+      "field-missing": "Λείπει ένα υποχρεωτικό πεδίο: {name}.",
+      "link-missing": "Η εφαρμογή για άνοιγμα δεν έχει επιλεγεί."
     }
   },
   "App": {},
@@ -68,15 +68,15 @@
   "BarPreview": {},
   "BarsList": {
     "bars_aria-label": "Bars for {name}",
-    "default-bar": "Default Bar",
-    "new-bar_button": "Add a new bar",
+    "default-bar": "Προεπιλεγμένη μπάρα",
+    "new-bar_button": "Προσθήκη νέας μπάρας",
     "new-bar_button_aria-label": "Add a new bar for {name}"
   },
   "BillingDetails": {},
   "BlockLoginRegister": {},
   "Invite": {
     "cancel_button": "Decline invitation",
-    "confirm-decline-no_button": "No",
+    "confirm-decline-no_button": "Όχι",
     "confirm-decline_message": "Do you really want to decline your invitation for Morphic?",
     "confirm-decline-yes_button": "Yes, decline",
     "confirm-decline_title": "Decline Morphic Invitation",
@@ -101,8 +101,8 @@
     "sign-in_button": "Sign in"
   },
   "MemberDetails": {
-    "bar-unused": "This bar has no members using it.",
-    "delete-member_button": "Delete member",
+    "bar-unused": "Αυτή η μπάρα δεν έχει μέλη που να τη χρησιμοποιούν.",
+    "delete-member_button": "Διαγραφή μέλους",
     "re-invite_button": "Send a new invitation",
     "invite_button": "Send an invitation"
   },
@@ -135,9 +135,9 @@
     "steps_heading": "What are the steps?"
   },
   "SidePanel": {
-    "account-settings_link": "Account settings",
-    "group-bars_heading": "Group Bars",
-    "other-bars_heading": "MorphicBars for Others",
+    "account-settings_link": "Ρυθμίσεις λογαριασμού",
+    "group-bars_heading": "Μπάρες ομάδας",
+    "other-bars_heading": "MorphicBars για άλλους",
     "own-bars_heading": "MorphicBars for Me"
   },
   "Dashboard": {
@@ -154,14 +154,14 @@
     }
   },
   "EarlyReleaseProgram": {
-    "account-created": "Your account has been created.",
-    "already-joined": "You already have an account",
-    "create-dialog-ok_button": "Create Account",
-    "create-dialog-prompt": "What would you like to name this account?",
-    "create-dialog-text-hint": "Examples: Your name, organization name, other...",
-    "create-dialog-title": "Create your account",
-    "heading": "Morphic Early Release Program",
-    "intro": "Welcome to Morphic.",
+    "account-created": "Ο λογαριασμός σας έχει δημιουργηθεί.",
+    "already-joined": "Έχετε ήδη λογαριασμό",
+    "create-dialog-ok_button": "Δημιουργία λογαριασμού",
+    "create-dialog-prompt": "Πως θα θέλατε να ονομάσετε αυτόν τον λογαριασμό;",
+    "create-dialog-text-hint": "Παραδείγματα: Το όνομά σας, το όνομα του οργανισμού, άλλα...",
+    "create-dialog-title": "Δημιουργήστε το λογαριασμό σας",
+    "heading": "Πρόγραμμα πρώιμης κυκλοφορίας Morphic",
+    "intro": "Καλώς ήλθατε στο Morphic.",
     "join_link": "Click here to begin"
   },
   "EditButtonDialog": {
@@ -209,7 +209,7 @@
     ]
   },
   "MembersList": {
-    "add-bar_button": "Add a new bar",
+    "add-bar_button": "Προσθήκη νέας μπάρας",
     "add-member_button": "Add a person",
     "collapse-all": "Collapse all",
     "expand-all": "Expand all",
@@ -231,7 +231,7 @@
   "MyCommunity": {},
   "NoSubscription": {
     "go-to-signup_link": "Click here to go to sign up page for Morphic Plus",
-    "morphic-early-release-program": "Morphic Early Release Program",
+    "morphic-early-release-program": "Πρόγραμμα πρώιμης κυκλοφορίας Morphic",
     "morphic-plus-is-free": "Morphic Plus is free through the",
     "no-subscription-message": "In order to create custom Morphic Bars you need to have a Morphic Plus subscription"
   },
@@ -261,9 +261,9 @@
   },
   "PreviewItem": {},
   "Registration": {
-    "account-benefits-lead": "An account allows you to",
+    "account-benefits-lead": "Ένας λογαριασμός σας επιτρέπει να",
     "account-benefits_list": [
-      "Back up your accessibility and usability settings to Morphic",
+      "Δημιουργία αντιγράφων ασφαλείας για τις ρυθμίσεις προσβασιμότητας και χρηστικότητας στο Morphic",
       "Apply your settings quickly to any computer with Morphic on it",
       "Make your own MorphicBar (with a subscription or if part of the Early Release Program)"
     ],
