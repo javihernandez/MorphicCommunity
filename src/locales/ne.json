@@ -107,7 +107,7 @@
     "invite_button": "Send an invitation"
   },
   "NewMember": {
-    "title": "Add a person"
+    "title": "व्यक्ति थप्नुहोस्"
   },
   "NewMemberDialog": {
     "add_button": "Add Person",
@@ -162,28 +162,28 @@
     "create-dialog-title": "तपाईंको खाता खोल्नुहोस्\"",
     "heading": "Morphic प्रारम्भिक रिलिज कार्यक्रम",
     "intro": "Morphic मा स्वागत छ.",
-    "join_link": "Click here to begin"
+    "join_link": "यहाँ क्लिक गरेर सुरू गर्नुहोस्"
   },
   "EditButtonDialog": {
     "color": {
-      "teal": "Teal",
-      "blue": "Blue",
-      "purple": "Purple",
-      "red": "Red",
-      "green": "Green",
-      "orange": "Orange",
-      "other": "Other"
+      "teal": "टील",
+      "blue": "निलो",
+      "purple": "बैजनी",
+      "red": "रातो",
+      "green": "हरियो",
+      "orange": "सुन्तला रङ्ग",
+      "other": "अन्य"
     }
   },
   "Footer": {
-    "copyright": "Copyright © {year} Raising the Floor - US Inc. All rights Reserved."
+    "copyright": "कपीराइट © {वर्ष} Raising the Floor - US Inc. सबै अधिकार सुरक्षित।."
   },
   "Header": {
     "focus-mode_button": "Mobile Mode",
     "logout_button": "Sign out",
     "login_button": "Sign in",
     "product-name": "Custom MorphicBar Tool",
-    "standard-mode_button": "Standard Mode"
+    "standard-mode_button": "मानक मोड"
   },
   "Home": {},
   "InviteMemberDialog": {
@@ -194,7 +194,7 @@
     "from-email_aria-label": "From email",
     "from-name_aria-label": "From name",
     "from_heading": "From:",
-    "invite-member_title": "Invite {name}",
+    "invite-member_title": "{नाम} लाई आमन्त्रित गर्नुहोस्",
     "invite_button": "Invite",
     "phone_description": "Number the invited person can call for assistance in getting Morphic set up",
     "phone_label": "Phone number (optional)",
@@ -210,16 +210,16 @@
   },
   "MembersList": {
     "add-bar_button": "नयाँ बार थप्नुहोस्",
-    "add-member_button": "Add a person",
-    "collapse-all": "Collapse all",
-    "expand-all": "Expand all",
+    "add-member_button": "व्यक्ति थप्नुहोस्",
+    "collapse-all": "सबै हटाउनुहोस्",
+    "expand-all": "सबै विस्तार गर्नुहोस्",
     "collapse-all_aria-label": "@:(MembersList.collapse-all) members",
     "expand-all_aria-label": "@:(MembersList.expand-all) members",
     "expand_button_arial-label": "Expand {name}",
     "invitation-not-accepted": "Invited, but has not yet accepted.",
     "invite_button": "Invite",
-    "invite_button_aria-label": "Invite {name}",
-    "no-members": "Create and manage MorphicBars for others! Your {subscription} Morphic subscription allows you to invite {maxMembers} people to your account.",
+    "invite_button_aria-label": "{नाम} लाई आमन्त्रित गर्नुहोस्",
+    "no-members": "अर्काेहरूका लागि MorphicBars सिर्जना र व्यवस्थापन गर्नुहोस्! तपाईंको {subscription} Morphic सदस्यता तपाईंलाई {maxMembers} व्यक्तिहरूलाई तपाईंको खातामा निमन्त्रणा गर्न अनुमति दिन्छ.",
     "not-invited": "Not yet invited.",
     "re-invite_button": "Re-send invitation",
     "re-invite_button_aria-label": "Re-send invitation to {name}",
@@ -230,15 +230,15 @@
   "MyCommunities": {},
   "MyCommunity": {},
   "NoSubscription": {
-    "go-to-signup_link": "Click here to go to sign up page for Morphic Plus",
+    "go-to-signup_link": "Morphic Plus को लागि साइन अप पृष्ठमा जान यहाँ क्लिक गर्नुहोस्",
     "morphic-early-release-program": "Morphic प्रारम्भिक रिलिज कार्यक्रम",
-    "morphic-plus-is-free": "Morphic Plus is free through the",
-    "no-subscription-message": "In order to create custom Morphic Bars you need to have a Morphic Plus subscription"
+    "morphic-plus-is-free": "Morphic Plus {through the} मा निःशुल्क उपलब्ध छ",
+    "no-subscription-message": "कस्टम Morphic Bars सिर्जना गर्नको लागि तपाईंलाई Morphic Plus सदस्यता आवश्यक छ।"
   },
   "PlanPicker": {
-    "12-month-payment": "(paid annually)",
+    "12-month-payment": "वार्षिक रूपमा भुक्तानी गर्नुहोस्",
     "6-month-payment": "(paid semiannually)",
-    "contact_link": "Contact us for more information",
+    "contact_link": "आर्धवार्षिक रूपमा भुक्तानी गर्नुहोस्",
     "current-plan-marker": "Your current plan",
     "enterprise-information": "Morphic also offers enterprise plans for larger groups, universities, companies, and organizations.",
     "future-upgrade-hint": "Not sure how many members you will have? You can upgrade your subscription whenever you need to.",
