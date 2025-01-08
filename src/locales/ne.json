@@ -1,7 +1,7 @@
 {
   "BarSettings": {
-    "delete_button": "Delete Bar",
-    "rename_button": "Edit bar name"
+    "delete_button": "डिलिट बार",
+    "rename_button": "नाम सच्याउनुहोस्"
   },
   "ButtonCatalog": {
     "search-result-summary": "No items found | 1 item found | {n} items found"
@@ -14,15 +14,15 @@
   "CopyBarDialog": {
     "confirm-dialog": {
       "no_button": "@:(General.no_button)",
-      "question": "Do you wish to continue?",
-      "summary": "This will copy the contents of the bar {barToCopy}, replacing all items of the current bar, {currentBar}.",
-      "title": "Confirm Bar Copy",
+      "question": "के तपाईं जारी राख्न चाहनुहुन्छ?",
+      "summary": "यसले बार {barToCopy} को सामग्रीलाई कपी गर्नेछ, जसले वर्तमान बार {currentBar} का सबै वस्तुहरूलाई प्रतिस्थापन गर्नेछ।.",
+      "title": "कपी गरेको पुष्टि गर्नुहोस्",
       "yes_button": "@:(General.yes_button)"
     },
-    "intro": "You can copy any of the MorphicBars below into the MorphicBar you are editing. (Replacing the ALL of current contents of the MorphicBar you are editing)",
-    "no-bars": "There are no other bars to copy items from.",
-    "select-instruction": "Select a bar to copy from:",
-    "title": "Copy bar"
+    "intro": "तपाईं तलका कुनैपनि MorphicBars लाई तपाईंले सम्पादन गर्दै गरेको MorphicBar मा कपी गर्न सक्नुहुन्छ। (यसले तपाईंले सम्पादन गर्दै गरेको MorphicBar को सबै वर्तमान सामग्रीलाई प्रतिस्थापन गर्नेछ।",
+    "no-bars": "कपी गर्नका लागि अरु कुनै बारहरू छैनन्.",
+    "select-instruction": "कपी गर्नको लागि एक बार चयन गर्नुहोस्:",
+    "title": "बार कपी गर्नुहोस्"
   },
   "EditorDetails": {
     "copy-bar_button": "Copy bar from...",
@@ -31,35 +31,35 @@
     "try-it_button": "Try it"
   },
   "General": {
-    "no_button": "No",
-    "yes_button": "Yes",
+    "no_button": "होईन",
+    "yes_button": "हाे",
     "ok_button": "OK",
     "cancel_button": "Cancel",
     "member-state": {
-      "active": "Active",
+      "active": "सक्रिय",
       "invited": "Not yet accepted",
-      "uninvited": "Uninvited"
+      "uninvited": "आमन्त्रण नगरिएको"
     }
   },
   "Errors": {
-    "generic-server-error": "Server error: {message}",
-    "generic-title": "Unable to {action}",
-    "generic-action": "perform the last action",
-    "invalid_credentials": "That email address or password has not been recognized.",
-    "missing_required": "A required field is missing.",
-    "existing_email": "There is already an account associated with that email address.",
-    "existing_username": "There is already an account which uses that user name.",
-    "limit_reached": "The maximum number of members for your subscription has been reached.",
-    "cannot_demote_self": "You are unable to demote yourself.",
-    "cannot_delete_self": "You are unable to delete yourself from the community.",
+    "generic-server-error": "सर्भर त्रुटि: {सन्देश}",
+    "generic-title": "काम गर्न असमर्थ",
+    "generic-action": "अन्तिमको काम गर्नुहोस्",
+    "invalid_credentials": ".",
+    "missing_required": "एक आवश्यक कुरा पुरा भएको छैन.",
+    "existing_email": "त्यो इमेल ठेगाना संग पहिले नै खाता जोडिएको छ.",
+    "existing_username": "त्यो प्रयोगकर्ता नाम पहिले नै प्रयोग भएको छ.",
+    "limit_reached": "तपाईंको सदस्यताका लागि अधिकतम सदस्य संख्या पुगेको छ.",
+    "cannot_demote_self": "तपाईंले आफूलाई कम गर्ने सक्नुहुन्न.",
+    "cannot_delete_self": "तपाईंले समुदायबाट आफूलाई हटाउन सक्नुहुन्न.",
     "http": {
-      "404": "Unable to access to the server. Please try again later.",
-      "500": "There is a problem with the server. Please try again later."
+      "404": "सर्भरमा पहुँच गर्न असमर्थ। कृपया पछि फेरि प्रयास गर्नुहोस्।.",
+      "500": "सर्भरसँग समस्या छ। कृपया पछि फेरि प्रयास गर्नुहोस्।."
     },
     "validation": {
-      "app-missing": "The application to open has not been chosen.",
-      "field-missing": "A required field is missing: {name}.",
-      "link-missing": "The site to open has not been chosen."
+      "app-missing": ".सर्भरसँग समस्या छ। कृपया पछि फेरि प्रयास गर्नुहोस्।.",
+      "field-missing": "एक आवश्यक कुरा पुरा भएको छैन.",
+      "link-missing": "वेबसाइटमा केही समस्या आएको छ। कृपया पछि फेरि प्रयास गर्नुहोस्।."
     }
   },
   "App": {},
@@ -68,15 +68,15 @@
   "BarPreview": {},
   "BarsList": {
     "bars_aria-label": "Bars for {name}",
-    "default-bar": "Default Bar",
-    "new-bar_button": "Add a new bar",
+    "default-bar": "Default बार",
+    "new-bar_button": "नयाँ बार थप्नुहोस्",
     "new-bar_button_aria-label": "Add a new bar for {name}"
   },
   "BillingDetails": {},
   "BlockLoginRegister": {},
   "Invite": {
     "cancel_button": "Decline invitation",
-    "confirm-decline-no_button": "No",
+    "confirm-decline-no_button": "होईन",
     "confirm-decline_message": "Do you really want to decline your invitation for Morphic?",
     "confirm-decline-yes_button": "Yes, decline",
     "confirm-decline_title": "Decline Morphic Invitation",
@@ -101,8 +101,8 @@
     "sign-in_button": "Sign in"
   },
   "MemberDetails": {
-    "bar-unused": "This bar has no members using it.",
-    "delete-member_button": "Delete member",
+    "bar-unused": "यो बार कुनै सदस्यले प्रयोग गरेका छैनन्.",
+    "delete-member_button": "सदस्य मेटाउनुहोस्",
     "re-invite_button": "Send a new invitation",
     "invite_button": "Send an invitation"
   },
@@ -135,9 +135,9 @@
     "steps_heading": "What are the steps?"
   },
   "SidePanel": {
-    "account-settings_link": "Account settings",
-    "group-bars_heading": "Group Bars",
-    "other-bars_heading": "MorphicBars for Others",
+    "account-settings_link": "खाता सेटिङ्स",
+    "group-bars_heading": "समूह बारहरू",
+    "other-bars_heading": "अरूको लागि MorphicBars",
     "own-bars_heading": "MorphicBars for Me"
   },
   "Dashboard": {
@@ -154,14 +154,14 @@
     }
   },
   "EarlyReleaseProgram": {
-    "account-created": "Your account has been created.",
-    "already-joined": "You already have an account",
-    "create-dialog-ok_button": "Create Account",
-    "create-dialog-prompt": "What would you like to name this account?",
-    "create-dialog-text-hint": "Examples: Your name, organization name, other...",
-    "create-dialog-title": "Create your account",
-    "heading": "Morphic Early Release Program",
-    "intro": "Welcome to Morphic.",
+    "account-created": "तपाईंको खाता सिर्जना गरिएको छ.",
+    "already-joined": "तपाईंको पहिले नै खाता छ",
+    "create-dialog-ok_button": "खाता खोल्नुहोस्",
+    "create-dialog-prompt": "तपाईं यस खातालाई के नाम दिन चाहनुहुन्छ?",
+    "create-dialog-text-hint": "उदाहरणहरू: तपाईंको नाम, संस्थाको नाम, अन्य...",
+    "create-dialog-title": "तपाईंको खाता खोल्नुहोस्\"",
+    "heading": "Morphic प्रारम्भिक रिलिज कार्यक्रम",
+    "intro": "Morphic मा स्वागत छ.",
     "join_link": "Click here to begin"
   },
   "EditButtonDialog": {
@@ -209,7 +209,7 @@
     ]
   },
   "MembersList": {
-    "add-bar_button": "Add a new bar",
+    "add-bar_button": "नयाँ बार थप्नुहोस्",
     "add-member_button": "Add a person",
     "collapse-all": "Collapse all",
     "expand-all": "Expand all",
@@ -231,7 +231,7 @@
   "MyCommunity": {},
   "NoSubscription": {
     "go-to-signup_link": "Click here to go to sign up page for Morphic Plus",
-    "morphic-early-release-program": "Morphic Early Release Program",
+    "morphic-early-release-program": "Morphic प्रारम्भिक रिलिज कार्यक्रम",
     "morphic-plus-is-free": "Morphic Plus is free through the",
     "no-subscription-message": "In order to create custom Morphic Bars you need to have a Morphic Plus subscription"
   },
