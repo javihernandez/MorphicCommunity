@@ -34,7 +34,7 @@
     "no_button": "होईन",
     "yes_button": "हाे",
     "ok_button": "OK",
-    "cancel_button": "Cancel",
+    "cancel_button": "रद्द गर्नुहोस्",
     "member-state": {
       "active": "सक्रिय",
       "invited": "Not yet accepted",
@@ -98,7 +98,7 @@
     "register-form-lead": "To accept your Morphic invitation and MorphicBar, you need to create a Morphic account below (unless you already have a Morphic account).",
     "sign-in-form-lead": "To accept your Morphic invitation and MorphicBar, you need to sign into your Morphic account below (or create a Morphic account if you do not have one).",
     "sign-in-register_link": "Sign up for a new Morphic account with a different email",
-    "sign-in_button": "Sign in"
+    "sign-in_button": "साईन इन गर्नुहोस्"
   },
   "MemberDetails": {
     "bar-unused": "यो बार कुनै सदस्यले प्रयोग गरेका छैनन्.",
@@ -181,7 +181,7 @@
   "Header": {
     "focus-mode_button": "Mobile Mode",
     "logout_button": "Sign out",
-    "login_button": "Sign in",
+    "login_button": "साईन इन गर्नुहोस्",
     "product-name": "Custom MorphicBar Tool",
     "standard-mode_button": "मानक मोड"
   },
@@ -237,51 +237,51 @@
   },
   "PlanPicker": {
     "12-month-payment": "वार्षिक रूपमा भुक्तानी गर्नुहोस्",
-    "6-month-payment": "(paid semiannually)",
+    "6-month-payment": "आर्धवार्षिक रूपमा भुक्तानी गर्नुहोस्",
     "contact_link": "आर्धवार्षिक रूपमा भुक्तानी गर्नुहोस्",
-    "current-plan-marker": "Your current plan",
-    "enterprise-information": "Morphic also offers enterprise plans for larger groups, universities, companies, and organizations.",
-    "future-upgrade-hint": "Not sure how many members you will have? You can upgrade your subscription whenever you need to.",
-    "payment_button": "Continue to Payment",
-    "plan-limit": "none | Manage 1 member | Manage up to {n} members",
-    "plan-monthly-price": "{price} per month",
-    "plan-savings": "Savings of {savings} with annual payment discount.",
-    "plan-too-small": "Your current group is too large for this plan.",
-    "renew-monthly": "automatically renews monthly until canceled"
+    "current-plan-marker": "तपाईंको वर्तमान योजना",
+    "enterprise-information": "Morphic ले ठूला समूहहरू, विश्वविद्यालयहरू, कम्पनीहरू र संगठनहरूको लागि उद्यम योजना पनि प्रस्ताव गर्दछ.",
+    "future-upgrade-hint": "तपाईंको कति सदस्य हुनेछ भनेर सुनिश्चित छैन? तपाईंलाई आवश्यकता पर्दा तपाईं आफ्नो सदस्यता कुनै समय पनि अपग्रेड गर्न सक्नुहुन्छ।.",
+    "payment_button": "भुक्तानी गर्न अगाडि बढ्नुहोस्",
+    "plan-limit": "कसैलाई छैन | १ सदस्य व्यवस्थापन गर्नुहोस् | {n} सदस्यसम्म व्यवस्थापन गर्नुहोस्",
+    "plan-monthly-price": "महिनामा {price}",
+    "plan-savings": "वार्षिक भुक्तानी छुटसँग {savings} को बचत.",
+    "plan-too-small": "तपाईंको वर्तमान समूह यो योजनाको लागि धेरै ठूलो छ.",
+    "renew-monthly": "रद्द नगरेसम्म स्वचालित रूपमा मासिक रूपमा नवीकरण हुन्छ"
   },
   "Plans": {
-    "close_button": "Close your group",
-    "group_bullet": "Group: {name}",
-    "leave_heading": "Not sure you want to stay with Morphic?",
-    "leave_text": "If you no longer want to manage your group, you can close it. Once the group is closed, all of\n          your group members will lose there personalizations. Each person will see the basic Morphic Bar.",
-    "member-count_bullet": "Current members: {member_count}",
-    "pick-subscription_heading": "Pick a subscription",
-    "trial-ended": "Your trial ends today. | Your trial ended yesterday. | Your trial ended {n} days ago.",
-    "trial-ending": "Your trial ends today. | Your trial will end tomorrow. | Your trial will ended in {n} days."
+    "close_button": "तपाईंको समूह बन्द गर्नुहोस्",
+    "group_bullet": "समूह: {name}",
+    "leave_heading": "तपाईं Morphic सँग रहन चाहनुहुन्छ कि चाहनुहुन्न?",
+    "leave_text": "यदि तपाईं अब आफ्नो समूह व्यवस्थापन गर्न चाहनुहुन्न भने, तपाईं यसलाई बन्द गर्न सक्नुहुन्छ। समूह बन्द भएपछि, तपाईंका सबै सदस्यहरूको व्यक्तिगत सेटिङ्हरू हराइनेछन्। प्रत्येक व्यक्तिले आधारभूत Morphic बार मात्र देख्नेछन्।.",
+    "member-count_bullet": "वर्तमान सदस्यहरू: {member_count}",
+    "pick-subscription_heading": "एक सदस्यता चयन गर्नुहोस्",
+    "trial-ended": "तपाईंको परीक्षण आज समाप्त हुन्छ। | तपाईंको परीक्षण हिजो समाप्त भयो। | तपाईंको परीक्षण {n} दिन पहिले समाप्त भयो।.",
+    "trial-ending": "तपाईंको परीक्षण आज समाप्त हुन्छ। | तपाईंको परीक्षण हिजो समाप्त भयो। | तपाईंको परीक्षण {n} दिन पहिले समाप्त भयो।."
   },
   "PreviewItem": {},
   "Registration": {
-    "account-benefits-lead": "An account allows you to",
+    "account-benefits-lead": "एउटा खाता तपाईंलाई अनुमति दिन्छ ताकि तपाईं",
     "account-benefits_list": [
-      "Back up your accessibility and usability settings to Morphic",
-      "Apply your settings quickly to any computer with Morphic on it",
-      "Make your own MorphicBar (with a subscription or if part of the Early Release Program)"
+      "तपाईंको पहुँचयोग्यता र प्रयोगकर्ता अनुकूलन सेटिङहरू Morphic मा ब्याक अप गर्नुहोस्।",
+      "तपाईंका सेटिङहरूलाई छिट्टै कुनै पनि कम्प्युटरमा लागू गर्नुहोस् जसमा Morphic इन्स्टल गरिएको छ।",
+      "आफ्नो MorphicBar बनाउनुस् (सदस्यता भएमा वा यदि तपाईं Early Release Program को हिस्सा हुनुहुन्छ भने)।"
     ],
-    "back_link": "I already have a Morphic account",
-    "form_heading": "New to Morphic?",
-    "form_lead": "Create your Morphic account now",
-    "side-heading": "Morphic is better with a Morphic account",
-    "submit_button": "Sign up"
+    "back_link": "मैले पहिले नै Morphic खाता बनाइसकेको छु।",
+    "form_heading": "Morphic मा नयाँ हुनुहुन्छ?",
+    "form_lead": "अब तपाईंको Morphic खाता सिर्जना गर्नुहोस्।",
+    "side-heading": "Morphic, एक Morphic खाता सँग अझ राम्रो हुन्छ।",
+    "submit_button": "साइन अप गर्नुहोस्"
   },
   "RenderList": {},
   "RenderListItem": {},
   "ResetPassword": {
-    "enter-your-email-address": "Enter your email address",
-    "instructions": "Please enter your email address, and we will email you instructions to you on how to reset your password.",
-    "heading": "Reset your password",
-    "reset-password_button": "Reset Password",
-    "return-to-login_link": "Return to Login",
-    "success": "Instructions to recover your password have been emailed to you."
+    "enter-your-email-address": "तपाईंको इमेल ठेगाना प्रविष्ट गर्नुहोस्",
+    "instructions": "कृपया तपाईंको इमेल ठेगाना प्रविष्ट गर्नुहोस्, र हामी तपाईंलाई पासवर्ड रिसेट गर्ने निर्देशहरू इमेलमार्फत पठाउनेछौं।.",
+    "heading": "आफ्नो पासवर्ड परिवर्तन",
+    "reset-password_button": "पासवर्ड रिसेट गर्नुहोस्",
+    "return-to-login_link": "लगइनमा फर्कनुहोस्",
+    "success": "तपाईंको पासवर्ड पुनः प्राप्त गर्नका लागि निर्देशहरू तपाईंलाई इमेल मार्फत पठाइएका छन्।."
   },
   "TextInputDialog": {},
   "Tutorial": {
@@ -346,34 +346,34 @@
     "step_arial-label": "Step {step}"
   },
   "UserLogin": {
-    "create-account_link": "I do not have a Morphic account yet",
-    "email_label": "Sign in with Email",
-    "heading": "Sign into Morphic",
-    "password-reset_link": "I forgot my password",
-    "password_label": "Password for Morphic",
-    "sign-in_button": "Sign in"
+    "create-account_link": "मैले अझै Morphic खाता सिर्जना गरेको छैन।",
+    "email_label": "ईमेलको साथ साइन इन गर्नुहोस्",
+    "heading": "Morphic मा साइन इन गर्नुहोस्",
+    "password-reset_link": "मैले मेरो पासवर्ड बिर्सें।",
+    "password_label": "Morphic को लागि पासवर्ड",
+    "sign-in_button": "साईन इन गर्नुहोस्"
   },
   "UserRegistration": {
-    "success": "Registration completed successfully"
+    "success": "पञ्जीकरण सफलतापूर्वक सम्पन्न भएको छ।"
   },
   "ValidatedInput": {},
   "members": {
     "changeRole": {
-      "apply_button": "Change to {role}",
+      "apply_button": "{role} मा परिवर्तन गर्नुहोस्",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Please confirm changing the role of {member} to {role}",
-      "title": "Change member role"
+      "confirm": "कृपया {member} को भूमिका {role} मा परिवर्तन गर्नको लागि पुष्टि गर्नुहोस्।",
+      "title": "सदस्यको भूमिका परिवर्तन गर्नुहोस्"
     },
     "delete": {
-      "apply_button": "Remove {member}",
+      "apply_button": "{member} लाई हटाउनुहोस्",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Please confirm the removal of {member} from the group",
-      "title": "Remove member"
+      "confirm": "कृपया {member} लाई समूहबाट हटाउने कुरा पुष्टि गर्नुहोस्।",
+      "title": "सदस्यलाई हटाउनुहोस्"
     },
     "removeBar": {
-      "apply_button": "Delete bar",
+      "apply_button": "बार मेट्नुहोस्",
       "cancel_button": "@:(General.cancel_button)",
-      "confirm": "Are you sure you want to delete the bar?\nThis will remove the bar from this account. This cannot be undone."
+      "confirm": "के तपाईं निश्चित हुनुहुन्छ कि तपाईं बार मेट्न चाहनुहुन्छ?\nयसले यो खाता बाट बारलाई मेटिदिन्छ। यो प्रक्रिया फर्काउन सकिँदैन।."
     }
   }
 }
