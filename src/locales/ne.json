@@ -4,20 +4,20 @@
     "rename_button": "नाम सच्याउनुहोस्"
   },
   "ButtonCatalog": {
-    "search-result-summary": "No items found | 1 item found | {n} items found"
+    "search-result-summary": "कुनै वस्तु फेला परेन।\n १ वस्तु फेला पर्‍यो।\n {n} वस्तुहरू फेला परे।"
   },
   "ConfirmEmail": {
-    "dialog_title": "Confirm your email",
-    "loading": "Loading...",
-    "ok_button": "Resend email"
+    "dialog_title": "आफ्नो इमेल पुष्टि गर्नुहोस्।",
+    "loading": "लोड हुँदैछ...",
+    "ok_button": "इमेल पुनः पठाउनुहोस्।"
   },
   "CopyBarDialog": {
     "confirm-dialog": {
-      "no_button": "@:(General.no_button)",
+      "no_button": "कुनै बटन छैन।",
       "question": "के तपाईं जारी राख्न चाहनुहुन्छ?",
       "summary": "यसले बार {barToCopy} को सामग्रीलाई कपी गर्नेछ, जसले वर्तमान बार {currentBar} का सबै वस्तुहरूलाई प्रतिस्थापन गर्नेछ।.",
       "title": "कपी गरेको पुष्टि गर्नुहोस्",
-      "yes_button": "@:(General.yes_button)"
+      "yes_button": "हो बटन।"
     },
     "intro": "तपाईं तलका कुनैपनि MorphicBars लाई तपाईंले सम्पादन गर्दै गरेको MorphicBar मा कपी गर्न सक्नुहुन्छ। (यसले तपाईंले सम्पादन गर्दै गरेको MorphicBar को सबै वर्तमान सामग्रीलाई प्रतिस्थापन गर्नेछ।",
     "no-bars": "कपी गर्नका लागि अरु कुनै बारहरू छैनन्.",
@@ -25,19 +25,19 @@
     "title": "बार कपी गर्नुहोस्"
   },
   "EditorDetails": {
-    "copy-bar_button": "Copy bar from...",
-    "revert-bar_button": "Revert to user's current bar",
-    "save-bar_button": "Save bar",
-    "try-it_button": "Try it"
+    "copy-bar_button": "बारलाई यहाँबाट प्रतिलिपि गर्नुहोस्...",
+    "revert-bar_button": "प्रयोगकर्ताको हालको बारमा फर्कनुहोस्।",
+    "save-bar_button": "बार सुरक्षित गर्नुहोस्।",
+    "try-it_button": "यो प्रयास गर्नुहोस्।"
   },
   "General": {
     "no_button": "होईन",
     "yes_button": "हाे",
-    "ok_button": "OK",
+    "ok_button": "ठीक छ",
     "cancel_button": "रद्द गर्नुहोस्",
     "member-state": {
       "active": "सक्रिय",
-      "invited": "Not yet accepted",
+      "invited": "अझै स्वीकृत भएको छैन।",
       "uninvited": "आमन्त्रण नगरिएको"
     }
   },
@@ -67,18 +67,18 @@
   "BarItemLink": {},
   "BarPreview": {},
   "BarsList": {
-    "bars_aria-label": "Bars for {name}",
+    "bars_aria-label": "{नाम} का लागि बारहरू",
     "default-bar": "Default बार",
     "new-bar_button": "नयाँ बार थप्नुहोस्",
-    "new-bar_button_aria-label": "Add a new bar for {name}"
+    "new-bar_button_aria-label": "{नाम} का लागि नयाँ बार थप्नुहोस्।"
   },
   "BillingDetails": {},
   "BlockLoginRegister": {},
   "Invite": {
-    "cancel_button": "Decline invitation",
+    "cancel_button": "आमन्त्रण अस्वीकृत गर्नुहोस्।",
     "confirm-decline-no_button": "होईन",
-    "confirm-decline_message": "Do you really want to decline your invitation for Morphic?",
-    "confirm-decline-yes_button": "Yes, decline",
+    "confirm-decline_message": "के तपाईं साँच्चिकै Morphic को लागि आफ्नो आमन्त्रण अस्वीकृत गर्न चाहनुहुन्छ?",
+    "confirm-decline-yes_button": "हो, अस्वीकृत गर्नुहोस्।",
     "confirm-decline_title": "Decline Morphic Invitation",
     "dialog-sign-in_title": "Sign into Morphic to accept",
     "dialog-register_title": "Sign up for Morphic to accept",
