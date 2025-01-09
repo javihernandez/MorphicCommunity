@@ -103,19 +103,19 @@
   "MemberDetails": {
     "bar-unused": "यो बार कुनै सदस्यले प्रयोग गरेका छैनन्.",
     "delete-member_button": "सदस्य मेटाउनुहोस्",
-    "re-invite_button": "Send a new invitation",
-    "invite_button": "Send an invitation"
+    "re-invite_button": "नयाँ निमन्त्रणा पठाउनुहोस्।",
+    "invite_button": "निमन्त्रणा पठाउनुहोस्"
   },
   "NewMember": {
     "title": "व्यक्ति थप्नुहोस्"
   },
   "NewMemberDialog": {
-    "add_button": "Add Person",
-    "cancel_button": "@:(General.cancel_button)",
-    "lead": "Manage MorphicBars for other people by adding them to your Morphic Plus subscription.",
-    "manager-steps": "First, you will need to...",
+    "add_button": "व्यक्ति थप्नुहोस्",
+    "cancel_button": "रद्द गर्नुहोस्",
+    "lead": "अर्को व्यक्तिहरूको लागि MorphicBars व्यवस्थापन गर्नुहोस् र तिनीहरूलाई तपाईंको Morphic Plus सदस्यतामा थप्नुहोस्।.",
+    "manager-steps": "पहिले, तपाईंलाई... आवश्यक पर्छ।...",
     "manager-steps_list": [
-      "Add the person (you are here)",
+      "व्यक्तिलाई थप्नुहोस् (तपाईं यहाँ हुनुहुन्छ",
       "Make a Bar",
       "Save the Bar",
       "Invite the person (invite will be sent by email)"
@@ -187,7 +187,7 @@
   },
   "Home": {},
   "InviteMemberDialog": {
-    "cancel_button": "@:(General.cancel_button)",
+    "cancel_button": "रद्द गर्नुहोस्",
     "email-copy": "Morphic will also send you a copy of the invitation email that will include steps & videos for helping.",
     "email_label": "Email of person to be invited",
     "form-lead": "Morphic recommends that you contact the person, so they know the email invitation is coming (and don't delete it).",
@@ -360,19 +360,19 @@
   "members": {
     "changeRole": {
       "apply_button": "{role} मा परिवर्तन गर्नुहोस्",
-      "cancel_button": "@:(General.cancel_button)",
+      "cancel_button": "रद्द गर्नुहोस्",
       "confirm": "कृपया {member} को भूमिका {role} मा परिवर्तन गर्नको लागि पुष्टि गर्नुहोस्।",
       "title": "सदस्यको भूमिका परिवर्तन गर्नुहोस्"
     },
     "delete": {
       "apply_button": "{member} लाई हटाउनुहोस्",
-      "cancel_button": "@:(General.cancel_button)",
+      "cancel_button": "रद्द गर्नुहोस्",
       "confirm": "कृपया {member} लाई समूहबाट हटाउने कुरा पुष्टि गर्नुहोस्।",
       "title": "सदस्यलाई हटाउनुहोस्"
     },
     "removeBar": {
       "apply_button": "बार मेट्नुहोस्",
-      "cancel_button": "@:(General.cancel_button)",
+      "cancel_button": "रद्द गर्नुहोस्",
       "confirm": "के तपाईं निश्चित हुनुहुन्छ कि तपाईं बार मेट्न चाहनुहुन्छ?\nयसले यो खाता बाट बारलाई मेटिदिन्छ। यो प्रक्रिया फर्काउन सकिँदैन।."
     }
   }
