@@ -4,20 +4,20 @@
     "rename_button": "Edit bar name"
   },
   "ButtonCatalog": {
-    "search-result-summary": "No items found | 1 item found | {n} items found"
+    "search-result-summary": "Nessun elemento trovato | 1 elemento trovato | {n} elementi trovati"
   },
   "ConfirmEmail": {
-    "dialog_title": "Confirm your email",
-    "loading": "Loading...",
-    "ok_button": "Resend email"
+    "dialog_title": "Conferma la tua email",
+    "loading": "Caricamento in corso...",
+    "ok_button": "Invia di nuovo la email"
   },
   "CopyBarDialog": {
     "confirm-dialog": {
-      "no_button": "@:(General.no_button)",
+      "no_button": "@:(Generale.nessun_tasto)",
       "question": "Do you wish to continue?",
       "summary": "This will copy the contents of the bar {barToCopy}, replacing all items of the current bar, {currentBar}.",
       "title": "Confirm Bar Copy",
-      "yes_button": "@:(General.yes_button)"
+      "yes_button": "@:(Generale.tasto_si)"
     },
     "intro": "You can copy any of the MorphicBars below into the MorphicBar you are editing. (Replacing the ALL of current contents of the MorphicBar you are editing)",
     "no-bars": "There are no other bars to copy items from.",
@@ -25,10 +25,10 @@
     "title": "Copy bar"
   },
   "EditorDetails": {
-    "copy-bar_button": "Copy bar from...",
-    "revert-bar_button": "Revert to user's current bar",
-    "save-bar_button": "Save bar",
-    "try-it_button": "Try it"
+    "copy-bar_button": "Copia la barra da...",
+    "revert-bar_button": "Ritorna alla barra corrente dell'utente",
+    "save-bar_button": "Salva la barra",
+    "try-it_button": "Provalo"
   },
   "General": {
     "no_button": "No",
@@ -37,7 +37,7 @@
     "cancel_button": "Cancel",
     "member-state": {
       "active": "Active",
-      "invited": "Not yet accepted",
+      "invited": "Non ancora accettato",
       "uninvited": "Uninvited"
     }
   },
@@ -67,18 +67,18 @@
   "BarItemLink": {},
   "BarPreview": {},
   "BarsList": {
-    "bars_aria-label": "Bars for {name}",
+    "bars_aria-label": "Barre per {name}",
     "default-bar": "Default Bar",
     "new-bar_button": "Add a new bar",
-    "new-bar_button_aria-label": "Add a new bar for {name}"
+    "new-bar_button_aria-label": "Aggiungi una nuova barra per {name}"
   },
   "BillingDetails": {},
   "BlockLoginRegister": {},
   "Invite": {
-    "cancel_button": "Decline invitation",
+    "cancel_button": "Rifiuta l'invito",
     "confirm-decline-no_button": "No",
-    "confirm-decline_message": "Do you really want to decline your invitation for Morphic?",
-    "confirm-decline-yes_button": "Yes, decline",
+    "confirm-decline_message": "Vuoi davvero rifiutare il tuo invito a Morphic?",
+    "confirm-decline-yes_button": "Sì, rifiuta",
     "confirm-decline_title": "Decline Morphic Invitation",
     "dialog-sign-in_title": "Sign into Morphic to accept",
     "dialog-register_title": "Sign up for Morphic to accept",
