@@ -70,7 +70,7 @@
     "bars_aria-label": "Barre per {name}",
     "default-bar": "Default Bar",
     "new-bar_button": "Add a new bar",
-    "new-bar_button_aria-label": "Aggiungi una nuova barra per {name}"
+    "new-bar_button_aria-label": "Aggiungi una nuova barra per {nome}"
   },
   "BillingDetails": {},
   "BlockLoginRegister": {},
@@ -325,25 +325,25 @@
         {
           "text": [
             "<b>Passo 5: Inviare la barra all'utente</b>",
-            "When you like how the bar looks, push it to the user and it will appear on the user’s computer.",
+            "Quando ti piace come appare la barra, inviala all'utente e questa apparirà sul suo calcolatore.",
             "",
-            "Click the <i>@:(EditorDetails.save-bar_button)</i> button"
+            "Fare clic sul pulsante <i>@:(Dettagli dell'editor.pulsante_salva la barra)</i>"
           ]
         },
         {
           "text": [
-            "<b>Done!</b>",
-            "When you are done, select another bar or just close the tool.",
+            "<b>Fatto!</b>",
+            "Quando hai finito, seleziona un'altra barra o chiudi lo strumento.",
             "",
-            "You can come back and make changes at any time."
+            "Puoi tornare indietro e apportare modifiche in qualsiasi momento."
           ]
         }
       ],
-      "title": "Tutorial: Getting started with Morphic Plus"
+      "title": "Lezione: Iniziare con Morphic Plus"
     },
-    "next_aria-label": "Next Step",
-    "previous_aria-label": "Previous step",
-    "step_arial-label": "Step {step}"
+    "next_aria-label": "Passo successivo",
+    "previous_aria-label": "Passo precedente",
+    "step_arial-label": "Passo {step}"
   },
   "UserLogin": {
     "create-account_link": "I do not have a Morphic account yet",
