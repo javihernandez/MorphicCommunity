@@ -145,7 +145,7 @@
       "create-member": "Do you want to make and manage MorphicBars for other people?",
       "create-member_instructions": [
         "Start by adding a person.",
-        "Next you can create bars.",
+        "Następnie możesz tworzyć paski.",
         "Finally, you can invite the person to download and use Morphic."
       ],
       "edit-bar": "Want to edit a bar? Click its name to get started!",
@@ -215,7 +215,7 @@
     "expand-all": "Expand all",
     "collapse-all_aria-label": "@:(MembersList.collapse-all) members",
     "expand-all_aria-label": "@:(MembersList.expand-all) members",
-    "expand_button_arial-label": "Expand {name}",
+    "expand_button_arial-label": "Rozwiń {nazwa}",
     "invitation-not-accepted": "Invited, but has not yet accepted.",
     "invite_button": "Invite",
     "invite_button_aria-label": "Invite {name}",
