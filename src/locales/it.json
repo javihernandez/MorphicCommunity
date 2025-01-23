@@ -159,31 +159,31 @@
     "create-dialog-ok_button": "Crea un account",
     "create-dialog-prompt": "Cosa vorresti nominare questo account?",
     "create-dialog-text-hint": "Esempi: Il tuo nome, il nome dell'organizzazione, altro...",
-    "create-dialog-title": "Create your account",
-    "heading": "Morphic Early Release Program",
-    "intro": "Welcome to Morphic.",
-    "join_link": "Click here to begin"
+    "create-dialog-title": "Crea il tuo account",
+    "heading": "Programma di rilascio anticipato di Morphic",
+    "intro": "Benvenuto in Morphic.",
+    "join_link": "Fai clic qui per iniziare"
   },
   "EditButtonDialog": {
     "color": {
-      "teal": "Teal",
-      "blue": "Blue",
-      "purple": "Purple",
-      "red": "Red",
-      "green": "Green",
-      "orange": "Orange",
-      "other": "Other"
+      "teal": "Verde acqua",
+      "blue": "Blu",
+      "purple": "Porpora",
+      "red": "Rosso",
+      "green": "Verde",
+      "orange": "Arancione",
+      "other": "Altro"
     }
   },
   "Footer": {
-    "copyright": "Copyright © {year} Raising the Floor - US Inc. All rights Reserved."
+    "copyright": "Copyright ©️ {year} Raising the Floor - US Inc. Tutti i diritti riservati."
   },
   "Header": {
     "focus-mode_button": "Modalità mobile",
     "logout_button": "Esci",
-    "login_button": "Sign in",
+    "login_button": "Accedi",
     "product-name": "Strumento personalizzato della barra di Morphic",
-    "standard-mode_button": "Standard Mode"
+    "standard-mode_button": "Modalità standard"
   },
   "Home": {},
   "InviteMemberDialog": {
@@ -194,7 +194,7 @@
     "from-email_aria-label": "Da email",
     "from-name_aria-label": "Dal nome",
     "from_heading": "Da:",
-    "invite-member_title": "Invite {name}",
+    "invite-member_title": "Invita {name}",
     "invite_button": "Invita",
     "phone_description": "Numero che la persona invitata può chiamare per assistenza nella configurazione di Morphic",
     "phone_label": "Numero di telefono (facoltativo)",
@@ -209,20 +209,20 @@
     ]
   },
   "MembersList": {
-    "add-bar_button": "Add a new bar",
-    "add-member_button": "Add a person",
-    "collapse-all": "Collapse all",
-    "expand-all": "Expand all",
+    "add-bar_button": "Aggiungi una nuova barra",
+    "add-member_button": "Aggiungi una persona",
+    "collapse-all": "Comprimi tutto",
+    "expand-all": "Espandi tutto",
     "collapse-all_aria-label": "@:(MembersList.collapse-all) membri",
     "expand-all_aria-label": "@:(Lista dei membri.mostra tutti i) membri",
     "expand_button_arial-label": "Espandi {name}",
     "invitation-not-accepted": "Invitato, ma non ha ancora accettato.",
     "invite_button": "Invita",
-    "invite_button_aria-label": "Invite {name}",
-    "no-members": "Create and manage MorphicBars for others! Your {subscription} Morphic subscription allows you to invite {maxMembers} people to your account.",
+    "invite_button_aria-label": "Invita {name}",
+    "no-members": "Crea e gestisci le barre Morphic per altri! Il tuo abbonamento Morphic {subscription} ti permette d'invitare persone {maxMembers} al tuo account.",
     "not-invited": "Non ancora invitato.",
     "re-invite_button": "Invia nuovamente l'invito",
-    "re-invite_button_aria-label": "Re-send invitation to {name}",
+    "re-invite_button_aria-label": "Invia nuovamente l'invito a {name}",
     "settings_tooltip": "Impostazioni per {name}"
   },
   "MorphicBarEditor": {},
@@ -230,42 +230,42 @@
   "MyCommunities": {},
   "MyCommunity": {},
   "NoSubscription": {
-    "go-to-signup_link": "Click here to go to sign up page for Morphic Plus",
-    "morphic-early-release-program": "Morphic Early Release Program",
-    "morphic-plus-is-free": "Morphic Plus is free through the",
-    "no-subscription-message": "In order to create custom Morphic Bars you need to have a Morphic Plus subscription"
+    "go-to-signup_link": "Fai click qui per andare alla pagina d'iscrizione a Morphic Plus",
+    "morphic-early-release-program": "Programma di rilascio anticipato di Morphic",
+    "morphic-plus-is-free": "Morphic Plus è gratuito attraverso il",
+    "no-subscription-message": "Per creare barre di Morphic personalizzate è necessario avere un abbonamento Morphic Plus"
   },
   "PlanPicker": {
-    "12-month-payment": "(paid annually)",
-    "6-month-payment": "(paid semiannually)",
-    "contact_link": "Contact us for more information",
-    "current-plan-marker": "Your current plan",
-    "enterprise-information": "Morphic also offers enterprise plans for larger groups, universities, companies, and organizations.",
-    "future-upgrade-hint": "Not sure how many members you will have? You can upgrade your subscription whenever you need to.",
-    "payment_button": "Continue to Payment",
-    "plan-limit": "none | Manage 1 member | Manage up to {n} members",
-    "plan-monthly-price": "{price} per month",
-    "plan-savings": "Savings of {savings} with annual payment discount.",
-    "plan-too-small": "Your current group is too large for this plan.",
-    "renew-monthly": "automatically renews monthly until canceled"
+    "12-month-payment": "(pagato annualmente)",
+    "6-month-payment": "(pagato semestralmente)",
+    "contact_link": "Contattaci per ulteriori informazioni",
+    "current-plan-marker": "Il tuo piano attuale",
+    "enterprise-information": "Morphic offre anche piani aziendali per gruppi più grandi, università, aziende e organizzazioni.",
+    "future-upgrade-hint": "Non sei sicuro di quanti membri avrai? Puoi aggiornare il tuo abbonamento ogni volta che ne hai bisogno.",
+    "payment_button": "Vai al pagamento",
+    "plan-limit": "Nessuno I Gestisci 1 membro | Gestisci fino a {n} membri",
+    "plan-monthly-price": "{price} per mese",
+    "plan-savings": "Risparmio di {savings} con sconto sui pagamenti annuali.",
+    "plan-too-small": "Il tuo gruppo attuale è troppo grande per questo piano.",
+    "renew-monthly": "Rinnova automaticamente ogni mese fino alla cancellazione"
   },
   "Plans": {
-    "close_button": "Close your group",
-    "group_bullet": "Group: {name}",
-    "leave_heading": "Not sure you want to stay with Morphic?",
-    "leave_text": "If you no longer want to manage your group, you can close it. Once the group is closed, all of\n          your group members will lose there personalizations. Each person will see the basic Morphic Bar.",
-    "member-count_bullet": "Current members: {member_count}",
-    "pick-subscription_heading": "Pick a subscription",
-    "trial-ended": "Your trial ends today. | Your trial ended yesterday. | Your trial ended {n} days ago.",
-    "trial-ending": "Your trial ends today. | Your trial will end tomorrow. | Your trial will ended in {n} days."
+    "close_button": "Chiudi il tuo gruppo",
+    "group_bullet": "Gruppo: {name}",
+    "leave_heading": "Non sei sicuro di voler rimanere con Morphic?",
+    "leave_text": "Se non vuoi più gestire il tuo gruppo, puoi chiuderlo. Una volta che il gruppo è chiuso, tutti i membri \n           perderanno la loro personalizzazione. Ogni persona vedrà la barra base di Morphic.",
+    "member-count_bullet": "Membri attuali: {member_count}",
+    "pick-subscription_heading": "Scegli un abbonamento",
+    "trial-ended": "Il tuo periodo di prova finisce oggi. I Il tuo periodo di prova è finito ieri | Il tuo periodo di prova è finito {n} giorni fa.",
+    "trial-ending": "Il tuo periodo di prova finisce oggi. I Il tuo periodo di prova finirà domani | Il tuo periodo di prova finirà fra {n} giorni."
   },
   "PreviewItem": {},
   "Registration": {
-    "account-benefits-lead": "An account allows you to",
+    "account-benefits-lead": "Un account ti permette di",
     "account-benefits_list": [
-      "Back up your accessibility and usability settings to Morphic",
-      "Apply your settings quickly to any computer with Morphic on it",
-      "Make your own MorphicBar (with a subscription or if part of the Early Release Program)"
+      "Esegui il salvataggio delle impostazioni di accessibilità e usabilità di Morphic",
+      "Applica rapidamente le tue impostazioni a qualsiasi calcolatore con Morphic istallato",
+      "Crea la tua barra di Morphic (con un abbonamento o come parte del programma di Early Release)"
     ],
     "back_link": "Ho già un account Morphic",
     "form_heading": "Nuovo su Morphic?",
