@@ -198,7 +198,7 @@
     "invite_button": "Invita",
     "phone_description": "Numero che la persona invitata può chiamare per assistenza nella configurazione di Morphic",
     "phone_label": "Numero di telefono (facoltativo)",
-    "steps-info": "Alcune persone potrebbero aver bisogno di un aiuto in più per la configurazione. Puoi farlo di persona o usando strumenti remoti.",
+    "steps-info": "Alcune persone potrebbero aver bisogno di un aiuto in più da te per la configurazione. Puoi farlo di persona o usando strumenti remoti.",
     "steps-lead": "Dopo aver inviato l'invito, la persona che hai invitato avrà bisogno di...",
     "steps_heading": "Quali sono i passaggi?",
     "steps_list": [
@@ -219,7 +219,7 @@
     "invitation-not-accepted": "Invitato, ma non ha ancora accettato.",
     "invite_button": "Invita",
     "invite_button_aria-label": "Invita {name}",
-    "no-members": "Crea e gestisci le barre Morphic per altri! Il tuo abbonamento Morphic {subscription} ti permette d'invitare persone {maxMembers} al tuo account.",
+    "no-members": "Crea e gestisci le barre Morphic per altri! Il tuo abbonamento Morphic {subscription} ti permette d'invitare {maxMembers} persone al tuo account.",
     "not-invited": "Non ancora invitato.",
     "re-invite_button": "Invia nuovamente l'invito",
     "re-invite_button_aria-label": "Invia nuovamente l'invito a {name}",
@@ -263,7 +263,7 @@
   "Registration": {
     "account-benefits-lead": "Un account ti permette di",
     "account-benefits_list": [
-      "Esegui il salvataggio delle impostazioni di accessibilità e usabilità di Morphic",
+      "Esegui il backup delle impostazioni di accessibilità e usabilità su Morphic",
       "Applica rapidamente le tue impostazioni a qualsiasi calcolatore con Morphic istallato",
       "Crea la tua barra di Morphic (con un abbonamento o come parte del programma di Early Release)"
     ],
@@ -295,7 +295,7 @@
             "Sotto la mia barra di Morphic, fai click<i>@:(BarsList.new-bar_button)</i>.",
             "",
             "<b>Creare una barra per qualcun'altro?</b>",
-            "Fare clic sul pulsante <i>@:(Lista delle barre.tasto_nuovo-membro)</i>. Quindi fare clic su <i>@:(Lista delle barre.tasto_nuova-barra)</i> per quella persona."
+            "Fai clic sul pulsante <i>@:(Lista delle barre.tasto_nuovo-membro)</i>. Quindi fai clic su <i>@:(Lista delle barre.tasto_nuova-barra)</i> per quella persona."
           ]
         },
         {
@@ -327,7 +327,7 @@
             "<b>Passo 5: Inviare la barra all'utente</b>",
             "Quando ti piace come appare la barra, inviala all'utente e questa apparirà sul suo calcolatore.",
             "",
-            "Fare clic sul pulsante <i>@:(MembersList.add-member_button))</i>. Quindi fare clic su <i>@:(MembersList.add-bar_button)</i> per quella persona."
+            "Fai clic sul pulsante <i>@:(EditorDetails.save-bar_button)</i>"
           ]
         },
         {
