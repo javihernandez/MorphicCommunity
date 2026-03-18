@@ -1,0 +1,380 @@
+{
+  "BarSettings": {
+    "delete_button": "Elimina la barra",
+    "rename_button": "Modifica il nome della barra"
+  },
+  "ButtonCatalog": {
+    "search-result-summary": "Nessun elemento trovato | 1 elemento trovato | {n} elementi trovati"
+  },
+  "ConfirmEmail": {
+    "dialog_title": "Conferma la tua email",
+    "loading": "Caricamento in corso...",
+    "ok_button": "Invia di nuovo la email"
+  },
+  "CopyBarDialog": {
+    "confirm-dialog": {
+      "no_button": "@:(Generale.nessun_tasto)",
+      "question": "Desideri continuare?",
+      "summary": "Questo copierà il contenuto della barra {barToCopy}, sostituendo tutti gli elementi della barra corrente, {currentBar}.",
+      "title": "Conferma la copia della barra",
+      "yes_button": "@:(Generale.tasto_si)"
+    },
+    "intro": "Puoi copiare una qualsiasi delle barre di Morphic qui sotto nella barra di Morphic che stai modificando. (Sostituendo TUTTO il contenuto corrente della barra di Morphic che stai modificando)",
+    "no-bars": "Non ci sono altre barre da cui copiare gli elementi.",
+    "select-instruction": "Seleziona una barra da cui copiare:",
+    "title": "Copia la barra"
+  },
+  "EditorDetails": {
+    "copy-bar_button": "Copia la barra da...",
+    "revert-bar_button": "Ritorna alla barra corrente dell'utente",
+    "save-bar_button": "Salva la barra",
+    "try-it_button": "Provalo"
+  },
+  "General": {
+    "no_button": "No",
+    "yes_button": "Sì",
+    "ok_button": "OK",
+    "cancel_button": "Cancella",
+    "member-state": {
+      "active": "Attivo",
+      "invited": "Non ancora accettato",
+      "uninvited": "Non Invitato"
+    }
+  },
+  "Errors": {
+    "generic-server-error": "Errore del server: {message}",
+    "generic-title": "Incapace di {action}",
+    "generic-action": "Esegui l'ultima azione",
+    "invalid_credentials": "L'indirizzo email o la password non sono stati riconosciuti.",
+    "missing_required": "Manca un campo obbligatorio.",
+    "existing_email": "Esiste già un account associato a quell'indirizzo email.",
+    "existing_username": "Esiste già un account che utilizza quel nome utente.",
+    "limit_reached": "È stato raggiunto il numero massimo di membri per il tuo abbonamento.",
+    "cannot_demote_self": "Non sei in grado di declassarti.",
+    "cannot_delete_self": "Non puoi eliminare te stesso dalla comunità.",
+    "http": {
+      "404": "Impossibile accedere al server. Riprova più tardi.",
+      "500": "C'è un problema con il server. Riprova più tardi."
+    },
+    "validation": {
+      "app-missing": "L'applicazione da aprire non è stata scelta.",
+      "field-missing": "Manca un campo obbligatorio: {name}.",
+      "link-missing": "Il sito da aprire non è stato scelto."
+    }
+  },
+  "App": {},
+  "BarItemFields": {},
+  "BarItemLink": {},
+  "BarPreview": {},
+  "BarsList": {
+    "bars_aria-label": "Barre per {name}",
+    "default-bar": "Barra predefinita",
+    "new-bar_button": "Aggiungi una nuova barra",
+    "new-bar_button_aria-label": "Aggiungi una nuova barra per {nome}"
+  },
+  "BillingDetails": {},
+  "BlockLoginRegister": {},
+  "Invite": {
+    "cancel_button": "Rifiuta l'invito",
+    "confirm-decline-no_button": "No",
+    "confirm-decline_message": "Vuoi davvero rifiutare il tuo invito a Morphic?",
+    "confirm-decline-yes_button": "Sì, rifiuta",
+    "confirm-decline_title": "Rifiuta l'invito di Morphic",
+    "dialog-sign-in_title": "Iscriviti a Morphic per accettare",
+    "dialog-register_title": "Iscriviti a Morphic per accettare",
+    "home-page_button": "Vai alla pagina iniziale di Morphic",
+    "info-learn-more_link": "Scopri di più su Morphic",
+    "info-p1": "La persona o l'organizzazione che ti ha invitato vuole creare e gestire la barra di Morphic per te.",
+    "info-p2": "Se accetti, saranno in grado di creare e aggiornare barra di Morphic per il tuo calcolatore. Non possono vedere o cambiare altre barre o cose sul tuo computer.",
+    "info_heading": "Accetta il tuo invito a Morphic &amp; Barra di Morphic",
+    "loading": "Caricamento in corso",
+    "message-accepted": "Hai accettato il tuo invito a Morphic.",
+    "message-declined": "Hai rifiutato il tuo invito a Morphic.",
+    "message-invalid": "Il tuo invito è scaduto o questo link è valido. Per favore chiedi un nuovo invito (dalla persona che ti ha invitato).",
+    "message_title": "Invito di Morphic",
+    "ok-sign-in_button": "Accetta l'invito",
+    "ok-register_button": "Accetta e crea un account",
+    "register-email_description": "Puoi cambiare questa opzione se vuoi usare un indirizzo email diverso",
+    "register-form-lead": "Per accettare l' invito e la barra di Morphic, devi creare un account di Morphic qui sotto (a meno che tu non abbia già un account di Morphic).",
+    "sign-in-form-lead": "Per accettare l' invito e la barra di Morphic, devi accedere al tuo account di Morphic qui sotto (o creare un account Morphic se non ne hai uno).",
+    "sign-in-register_link": "Iscriviti per un nuovo account di Morphic con un'altra email",
+    "sign-in_button": "Registrati"
+  },
+  "MemberDetails": {
+    "bar-unused": "Questa barra non ha membri che la usano.",
+    "delete-member_button": "Rimuovi il membro",
+    "re-invite_button": "Invia un nuovo invito",
+    "invite_button": "Invia un invito"
+  },
+  "NewMember": {
+    "title": "Aggiungi una persona"
+  },
+  "NewMemberDialog": {
+    "add_button": "Aggiungi persona",
+    "cancel_button": "@:(General.cancel_button)",
+    "lead": "Gestisci la barra di Morphic per altre persone aggiungendole al tuo abbonamento Morphic Plus.",
+    "manager-steps": "In primo luogo, dovrete...",
+    "manager-steps_list": [
+      "Aggiungi la persona (sei qui)",
+      "Crea una barra",
+      "Salva la barra",
+      "Invita la persona (l'invito verrà inviato via email)"
+    ],
+    "member-plan-limit": "Puoi aggiungere fino a {limit} persone sul tuo abbonamento {plan} Morphic Plus.",
+    "member-steps": "La persona che hai invitato avrà bisogno di...",
+    "member-steps_info": "Potresti voler aiutare di persona o usando strumenti remoti.",
+    "member-steps_list": [
+      "Fai clic sul collegamento nell'email d'invito",
+      "Iscriviti all'account e accetta l'invito",
+      "Scarica e installa l'applicazione Morphic sul loro calcolatore",
+      "Accedi all'applicazione Morphic"
+    ],
+    "name-duplicate_error": "Esiste già un membro con questo nome.",
+    "name_label": "Nome o soprannome della persona da aggiungere",
+    "steps-info": "Morphic consiglia di contattare in anticipo la persona che stai invitando.",
+    "steps_heading": "Quali sono i passaggi?"
+  },
+  "SidePanel": {
+    "account-settings_link": "Impostazioni dell'account",
+    "group-bars_heading": "Barre del gruppo",
+    "other-bars_heading": "Barre di Morphic per altri",
+    "own-bars_heading": "Barre di Morphic per me"
+  },
+  "Dashboard": {
+    "hints": {
+      "create-member": "Vuoi creare e gestire barre di Morphic per altre persone?",
+      "create-member_instructions": [
+        "Inizia aggiungendo una persona.",
+        "Successivamente puoi creare delle barre.",
+        "Infine, puoi invitare la persona a scaricare e utilizzare Morphic."
+      ],
+      "edit-bar": "Vuoi modificare una barra? Fai clic sul suo nome per iniziare!",
+      "new-bar": "Vuoi creare una barra di Morphic per te? Inizia con \"@:(MembersList.add-bar_button)\"",
+      "other-bars": "Fai clic sul nome di una persona per vedere la sua barra di Morphic"
+    }
+  },
+  "EarlyReleaseProgram": {
+    "account-created": "Il tuo account è stato creato.",
+    "already-joined": "Hai già un account",
+    "create-dialog-ok_button": "Crea un account",
+    "create-dialog-prompt": "Cosa vorresti nominare questo account?",
+    "create-dialog-text-hint": "Esempi: Il tuo nome, il nome dell'organizzazione, altro...",
+    "create-dialog-title": "Crea il tuo account",
+    "heading": "Programma di rilascio anticipato di Morphic",
+    "intro": "Benvenuto in Morphic.",
+    "join_link": "Fai clic qui per iniziare"
+  },
+  "EditButtonDialog": {
+    "color": {
+      "teal": "Verde acqua",
+      "blue": "Blu",
+      "purple": "Porpora",
+      "red": "Rosso",
+      "green": "Verde",
+      "orange": "Arancione",
+      "other": "Altro"
+    }
+  },
+  "Footer": {
+    "copyright": "Copyright ©️ {year} Raising the Floor - US Inc. Tutti i diritti riservati."
+  },
+  "Header": {
+    "focus-mode_button": "Modalità mobile",
+    "logout_button": "Esci",
+    "login_button": "Accedi",
+    "product-name": "Strumento personalizzato della barra di Morphic",
+    "standard-mode_button": "Modalità standard"
+  },
+  "Home": {},
+  "InviteMemberDialog": {
+    "cancel_button": "@:(General.cancel_button)",
+    "email-copy": "Morphic ti invierà anche una copia dell'email d'invito che includerà passaggi e video per aiutarti.",
+    "email_label": "Email della persona da invitare",
+    "form-lead": "Morphic consiglia di contattare la persona, in modo che sappia che l'invito email sta arrivando (e non cancellarlo).",
+    "from-email_aria-label": "Da email",
+    "from-name_aria-label": "Dal nome",
+    "from_heading": "Da:",
+    "invite-member_title": "Invita {name}",
+    "invite_button": "Invita",
+    "phone_description": "Numero che la persona invitata può chiamare per assistenza nella configurazione di Morphic",
+    "phone_label": "Numero di telefono (facoltativo)",
+    "steps-info": "Alcune persone potrebbero aver bisogno di un aiuto in più da te per la configurazione. Puoi farlo di persona o usando strumenti remoti.",
+    "steps-lead": "Dopo aver inviato l'invito, la persona che hai invitato avrà bisogno di...",
+    "steps_heading": "Quali sono i passaggi?",
+    "steps_list": [
+      "Fare clic sul collegamento nell'email d'invito",
+      "Iscriviti per un account Morphic e accetta l'invito",
+      "Scarica e installa l'applicazione Morphic sui loro calcolatori",
+      "Accedi all'applicazione Morphic"
+    ]
+  },
+  "MembersList": {
+    "add-bar_button": "Aggiungi una nuova barra",
+    "add-member_button": "Aggiungi una persona",
+    "collapse-all": "Comprimi tutto",
+    "expand-all": "Espandi tutto",
+    "collapse-all_aria-label": "@:(MembersList.collapse-all) membri",
+    "expand-all_aria-label": "@:(Lista dei membri.mostra tutti i) membri",
+    "expand_button_arial-label": "Espandi {name}",
+    "invitation-not-accepted": "Invitato, ma non ha ancora accettato.",
+    "invite_button": "Invita",
+    "invite_button_aria-label": "Invita {name}",
+    "no-members": "Crea e gestisci le barre Morphic per altri! Il tuo abbonamento Morphic {subscription} ti permette d'invitare {maxMembers} persone al tuo account.",
+    "not-invited": "Non ancora invitato.",
+    "re-invite_button": "Invia nuovamente l'invito",
+    "re-invite_button_aria-label": "Invia nuovamente l'invito a {name}",
+    "settings_tooltip": "Impostazioni per {name}"
+  },
+  "MorphicBarEditor": {},
+  "MorphicBarPreconfigured": {},
+  "MyCommunities": {},
+  "MyCommunity": {},
+  "NoSubscription": {
+    "go-to-signup_link": "Fai click qui per andare alla pagina d'iscrizione a Morphic Plus",
+    "morphic-early-release-program": "Programma di rilascio anticipato di Morphic",
+    "morphic-plus-is-free": "Morphic Plus è gratuito attraverso il",
+    "no-subscription-message": "Per creare barre di Morphic personalizzate è necessario avere un abbonamento Morphic Plus"
+  },
+  "PlanPicker": {
+    "12-month-payment": "(pagato annualmente)",
+    "6-month-payment": "(pagato semestralmente)",
+    "contact_link": "Contattaci per ulteriori informazioni",
+    "current-plan-marker": "Il tuo piano attuale",
+    "enterprise-information": "Morphic offre anche piani aziendali per gruppi più grandi, università, aziende e organizzazioni.",
+    "future-upgrade-hint": "Non sei sicuro di quanti membri avrai? Puoi aggiornare il tuo abbonamento ogni volta che ne hai bisogno.",
+    "payment_button": "Vai al pagamento",
+    "plan-limit": "Nessuno I Gestisci 1 membro | Gestisci fino a {n} membri",
+    "plan-monthly-price": "{price} per mese",
+    "plan-savings": "Risparmio di {savings} con sconto sui pagamenti annuali.",
+    "plan-too-small": "Il tuo gruppo attuale è troppo grande per questo piano.",
+    "renew-monthly": "Rinnova automaticamente ogni mese fino alla cancellazione"
+  },
+  "Plans": {
+    "close_button": "Chiudi il tuo gruppo",
+    "group_bullet": "Gruppo: {name}",
+    "leave_heading": "Non sei sicuro di voler rimanere con Morphic?",
+    "leave_text": "Se non vuoi più gestire il tuo gruppo, puoi chiuderlo. Una volta che il gruppo è chiuso, tutti i membri \n           perderanno la loro personalizzazione. Ogni persona vedrà la barra base di Morphic.",
+    "member-count_bullet": "Membri attuali: {member_count}",
+    "pick-subscription_heading": "Scegli un abbonamento",
+    "trial-ended": "Il tuo periodo di prova finisce oggi. I Il tuo periodo di prova è finito ieri | Il tuo periodo di prova è finito {n} giorni fa.",
+    "trial-ending": "Il tuo periodo di prova finisce oggi. I Il tuo periodo di prova finirà domani | Il tuo periodo di prova finirà fra {n} giorni."
+  },
+  "PreviewItem": {},
+  "Registration": {
+    "account-benefits-lead": "Un account ti permette di",
+    "account-benefits_list": [
+      "Esegui il backup delle impostazioni di accessibilità e usabilità su Morphic",
+      "Applica rapidamente le tue impostazioni a qualsiasi calcolatore con Morphic istallato",
+      "Crea la tua barra di Morphic (con un abbonamento o come parte del programma di Early Release)"
+    ],
+    "back_link": "Ho già un account Morphic",
+    "form_heading": "Nuovo su Morphic?",
+    "form_lead": "Crea il tuo account Morphic ora",
+    "side-heading": "Morphic è migliore con un account Morphic",
+    "submit_button": "Registrati"
+  },
+  "RenderList": {},
+  "RenderListItem": {},
+  "ResetPassword": {
+    "enter-your-email-address": "Inserisci il tuo indirizzo email",
+    "instructions": "Inserisci il tuo indirizzo email e ti invieremo le istruzioni su come reimpostare la password.",
+    "heading": "Reimposta la tua password",
+    "reset-password_button": "Reimposta la password",
+    "return-to-login_link": "Torna all’accesso",
+    "success": "Le istruzioni per recuperare la password sono state inviate via email."
+  },
+  "TextInputDialog": {},
+  "Tutorial": {
+    "done_button": "Fatto",
+    "getting-started": {
+      "link": "Lezione di 30 secondi:<br/>Come iniziare con lo strumento di personalizzazione",
+      "steps": [
+        {
+          "text": [
+            "<b>Creare una barra per te?</b>",
+            "Sotto la mia barra di Morphic, fai click<i>@:(BarsList.new-bar_button)</i>.",
+            "",
+            "<b>Creare una barra per qualcun'altro?</b>",
+            "Fai clic sul pulsante <i>@:(Lista delle barre.tasto_nuovo-membro)</i>. Quindi fai clic su <i>@:(Lista delle barre.tasto_nuova-barra)</i> per quella persona."
+          ]
+        },
+        {
+          "text": [
+            "<b>Passo 2: Visualizza e modifica la barra</b>",
+            "La barra di Morphic selezionata appare nella sezione centrale dello schermo.",
+            "",
+            "Sembra il modo in cui potrebbe apparire su un calcolatore."
+          ]
+        },
+        {
+          "text": [
+            "<b>Passo 3: Aggiunta di pulsanti</b>",
+            "La colonna di destra elenca diversi pulsanti che puoi aggiungere.",
+            "",
+            "Aggiungi pulsanti facendo clic o trascinando."
+          ]
+        },
+        {
+          "text": [
+            "<b>Passo 4: apportare modifiche a un pulsante</b>",
+            "Vuoi modificare un pulsante?",
+            "",
+            "Fai clic su un pulsante sulla barra e apporta le modifiche."
+          ]
+        },
+        {
+          "text": [
+            "<b>Passo 5: Inviare la barra all'utente</b>",
+            "Quando ti piace come appare la barra, inviala all'utente e questa apparirà sul suo calcolatore.",
+            "",
+            "Fai clic sul pulsante <i>@:(EditorDetails.save-bar_button)</i>"
+          ]
+        },
+        {
+          "text": [
+            "<b>Fatto!</b>",
+            "Quando hai finito, seleziona un'altra barra o chiudi lo strumento.",
+            "",
+            "Puoi tornare indietro e apportare modifiche in qualsiasi momento."
+          ]
+        }
+      ],
+      "title": "Lezione: Iniziare con Morphic Plus"
+    },
+    "next_aria-label": "Passo successivo",
+    "previous_aria-label": "Passo precedente",
+    "step_arial-label": "Passo {step}"
+  },
+  "UserLogin": {
+    "create-account_link": "Non ho ancora un account Morphic",
+    "email_label": "Accedi con la tua email",
+    "heading": "Accedi a Morphic",
+    "password-reset_link": "Ho dimenticato la password",
+    "password_label": "Password per Morphic",
+    "sign-in_button": "Accedi"
+  },
+  "UserRegistration": {
+    "success": "Registrazione completata con successo"
+  },
+  "ValidatedInput": {},
+  "members": {
+    "changeRole": {
+      "apply_button": "Cambia in {role}",
+      "cancel_button": "@:(General.cancel_button)",
+      "confirm": "Conferma di cambiare il ruolo da {member} to {role}",
+      "title": "Cambia il ruolo del membro"
+    },
+    "delete": {
+      "apply_button": "Rimuovi {member}",
+      "cancel_button": "@:(General.cancel_button)",
+      "confirm": "Si prega di confermare la rimozione di {member} dal gruppo",
+      "title": "Rimuovi il membro"
+    },
+    "removeBar": {
+      "apply_button": "Elimina la barra",
+      "cancel_button": "@:(General.cancel_button)",
+      "confirm": "Sei sicuro di voler eliminare la barra?\nQuesto rimuoverà la barra dall'account. Ciò non può essere annullato."
+    }
+  }
+}
+
