@@ -45,7 +45,7 @@
     "generic-server-error": "सर्भर त्रुटि: {सन्देश}",
     "generic-title": "काम गर्न असमर्थ",
     "generic-action": "अन्तिमको काम गर्नुहोस्",
-    "invalid_credentials": ".",
+    "invalid_credentials": "त्यो इमेल ठेगाना वा पासवर्ड चिन्न सकिएको छैन।.",
     "missing_required": "एक आवश्यक कुरा पुरा भएको छैन.",
     "existing_email": "त्यो इमेल ठेगाना संग पहिले नै खाता जोडिएको छ.",
     "existing_username": "त्यो प्रयोगकर्ता नाम पहिले नै प्रयोग भएको छ.",
